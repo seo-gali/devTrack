@@ -1803,3 +1803,36 @@ Oracle의 가이드는 비동기 작업, 워커, 지속 가능한 상태, 예측
 
 ---
 
+<!-- devtrack-draft-id: d74994cb-7ebc-4ecd-9689-14cfdb4bfebe -->
+<details>
+<summary><strong>Claude Code, Codex 에이전트에게 앱을 리버스 엔지니어링시키는 오픈소스.</strong></summary>
+
+REA  
+https://github.com/morluto/rea/blob/main/README_ko.md
+
+그러니까 소스 코드가 없는 앱에서 마음에 드는 기능을 찾으면,,
+
+에이전트가 그 동작을 분석해 근거로 설명하고, 나의 프로젝트에 맞게 구현하는 것까지 이어가는 것이 중요한 아이디어.
+
+바이너리 수준까지 어떻게 돌아가는지 이해하라는 것..
+
+분석 대상은 네이티브 바이너리, JavaScript, Electron 앱, .NET 어셈블리, 웹사이트, Android APK, 펌웨어, EVM 바이트코드 등등등 무진장 넓음.
+
+![HUMbmO9bcAA55sD.jpg](../../assets/drafts/4e731f3a-eadb-41cc-a925-f27a608c2216.jpg)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: ad19f2c0-d21e-4529-80e1-3607cb180c44 -->
+<details>
+<summary><strong>기술을 제대로 이해하고 싶은 사람은 이것 써봐 Skill도 MCP도 아무것도 필요 없어</strong></summary>
+
+```
+소프트웨어 아키텍처를 C4 모델로 HTML에 출력해
+```
+
+</details>
+
+---
+

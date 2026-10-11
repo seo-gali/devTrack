@@ -780,3 +780,37 @@ https://pulls.review/
 </details>
 
 ---
+
+<!-- devtrack-draft-id: c64fbb83-9e97-4b48-89ef-daf84f4b2cce -->
+<details>
+<summary><strong>GitHub에서 코드 읽기가 막막하면, 주소의 ‘hub’부분을 바꿔보면 됨.</strong></summary>
+
+1. GitDiagram — 전체 구조부터 보기
+    
+    주요 구성 요소와 연결 관계를 AI가 다이어그램으로 정리해줌.
+    그림에서 관심 있는 부분을 누르면 해당 파일이나 폴더로 이동할 수 있음.
+    
+    http://github.com소유자/저장소
+    → http://gitdiagram.com소유자/저장소https://gitdiagram.com/visualize-codebase
+    
+2. Gitingest — 코드를 AI에 전달하기
+    
+    폴더 구조와 코드 내용을 복사·다운로드 가능한 텍스트로 묶어줌.
+    필요한 파일만 골라 AI에 넣고 “이 기능은 어느 파일부터 읽으면 돼?”라고 물어볼 때 쓰면 됨.
+    
+    http://github.com소유자/저장소
+    → http://gitingest.com 소유자/저장소https://gitingest.com
+    
+
+구조도로 큰 그림을 보고, 궁금한 부분은 AI와 코드로 확인하기.
+
+파일을 하나씩 열기 전에, 어디부터 읽을지 잡는 용도임.
+
+![HUQB2SCakAAX6QN.jpg](../../assets/drafts/ec55736c-19f6-498b-9586-ef011a66c40f.jpg)
+
+![HUQBpvpbsAE5hDU.jpg](../../assets/drafts/ac208a0c-55b3-49ba-8587-064ee92a7dfb.jpg)
+
+</details>
+
+---
+
