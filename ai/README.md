@@ -7,3 +7,4 @@
 - [Claude](claude/notes.md)
 - [Codex](codex/notes.md)
 - [Jev](jev/notes.md)
+- [REA](rea/notes.md)

@@ -61,5 +61,6 @@
 | AI | `ai/claude` | `ai/claude/notes.md` |
 | AI | `ai/codex` | `ai/codex/notes.md` |
 | AI | `ai/jev` | `ai/jev/notes.md` |
+| AI | `ai/rea` | `ai/rea/notes.md` |
 | 프론트엔드 · 디자인 | `frontend` | `frontend/notes.md` |
 | 프론트엔드 · 디자인 | `design` | `design/notes.md` |

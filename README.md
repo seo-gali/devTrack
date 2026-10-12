@@ -37,6 +37,7 @@
 | Claude | [Claude](ai/claude/notes.md) |
 | Codex | [Codex](ai/codex/notes.md) |
 | Jev | [Jev](ai/jev/notes.md) |
+| REA | [Jev](ai/rea/notes.md) |
 
 ## 프론트엔드 · 디자인
 
