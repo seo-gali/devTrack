@@ -1036,3 +1036,15 @@ Jev가 모호한 판단을 내립니다. 코드는 실제 결정에 대한 책�
 
 ---
 
+
+<!-- devtrack-draft-id: 19a977c9-4593-43de-8055-e01686348981 -->
+<details>
+<summary><strong>jev를 그만두고 Cloudflare의 Clef-flash라는 모델로 바꿨어요.</strong></summary>
+
+- jev보다 더 저렴하고, 무료 티어가 있어서  
+- 품질도 거의 변한 것 같지 않아서
+
+</details>
+
+---
+

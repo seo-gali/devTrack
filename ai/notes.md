@@ -2044,3 +2044,16 @@ https://github.com/morluto/rea
 
 ---
 
+
+<!-- devtrack-draft-id: cfd9d10e-239c-4bbd-a772-a4d986479dfc -->
+<details>
+<summary><strong>만약 AI가 거의 모든 소프트웨어를 처음부터 역설계하고, 재구축하며, 개선할 만큼 충분히 발전한다면, 소프트웨어 산업에는 무슨 일이 일어날까?</strong></summary>
+
+코딩은 사라지고 코더들은 창작자들로 대체될 것입니다.
+
+다른 사람들이 상상할 수 없는 것을 상상할 수 있는 사람들. 그것이 기업 소프트웨어의 새로운 물결입니다.
+
+</details>
+
+---
+
