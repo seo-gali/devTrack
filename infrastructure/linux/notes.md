@@ -1093,3 +1093,17 @@ Git 필수:
 
 ---
 
+<!-- devtrack-draft-id: 00920d3a-238e-47e6-a6e1-0a9d62ed7955 -->
+<details>
+<summary><strong>Strata 1.0이 출시되었습니다.</strong></summary>
+
+리눅스 최고의 파일 관리자, 완전 오픈 소스.
+
+45일, 775 커밋, 38 기여자, ~300K 줄의 Rust.
+
+https://stratafiles.io/
+
+</details>
+
+---
+
