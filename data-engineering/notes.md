@@ -167,3 +167,17 @@ Top-k는 몇 개를 남길지 미리 정하고, Top-p는 분포를 보고 몇 �
 
 ---
 
+<!-- devtrack-draft-id: 1cd2e995-7d0e-4694-84b0-4a71c26f4c43 -->
+<details>
+<summary><strong>엔지니어가 &quot;성능 개선에서 가장 먼저 확인하는 곳&quot; 5선</strong></summary>
+
+- DB 쿼리」 → 대체로 여기
+- N+1 문제」 → 흔함
+- 캐시」 → 효과 큼
+- 불필요한 처리」 → 의외로 많음
+- 네트워크」 → 간과하기 쉬움
+
+</details>
+
+---
+

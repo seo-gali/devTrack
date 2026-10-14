@@ -351,3 +351,20 @@ https://github.com/efij/awesome-claude-code-security
 </details>
 
 ---
+
+<!-- devtrack-draft-id: f9e96173-868c-408e-bafc-02d87ab2b7e1 -->
+<details>
+<summary><strong>카페 wi-fi 는 방화벽을 카페에 설치 안해두면 위험하겠다 생각이 든게</strong></summary>
+
+지금은 없어진 집근처 카x베네 wi-fi 라우터가 악성코드 감염되어 있어서
+
+비보안(http) 통신은 중간에서 가로채 도박 사이트 배너 띄우고 그랬음.
+
+보안(https) 통신은 문제가 없었음.
+
+그래서 https가 왜 중요한지 그때 다시 상기시켜줬지
+
+</details>
+
+---
+

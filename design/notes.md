@@ -337,3 +337,50 @@ http://lucianlabs.dev/uxui-prompt
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 18a7929b-a3ec-4e4a-9ec8-69444ad0f058 -->
+<details>
+<summary><strong>Anthropic이 (드디어) Claude Motion을 출시했습니다.</strong></summary>
+
+저는 16개의 Apple 스타일 애니메이션을 만들었습니다. 이렇게 했어요:
+
+단계 1: 단계별 가이드를 읽으세요:
+
+https://charliehills.substack.com/p/claude-motion-graphics
+
+단계 2: 프롬프트를 받으세요:
+
+https://charliehills.substack.com/p/16-claude-motion-prompts-and-my-brief
+
+먼저 제 브랜드 키트를 주고 비슷한 결과만 나와서, 하나의 기준으로 브리프를 다시 썼어요: Apple 품질.
+
+브리프는 절대 변하지 않아요. 같은 프롬프트(위)를 사용하고 한 줄(장면)만 다시 써요.
+
+현재 팀 및 엔터프라이즈 전용입니다 (지금은요).
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: bfd6ab84-53b7-4e43-9082-bb9cf98443f3 -->
+<details>
+<summary><strong>타 부서에서 바이브 코딩한 물건들이 </strong></summary>
+
+디버그를 위해서, 보안 리뷰를 위해서, 배포를 위해서, ... 여러 이유로 개발 부서에 인계되고 있다. 기획 과정에 참여도 안 해서 존재 이유도 모르겠는 물건들이 끊임 없이...
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 9beab87e-15a7-45ec-aecb-2fb2ac632700 -->
+<details>
+<summary><strong>바이브코딩 많이 하는데 바이브 코딩 하면 진짜 오픈소스에 감사한 줄 알아야 함</strong></summary>
+
+오픈소스로 쌓인 거대한 지적 유산으로 비로소 가능해진게 바이브코딩인데 딸깍 하면 다 만들어주니까 자기가 전능하기라도 한듯 오만해진 바이브코더들 참 많음. 휴브리스는 재앙을 부릅니다.
+
+거대한 오픈소스 프로그램 그대로 가져온 프로젝트를 바이브코딩으로 몇 시간이면 만들 수 있다고 주장하는 분 보고 어이없었음. 겸손해야 오래 가지
+
+</details>
+
+---
+
