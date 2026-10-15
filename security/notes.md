@@ -368,3 +368,32 @@ https://github.com/efij/awesome-claude-code-security
 
 ---
 
+<!-- devtrack-draft-id: d9824eff-e2fd-4b9d-901e-8c0d2ff68361 -->
+<details>
+<summary><strong>Top 12 API 보안 모범 사례:</strong></summary>
+
+- 속도 제한 및 스로틀링 추가
+- 활동 모니터링 및 로깅
+- API 게이트웨이 사용
+- 저장된 데이터 암호화
+- 모든 입력 검증
+- API 버전 관리
+- 허용된 클라이언트 화이트리스트
+- HTTPS 사용
+- 인증 강제
+- 권한 부여 강제
+- 종속성 사전 관리
+- 정기적인 보안 감사 실행
+
+이 목록은 완전하지 않습니다. 더 많은 항목이 있습니다: API 키/토큰 생애 주기 관리, 비밀 순환, 최소 권한 원칙 등.
+
+더 깊이 파고들고 싶다면, 다음 두 달 동안 제 뉴스레터에서 API 설계에 대한 심층 탐구 기사를 발행할 예정입니다.
+
+여기에 무엇을 더 추가하시겠어요?
+
+![image.png](../assets/drafts/f25fe106-2094-41e4-97cf-6999daeb26a3.png)
+
+</details>
+
+---
+

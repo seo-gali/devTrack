@@ -1941,3 +1941,123 @@ https://www.anthropic.com/engineering/redesigning-source-control
 
 ---
 
+<!-- devtrack-draft-id: c5a215f9-8efe-4f64-b6d7-1497978caa19 -->
+<details>
+<summary><strong>Claude code를 쓴다면 놓치면 안 되는 유용한 기능, 2탄!</strong></summary>
+
+1. Shift + Tab으로 Mode 바꾸기
+
+Shift Tab을 누를 때마다 아래 4가지 모드를 선택 가능합니다  
+ (1) 수동 모드 : 파일 읽기 외 수정, 명령 실행 등을 사람이 승인  
+ (2) 수정 자동 승인 모드 : 수정은 자동이되 일부는 승인 필요  
+ (3) 계획 모드 : 뭔가 실행하기 전에 계획이 먼저 필요하다면  
+ (4) 자동 모드 : 위험한 행동 이외에 진짜 '딸깍'을 원한다면
+
+2. 1번 누르기도 귀찮다면? 자동 모드 설정
+
+ - ~/.claude/settings.json 수정 요청 
+ - "permissions": { "defaultMode": "auto" }
+*최신 버전 자동 모드가 기본 설정되어 있습니다
+
+3. 터미널에서 명령을 바로 실행하기
+
+명령어 앞에 느낌표(!)를 붙이면 바로 실행이 가능합니다  
+결과까지 Claude code가 알아서 확인해주니까 더 좋죠!
+
+4. 지난 대화를 이어서 하고 싶다면?
+
+ - claude -c : 최근 대화 바로 시작
+ - claude -r : 원하는 대화 골라서 이어서 시작
+ - /resume : 터미널 실행 후 대화에서 이어서 시작하기
+
+5. 파일 지정해서 요청하기
+
+@ 를 치고 파일이름만 치면 목록에서 확인이 가능합니다
+
+이번에 Opus 5.5로 Claude code에 입문하시고 싶으셨거나,  
+새롭게 사용하고 계신 분들은 이 단축키들도 꼭 써보시죠!
+
+![image.png](../../assets/drafts/a48525e9-e97e-4cd3-be9f-f0a88664ec4e.png)
+
+![image.png](../../assets/drafts/ffecc6a0-a523-444f-a4da-1365e30d2dc8.png)
+
+![image.png](../../assets/drafts/4a7b3170-807f-4e76-8b1e-b52efe1380f1.png)
+
+![image.png](../../assets/drafts/ded9d54a-3c96-41a6-b2e8-7f9b6e3dd402.png)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: d9a94da7-7d00-4ade-a3b0-c3b5f2b6b52f -->
+<details>
+<summary><strong>Anthropic 에이전트 시대에 맞춰 다시 설계한 소스 컨트롤</strong></summary>
+
+Scion 만든 얘기는 오늘 내게 너무 크게 다가옴. 패러다임을 바꾸는 얘기이기 때문..
+
+PDF 자료 만들었으니 참고하시고 이해에 도움이 되시길
+
+https://drive.google.com/file/d/1ZVGqstyUE8ACmr2rwSit_gvQXRU2eGDM/view
+
+anthropic-scion-새로운소스컨트롤-20261014.pdf
+
+자 앤트로픽은 어떤 얘기를 했는가.
+
+Claude 덕분에 앤트로픽의 하루 코드 머지가 2,500건에서 3만 건 이상으로 폭증함 ㄷㄷ
+
+그런데 우리의 친구 git 기반 소스 관리가 가장 큰 병목이 된거임.
+
+git은 오프라인 분산 작업용인데 실제 사용자는 대부분 항상 온라인인 에이전트라는 점에 착안함.
+
+그래서 자체 버전 관리 시스템 Scion을 만들게 된 것.
+
+커밋 대신 changeset 이라고 부르는 단위를 씀.
+
+부모 대비 바뀐 파일 목록과 콘텐츠 주소 포인터만 저장해서 잠금이나 서버간에 조율 없이 빠르게 받아들일 수 있음..(!!!)
+
+blame이나 경로 히스토리처럼 changeset만으로 답하기 어려운 정보는 "파생 데이터"라는 공통 메커니즘으로 따로 계산하는거고.
+
+부담없이 PDF 만들었으니 거길 읽어보시길. 오늘 하루에 몇번의 충격을 받는건지
+
+![image.png](../../assets/drafts/f57b9dbf-427a-4d04-be6d-9580c81032c7.png)
+
+![image.png](../../assets/drafts/9c7e4447-56f6-4e9e-a7e7-dbfef5f32dc3.png)
+
+![image.png](../../assets/drafts/c04877e2-9bd1-4d05-a066-e976fa92cab1.png)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 0ecc8a53-bd24-44ad-abdd-f168157eb111 -->
+<details>
+<summary><strong>Claude의 리드 엔지니어의 블로그가 흥미롭다</strong></summary>
+
+「AI의 능력은 급속히 향상되고 있는데, 인간이 AI에 의뢰하는 일의 스케일은 충분히 커지지 않고 있다」という 이야기
+
+AI를 더 활용하기 위한, 4가지 방향성
+
+① Speed（속도）  
+같은 일을 더 빨리 끝내기  
+이건 많은 사람들이 이미 실천하고 있다
+
+② Altitude（추상도）  
+작업이 아니라, 이루고 싶은 목적을 맡기기  
+「버그를 수정해」가 아니라 「버그가 발생하기 어려운 메커니즘을 구축해」
+
+③ Depth（깊이）  
+전문가의 직함을 주는 것뿐만 아니라, 전문가가 실제로 사용하는 기법·도구·데이터를 사용하게 하기
+
+④ Range（영역의 넓이）  
+하나의 전문 분야에 갇히지 않고, 여러 분야의 지식이나 기법을 조합하기
+
+특히 인상적이었던 건, AI의 한계보다 인간이 상상하는 가능성의 한계가 병목이 될 수 있다는 사고방식
+
+AI에 지금의 일을 효율화시키는 것뿐만 아니라, 지금까지 자신에게는 어렵다고 생각했던 일에 도전하기
+
+AI가 진화할수록, 무엇을 맡길지를 생각하는 인간 쪽의 상상력이 중요해질지도 모른다
+
+</details>
+
+---
+

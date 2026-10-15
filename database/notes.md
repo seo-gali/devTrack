@@ -780,3 +780,15 @@ AI 신버전 나올때마다 최신 버전으로 내 테이블 칼럼들이랑 �
 
 ---
 
+<!-- devtrack-draft-id: 6a391c68-317e-4f48-b679-6b4e73cdf426 -->
+<details>
+<summary><strong>SQL 문을 포맷하는 좋은 방법은 키워드를 왼쪽에, 표현식/식별자를 오른쪽에 두고 중앙 정렬하는 것입니다. 그런 기능을 제공하는 IDE가 있나요?</strong></summary>
+
+이것을 "리버 포맷팅"이라고 합니다. 이를 위한 플러그인이 있습니다.
+
+![image.png](../assets/drafts/5ce38262-0070-4e1b-9607-0080f4a08ae7.png)
+
+</details>
+
+---
+

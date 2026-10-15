@@ -1187,3 +1187,25 @@ Linux 유저들은 반나절 쳐다보고.
 
 ---
 
+<!-- devtrack-draft-id: c27f0a6a-e17f-48f2-bfa1-053503f0a21e -->
+<details>
+<summary><strong>새로운 버전인 Linux Mint 27 "Adrien"은 Ubuntu 26.04 LTS 기반으로 크리스마스에 출시될 예정입니다.</strong></summary>
+
+https://itsfoss.com/news/linux-mint-27-announced/
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: a43ce766-a29f-4040-ac17-837ac996d5ce -->
+<details>
+<summary><strong>Linux용 악성코드 스캐너</strong></summary>
+
+- 다단계 위협 탐지(MD5, SHA-256, HEX, YARA, 통계 분석), ClamAV 통합, 실시간 inotify 모니터링, 격리/치료/복원 작업, 다중 채널 알림(이메일, Slack, Telegram, Discord) 기능을 제공합니다.
+
+https://github.com/rfxn/linux-malware-detect
+
+</details>
+
+---
+
