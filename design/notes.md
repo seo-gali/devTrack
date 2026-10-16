@@ -384,3 +384,50 @@ https://charliehills.substack.com/p/16-claude-motion-prompts-and-my-brief
 
 ---
 
+<!-- devtrack-draft-id: be88a410-db7f-4c8a-ac01-92e2330dab95 -->
+<details>
+<summary><strong>게임처럼 탭으로 즐기는 CSS 애니메이션</strong></summary>
+
+https://x.com/yui540/status/2110899224015687996
+
+![SaveTwitter.Net_FkNjlzEuztuLDczT_(720p).gif](../assets/drafts/c534a4bc-82a0-484a-8e8c-310419b468f9.gif)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 730321df-ebb2-4094-862a-41cf18dce3f2 -->
+<details>
+<summary><strong>제품 사진에 내부 아웃라인을 추가하세요.</strong></summary>
+
+흰색 카드 위의 흰색 사진은 테두리를 잃어버립니다. 이것이 그것을 되찾아줍니다:
+
+```
+.𝚙𝚛𝚘𝚍𝚞𝚌𝚝-𝚒𝚖𝚊𝚐𝚎 {
+  𝚘𝚞𝚝𝚕𝚒𝚗𝚎: 𝟷𝚙𝚡 𝚜𝚘𝚕𝚒𝚍 𝚛𝚐𝚋(𝟶 𝟶 𝟶 / 𝟶.𝟷);
+  𝚘𝚞𝚝𝚕𝚒𝚗𝚎-𝚘𝚏𝚏𝚜𝚎𝚝: -𝟷𝚙𝚡;
+}
+```
+
+-1px는 선을 이미지 내부로 당겨서 크기를 추가하지 않고 border-radius를 따릅니다.
+
+![image.png](../assets/drafts/b551ee48-00a4-4956-bb7c-593326d2d6f2.png)
+
+![image.png](../assets/drafts/ea4fe644-0577-4b6f-8ba2-5786c3ac01c1.png)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 80f1985c-5ea9-4333-816f-2f3d2dd2b71c -->
+<details>
+<summary><strong>AI에게 로딩 상태를 요청할 때, 보통 스피너를 받게 됩니다. </strong></summary>
+
+이러한 일반적으로 사용되는 로딩 패턴들은 Claude나 Codex에서 원하는 것을 정확히 설명하는 데 도움이 됩니다. 나중에 참고하세요.
+
+![SaveTwitter.Net_WtwoIrHLgmuOKRee_(720p).gif](../assets/drafts/755805d3-6c28-4e89-bba9-6b53c6f6086c.gif)
+
+</details>
+
+---
+

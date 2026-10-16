@@ -397,3 +397,39 @@ https://github.com/efij/awesome-claude-code-security
 
 ---
 
+<!-- devtrack-draft-id: e57f1cda-9f13-4cce-88db-1714c3c28983 -->
+<details>
+<summary><strong>윈도우에 숨겨진 도구 (Sigverif)가 있어요  </strong></summary>
+
+왜 필요한가요? 해커들이 윈도우 파일 안에 자신들의 파일을 심어놓아서 보호 시스템이 의심하지 않게 하고, 그렇게 해서 당신의 데이터를 훔치기 때문이에요
+
+효과는? 시스템 내 모든 파일의 신원 (디지털 서명)을 검사해요.
+
+검사 방법: (윈도우) 키를 누르고 Sigverif를 입력하세요
+
+자신의 기기들을 확인해보세요
+
+(당신의 상호작용이 다른 사람을 돕습니다)
+
+![image.png](../assets/drafts/4c2915b7-1905-4f22-9259-8ef2a5efab33.png)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: aa5bbbb3-610e-43ca-b9d5-4f1da47589e5 -->
+<details>
+<summary><strong>파일 업로드 확장자 우회 새로운 방법</strong></summary>
+
+미디어 업로드 섹션에서 .png .jpg .txt 같은 파일을 업로드할 수 있습니다
+
+하지만 php 파일을 업로드하려 하면 차단됩니다: .php .jpg.php .php7 .shtml
+
+우회 방법: ".php " (.php 뒤에 간단한 공백만 추가하세요)
+
+![image.png](../assets/drafts/a635632d-389f-4c8e-8c64-4e1998f30041.png)
+
+</details>
+
+---
+
