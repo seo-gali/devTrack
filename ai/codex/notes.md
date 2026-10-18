@@ -2079,3 +2079,16 @@ Codex에 부탁할 걸 Work에 잘못 부탁해버려서 조금 걱정되거나,
 
 ---
 
+<!-- devtrack-draft-id: b1a656d9-ae9a-4b9e-9df5-5d177a831f99 -->
+<details>
+<summary><strong>/doctor prompt-audit 대체 방법 (프롬프트 및 설정 진단)</strong></summary>
+
+Codex 대화 세션창에 `AGENTS.md`나 지침 파일 내용을 직접 첨부한 뒤 아래와 같이 **수동 프롬프트를 입력하여 검사를 지시**해야 합니다.
+
+> *"이 지침 파일(`AGENTS.md`)을 읽고 1) 서로 상충되는 규칙, 2) 존재하지 않는 파일 참조, 3) 불필요하게 중복된 구형 문구가 있는지 진단해서 수정안을 제시해줘."*
+>
+
+</details>
+
+---
+

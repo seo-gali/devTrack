@@ -603,3 +603,26 @@ https://github.com/mttmcknn/sea-glass
 
 ---
 
+<!-- devtrack-draft-id: f06fbd80-e3ad-4699-a1e0-be4be2739787 -->
+<details>
+<summary><strong>디자인 팁 🌲 - 아이콘 크기를 𝘱𝘹가 아닌 𝟷𝗰𝗮𝗽으로 설정하세요.</strong></summary>
+
+𝟷𝗰𝗮𝗽은 현재 폰트의 대문자 높이를 의미하므로, 아이콘이 모든 크기에서 텍스트를 따라갑니다:
+```
+.𝗹𝗮𝗯𝗲𝗹 {
+  𝗱𝗶𝘀𝗽𝗹𝗮𝘆: 𝗳𝗹𝗲𝘅;
+  𝗮𝗹𝗶𝗴𝗻-𝗶𝘁𝗲𝗺𝘀: 𝗯𝗮𝘀𝗲𝗹𝗶𝗻𝗲;
+}
+
+.𝗹𝗮𝗯𝗲𝗹 𝘀𝘃𝗴 {
+  𝗯𝗹𝗼𝗰𝗸-𝘀𝗶𝘇𝗲: 𝟷𝗰𝗮𝗽;
+}
+```
+𝗯𝗮𝘀𝗲𝗹𝗶𝗻𝗲은 아이콘을 텍스트의 베이스라인에 맞추므로, 모든 폰트에서 대문자를 가로지릅니다. 너비는 𝘃𝗶𝗲𝘄𝗕𝗼𝘹를 따릅니다.
+
+![SaveTwitter.Net_A5gyS_tT7wAQPPw8_(720p).gif](../assets/drafts/6d54b134-4a94-45a9-8dda-b1de9a4a9420.gif)
+
+</details>
+
+---
+
