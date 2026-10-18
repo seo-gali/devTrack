@@ -433,3 +433,15 @@ https://github.com/efij/awesome-claude-code-security
 
 ---
 
+<!-- devtrack-draft-id: 5405eee5-3fce-43c1-8b79-cb479e9d301e -->
+<details>
+<summary><strong>다들 웹사이트 만들어서 물건 팔 때 AI한테 한 바퀴 역방향으로 점검받는 거 잊지 마세요. </strong></summary>
+
+나 이미 SQL 인젝션 공격 당했어요
+
+![image.png](../assets/drafts/bf34ddf1-1c26-4196-90c2-99bc5f055ad7.png)
+
+</details>
+
+---
+

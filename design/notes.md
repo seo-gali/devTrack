@@ -431,3 +431,175 @@ https://x.com/yui540/status/2110899224015687996
 
 ---
 
+<!-- devtrack-draft-id: 7b2ed4bd-bd6f-43f2-b6c7-98685519184d -->
+<details>
+<summary><strong>지금까지 나온 거의 모든 오픈 소스 아이콘 세트</strong></summary>
+
+https://icones.js.org/
+
+![image.png](../assets/drafts/2468e2ea-df9e-40ff-baff-c9f27345121f.png)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 9346b3d2-09f3-40cf-a6e2-7248df380104 -->
+<details>
+<summary><strong>오버플로우가 발생할 수 있는 행에 `𝚜𝚊𝚏𝚎 𝚌𝚎𝚗𝚝𝚎𝚛`를 사용하세요.</strong></summary>
+
+일반 `center`를 사용하면, 상자보다 넓은 행이 양쪽으로 넘칩니다.
+
+`𝚜𝚊𝚏𝚎 𝚌𝚎𝚗𝚝𝚎𝚛`는 맞을 때는 중앙 정렬하고, 맞지 않을 때는 왼쪽 가장자리부터 시작합니다:
+
+```css
+.𝚝𝚊𝚋𝚜 {
+  𝚍𝚒𝚜𝚙𝚕𝚊𝚢: 𝚏𝚕𝚎𝚡;
+  𝚓𝚞𝚜𝚝𝚒𝚏𝚢-𝚌𝚘𝚗𝚝𝚎𝚗𝚝: 𝚜𝚊𝚏𝚎 𝚌𝚎𝚗𝚝𝚎𝚛;
+  𝚘𝚟𝚎𝚛𝚏𝚕𝚘𝚠-𝚡: 𝚊𝚞𝚝𝚘;
+}
+```
+
+![SaveTwitter.Net_MeErE6RDRuc0D8WS_(720p).gif](../assets/drafts/9646ceff-8083-4ea4-ac44-bc93b1a9739b.gif)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 431ecc13-b60b-45e2-a0eb-76499772701b -->
+<details>
+<summary><strong>&lt;/details&gt; 태그의 스택은 독립적으로 열립니다. </strong></summary>
+
+세 개를 클릭하면 세 개의 개방된 답변을 얻습니다.
+
+그들에게 동일한 name을 부여하면 하나를 열 때 다른 것들이 닫힙니다:
+
+```json
+<details name="faq">
+  <summary>나중에 플랜을 변경할 수 있나요?</summary>
+  <p>네. 업그레이드는 즉시 적용됩니다.</p>
+</details>
+```
+
+```json
+<details name="faq">
+  <summary>환불을 제공하나요?</summary>
+  <p>모든 요금 청구 후 30일 이내에 가능합니다.</p>
+</details>
+```
+
+높이도 `interpolate-size`로 애니메이션할 수 있어요:
+
+```css
+:root { interpolate-size: allow-keywords; }
+```
+
+```css
+details::details-content {
+  height: 0;
+  overflow: clip;
+  transition: height 0.3s, content-visibility 0.3s allow-discrete;
+}
+```
+
+```css
+details[open]::details-content { height: auto; }
+```
+
+![SaveTwitter.Net_gHzw2xP1kX1cPqpa_(720p).gif](../assets/drafts/4b697a81-0d16-4a69-a7eb-eab746f5b07c.gif)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 597d9c90-ad8a-4f4d-9a61-0ce8729437dd -->
+<details>
+<summary><strong>앱이 어딘가 이상하게 느껴지지만 왜 그런지 모르겠다면, 아마도 간격 문제일 가능성이 큽니다.</strong></summary>
+
+적절한 간격 배치는 단순한 디자인조차 세련되고 전문적인 느낌으로 만들어주죠. 때로는 아주 작은 디테일이 가장 큰 차이를 만들어냅니다.
+
+![SaveTwitter.Net_A4VMrbbaeglcKPzD_(720p).gif](../assets/drafts/9eb3975e-7878-4cdc-9d13-e88a4131f18d.gif)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 6ced49e1-2312-4489-9f78-46715ad67a16 -->
+<details>
+<summary><strong>내가 쓰려고 남겨놓는 저작권 없는 무료 사이트들 모음</strong></summary>
+
+1. 무료 트랜지션  
+https://www.eisaidoo.com/
+
+2. 상업적 무료 폰트 모음  
+https://noonnu.cc/
+
+3. 애니메이션 효과 무료 배포  
+https://nopia31.booth.pm/items/7347590
+
+4. Freeticon  
+https://www.youtube.com/@freeticon/featured
+
+5. 저작권 없는 목업, 이미지 사이트 1 - Magnific(구 Freepic)  
+https://www.magnific.com/kr
+
+6. 저작권 없는 스톡 사진 1  
+https://unsplash.com/ko
+
+7. 스톡 사진, 일러스트, 이미지, 브금 등  있는 사이트  
+https://pixabay.com/ko/
+
+(브금은 일로)  
+https://pixabay.com/ko/music/
+
+8. 최근 뜨고 있는 무료 브금(Dova-Syndrom)  
+https://www.youtube.com/channel/UCq15_9MvmxT1r2-LLjtkokg
+
+9. 귀여운 BGM 모음  
+https://bgm-farm.pages.dev/#music
+
+10. 거진 모든 이모지가 다 있는 이모티콘, 아이콘 사이트  
+https://www.flaticon.com/
+
+11. 연필 손그림 - Hand-drawing  
+https://enpitsu-sozai.com/
+
+12. 손그림 벡터 이미지 Hand-drawing Vector Image  
+https://vectorshelf.com/
+
+13. 사이트에서 색상 변경이 가능한 일러스트 사이트  
+https://loosedrawing.com/
+
+
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 3e25e04f-e475-4dd9-8ff8-74d0e4c81213 -->
+<details>
+<summary><strong>Compose용 Sea Glass를 소개합니다.</strong></summary>
+
+서리 낀 색상, 부드럽게 깎인 가장자리, 그리고 각 조각 아래로 살짝 비치는 빛.
+
+구글은 Material Design 4에서 시글라스를 다음 UI 소재로 삼아 성공을 거둘 수 있을 거라고 생각해요.
+
+https://github.com/mttmcknn/sea-glass
+
+![image.png](../assets/drafts/f347e507-8c7f-465e-a8e3-8c1c849b8da0.png)
+
+![SaveTwitter.Net_1rYuVpZ_STJY33EB_(600p).gif](../assets/drafts/adec7422-539a-4e58-9bd2-d5923157a808.gif)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: a7a162df-94db-4fba-b221-7da6d4f45e33 -->
+<details>
+<summary><strong>Figma에서 이 유행하는 프로그레시브 블러 효과를 배워보세요</strong></summary>
+
+![image.png](../assets/drafts/99b9550d-f366-4164-bddb-af7fd56f6056.png)
+
+</details>
+
+---
+

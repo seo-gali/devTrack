@@ -1209,3 +1209,23 @@ https://github.com/rfxn/linux-malware-detect
 
 ---
 
+<!-- devtrack-draft-id: 0a54d67c-e0f2-42be-bcbb-9a1e4c24090e -->
+<details>
+<summary><strong>Ubuntu는 수십 년 된 GNU 핵심 유틸리티를 Rust로 공식 대체했습니다.</strong></summary>
+
+cp, mv, rm 같은 일상적인 명령어도 이제 기본적으로 Rust 기반 구현을 사용합니다.
+
+Ubuntu 26.10 “Stonking Stingray”가 출시되었으며, GNU Coreutils의 Rust 기반 대안인 uutils로의 마이그레이션을 완료했습니다.
+
+여전히 동일한 명령어를 입력합니다. 변경된 것은 파일을 처리하는 하부 소프트웨어입니다.
+
+이 전환은 점진적으로 이루어졌습니다. Ubuntu는 뛰어난 문제들이 해결되는 동안 cp, mv, rm을 보류했습니다.
+
+이번 릴리스가 전환을 완료합니다.
+
+또한 GNOME 51, 새로운 RISC-V 데스크톱 이미지, 그리고 확장된 하드웨어 기반 디스크 암호화 지원을 가져옵니다.
+
+</details>
+
+---
+

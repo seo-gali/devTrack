@@ -2135,3 +2135,101 @@ VERIFICATION: 당신 자신의 판단 외에 그것이 작동했는지 알 수 �
 
 ---
 
+<!-- devtrack-draft-id: 1ca426d7-6202-476c-8fc5-3e1da45e29c1 -->
+<details>
+<summary><strong>Claude Code의 새로운 기능: 유휴 압축</strong></summary>
+
+프롬프트 캐시는 1시간 동안 유지됩니다. 200K+ 토큰 세션을 약 54분 동안 유휴 상태로 두면 자동으로 압축되므로, 차가운 재캐싱이 아닌 따뜻한 요약으로 돌아올 수 있습니다.
+
+임계값 설정: CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS  
+끄기: "idleCompaction": false
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: bdf779b4-aff7-40d9-87b6-147dcfd8c081 -->
+<details>
+<summary><strong>Claude Code의 창작자가 모두에게 CLAUDE.md를 삭제하라고 방금 말했어.</strong></summary>
+
+YC의 Boris Cherny:  
+"6개월마다 CLAUDE.md를 삭제하고, 스킬을 삭제하고, 훅을 삭제해. 모델이 뭘 하는지 보고, 놀랄 수도 있을 거야."
+
+그의 이유:  
+• 당신의 오래된 규칙들은 이전 모델들의 약점을 고치기 위한 거였어  
+• 새로운 모델들은 그 약점들이 더 이상 없어  
+• 그래서 당신의 지침들이 이제 Claude를 더 나쁘게 만들 수 있어
+
+방법:
+1. CLAUDE.md, 스킬, 훅 삭제
+2. 평소처럼 작업하고 Claude가 어디서 잘못되는지 지켜봐
+3. 실수가 계속 반복될 때만 하나의 지침만 다시 추가
+4. 주요 모델 릴리스마다 반복
+
+유지할 것:  
+• 보안 및 규정 준수 규칙  
+• 코드에서 Claude가 파악할 수 없는 프로젝트 특성
+
+삭제할 것:  
+• 폴더 구조, 의존성 목록, 아키텍처 요약  
+• 당신의 repo를 읽으면 Claude가 배울 수 있는 모든 것
+
+대부분의 사람들은 규칙을 계속 추가해.  
+도구를 만든 사람이 규칙을 제거하고 있어.
+
+이걸 북마크해. 당신의 CLAUDE.md는 얼마나 길어?
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 47d19f53-b5d9-4161-9a43-d4a61a84d542 -->
+<details>
+<summary><strong>CLAUDE.md를 삭제해도 괜찮은 이유는 그 안에 있는 모든 내용이 리포지토리에서 다시 유도할 수 있기 때문입니다. </strong></summary>
+
+리포지토리가 되돌려줄 수 없는 것은 '왜'입니다: 죽어버린 접근 방식, 스테이징을 망쳐놓은 마이그레이션, 이틀째에 당신이 죽인 수정 사항. 그 기록은 컨텍스트 윈도우 밖에서 살아남아야만 지속되는데, MemoryRouter가 프로젝트와 함께 유지하는 것이 바로 그것입니다:
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 689f5c0f-52e9-4f0b-af27-4f178d77c12d -->
+<details>
+<summary><strong>Anthropic은 gzip를 사용해 Claude를 3배 더 빠르게 만들었습니다.</strong></summary>
+
+1992년의 압축 도구.
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: dd31a2eb-8fc7-4aae-9623-9daa00e2c2a6 -->
+<details>
+<summary><strong>Claude Code의 세션을 SQLite에 쌓아두고, 과거 대화를 나도 Claude도 떠올릴 수 있도록 하는 도구를 만들었어</strong></summary>
+
+SQLite는 세션 메모리에 적합한 선택입니다. 쿼리 가능하고 이식성이 뛰어나며 컨텍스트 압축 후에도 데이터가 유지됩니다. 여기서 흥미로운 점은 데이터 검색입니다. 어떤 과거 세션을 다시 주입할 가치가 있는지 어떻게 판단할까요? 단순히 최근 세션이라는 이유만으로는 충분하지 않은 경우가 많습니다.
+
+![image.png](../../assets/drafts/98f71132-8896-4ba3-ba90-d4328bdc5e61.png)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 68babefb-d22a-41a0-965e-b043fca734d2 -->
+<details>
+<summary><strong>앱을 더 빠르게 만들고 싶다면, Claude에게 이 5가지를 요청하세요:</strong></summary>
+
+1) 불필요한 렌더링을 감지하고 제거하세요.
+2) 지연 로딩으로 번들을 줄이세요.
+3) 요청과 캐싱을 최적화하세요.
+4) 느린 쿼리와 N+1 문제를 찾아내세요.
+5) 이미지, 폰트 및 스크립트를 최적화하세요.
+
+이 작업을 위해 Chrome DevTools 같은 MCPs를 사용하여 성능을 측정하고, Playwright로 실제 흐름을 테스트하며, Sentry로 프로덕션 문제를 감지할 수 있습니다.
+
+핵심: 각 최적화 전후에 측정하세요.
+
+</details>
+
+---
+
