@@ -626,3 +626,70 @@ https://github.com/mttmcknn/sea-glass
 
 ---
 
+<!-- devtrack-draft-id: 72ca8e05-1581-4ed9-9957-fe395ecaf821 -->
+<details>
+<summary><strong>신입 디자이너라면 꼭 알아야 할 디자인 용어</strong></summary>
+
+![image.png](../assets/drafts/6af2d6e0-94a7-4c67-a00a-f8740b5adb28.png)
+
+![image.png](../assets/drafts/e80b1a01-e138-4f47-bd19-8f1a8745792f.png)
+
+![image.png](../assets/drafts/6b6161bb-2fe5-47e5-b370-9b84caec0e5d.png)
+
+![image.png](../assets/drafts/f0aa8c49-05ac-47a1-8d9d-09b530e36d43.png)
+
+![image.png](../assets/drafts/ce651b29-cf4f-4e45-b522-5e69509dc685.png)
+
+![image.png](../assets/drafts/22163e96-a98c-4f00-b930-32252ac98862.png)
+
+![image.png](../assets/drafts/03b5ec55-5d3b-4fb2-99f8-48b2de3c1e50.png)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: c997bdb2-f301-42f2-8a09-97e1f0477d13 -->
+<details>
+<summary><strong>대시보드 디자인 팁, 간격이 중요해요.</strong></summary>
+
+이건 진짜 피눈물 나는 경험담이에요. 제 자신의 교훈은: 간격 시스템을 확정짓고 나면, 색상 배합도 기준이 생겨서 조정 속도가 두 배로 빨라진다는 거예요. 참고로 궁금해서 여쭤보는데, 여러분 dashboard의 간격은 보통 4pt 그리드에 맞추나요, 아니면 tailwind 기본 세트를 그대로 쓰나요?
+
+디자인 시스템으로 시작했는데, 나중에는 tailwindcss를 썼어요. 디자이너가 만든 UI 시스템이 전체적으로 tailwind로 직접 짠 것만큼 예쁘지 않다는 걸 알게 됐거든요. 왜 그런지 딱 말로 설명은 못 하겠어요. 이걸 보고 나서야 알았네요. 간격, 간격!
+
+![SaveTwitter.Net_3K5gz5h60fMSFtni_(720p).gif](../assets/drafts/08ac2cf8-b858-43e0-9c93-33e63f4b2439.gif)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: e30ec834-7a84-4668-bce6-b0dc7fbc691a -->
+<details>
+<summary><strong>구글에서 일하면서 배운 트릭 중 하나는 인터페이스가 브랜드에 맞게 느껴지도록 하는 매우 간단한 방법입니다:</strong></summary>
+
+핵심 브랜드 색상으로 시작하세요.  
+예를 들어, 그것이 파란색이라고 합시다.
+
+거의 흰색에서 거의 검은색까지, 모두 파란색 틴트를 가진 밝은 파란색 음영부터 어두운 파란색 음영까지의 팔레트를 만듭니다.
+
+텍스트는 단순한 순수한 흰색이 아닙니다.  
+매우 밝은 파란색입니다.
+
+배경은 순수한 검은색이 아닙니다.  
+매우 어두운 파란색입니다.
+
+이것들을 핵심 요소 전반에 사용하면 인터페이스 전체에 거의 눈에 띄지 않지만 존재하는 브랜드 '느낌'을 만들어냅니다.
+
+긍정적/부정적 색상이 쉽게 지배하게 되어 브랜드를 통합하기 어렵고, 충격적으로 느껴지는 거래 인터페이스에서 특히 잘 작동합니다.
+
+이 기술은 모든 제품과 산업에 완벽하게 적용됩니다.
+
+그리고 AI로 구축 중이라면, 그냥 이렇게 프롬프트할 수 있습니다:
+
+"내 브랜드의 기본 색상을 가져와서 거의 흰색에서 거의 검은색까지의 틴트 스케일을 생성하세요. 인터페이스의 모든 배경, 표면, 테두리 및 텍스트 색상에 순수한 회색 대신 이 틴트들을 사용하세요."
+
+![image.png](../assets/drafts/040f3a3e-87ac-4dc6-bec1-a63929ca2e5a.png)
+
+</details>
+
+---
+

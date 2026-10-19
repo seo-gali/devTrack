@@ -1995,3 +1995,19 @@ Claude Code에게 양식을 구현하라고 요청한다면, 이를 구축하고
 
 ---
 
+<!-- devtrack-draft-id: bc313ae4-b2be-47ec-9f02-3b206c57466b -->
+<details>
+<summary><strong>유일하게 제정신인 코드 리뷰 루프</strong></summary>
+
+지금 모든 조직이 이 루프를 구축하고 있습니다.
+
+대기업에 계시다면, 규제 장애물 때문에 마지막 단계를 수행할 수 없겠지만, 여전히 SDLC의 90%를 극적으로 가속화할 수 있습니다.
+
+![image.png](../../assets/drafts/d5bcb8b2-947f-45b7-8960-bdaa3c5a528e.png)
+
+![image.png](../../assets/drafts/fd7d0cf0-a22e-470f-a73b-d9da566a9473.png)
+
+</details>
+
+---
+

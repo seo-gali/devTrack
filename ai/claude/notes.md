@@ -2233,3 +2233,47 @@ SQLite는 세션 메모리에 적합한 선택입니다. 쿼리 가능하고 이
 
 ---
 
+<!-- devtrack-draft-id: 0287206b-1029-4163-ae68-7bc408259685 -->
+<details>
+<summary><strong>한 세션을 터미널 2곳에서 이어 열면, 두 쪽 메시지가 한 기록에 섞여요.</strong></summary>
+
+Claude Code 공식 문서의 세션 관리 내용이에요.
+
+/branch를 치면 지금까지 대화를 복사한 갈래로 옮겨 가요.
+
+원래 대화는 그대로라, 다른 방법을 시험해도 잃지 않아요.
+
+명령줄에선: claude --continue --fork-session
+
+![image.png](../../assets/drafts/1e2014bf-8ae9-4e23-b7bf-f56020987776.png)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: c54c8d40-035a-4096-9e67-d4a9fc17dcde -->
+<details>
+<summary><strong>클로드코드로 작업한 기록 영수증처럼 뽑아보실래요?</strong></summary>
+
+앤트로픽 공식 플러그인으로 출시된 Receipts 로 출력해봤습니다.  
+이번 달에 클로드 코드로 뭐 했는지 세션, 커밋, PR까지 영수증처럼 뽑아주네요.  
+지금까지 작업을 어느정도 했는지 보고싶거나,  
+누군가에게 보여줄 필요가 있다면 한번 뽑아보셔도 괜찮을것같아요.
+
+`/plugin install receipts@claude-plugins-official` 깔고 
+
+`/receipts month` (한달)  
+`/receipts week` (일주일) 
+
+치면 끝
+
+세션이랑 커밋, PR까지 영수증처럼 한 장에 정리되니 한 달 작업량이 바로 보이네요. 회고할 때 꺼내 보기 좋은 자료가 될 것 같아요
+
+https://github.com/anthropics/claude-plugins-official/tree/main/plugins/receipts
+
+![image.png](../../assets/drafts/22889e21-dd4e-4126-a5a6-267f536b84e5.png)
+
+</details>
+
+---
+
