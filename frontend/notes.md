@@ -190,3 +190,21 @@
 
 ---
 
+<!-- devtrack-draft-id: 98f998cf-ed8c-4a1a-a276-f2c2ea11c249 -->
+<details>
+<summary><strong>비밀번호 관리자가 OTP 입력을 가로채는 것을 막는 방법</strong></summary>
+
+```
+<𝚒𝚗𝚙𝚞𝚝   
+𝚊𝚞𝚝𝚘𝚌𝚘𝚖𝚙𝚕𝚎𝚝𝚎="𝚘𝚗𝚎-𝚝𝚒𝚖𝚎-𝚌𝚘𝚍𝚎"   
+𝚍𝚊𝚝𝚊-𝟷𝚙-𝚒𝚐𝚗𝚘𝚛𝚎   
+𝚍𝚊𝚝𝚊-𝚕𝚙𝚒𝚐𝚗𝚘𝚛𝚎="𝚝𝚛𝚞𝚎"   
+/>
+```
+
+![SaveTwitter.Net_b8MbCprkvXJjUgvj_(720p).gif](../assets/drafts/70494433-8e1b-423c-810f-6276ba00ed08.gif)
+
+</details>
+
+---
+
