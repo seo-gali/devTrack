@@ -1,6 +1,8 @@
-# API testing tool
+# 소프트웨어
 
 속성: Backend
+
+#### API testing tool
 
 ![image.png](image%2042.png)
 
@@ -27,14 +29,13 @@ API 테스트만 하고
     4. API 모니터링 & 테스트
 
 ![image.png](image%2043.png)
-
-![image.png](image%2044.png)
-
 ![image.png](image%2045.png)
 
 ---
 
 #### Bruno v3.5.0의 새로운 기능
+
+![image.png](image%2044.png)
 
 - 컬렉션 실행을 위한 공식 GitHub Action
 - CI/CD를 위한 공식 Bruno CLI Docker 이미지

@@ -1,10 +1,10 @@
-# API testing tool
+# 소프트웨어
 
-속성: Backend
+속성: Architecture
 
 
 <details>
-<summary><strong>Postman은 실제로 어떻게 돈을 벌고 있는 걸까?</strong></summary>
+<summary><strong>API testing tool</strong></summary>
 
 ![image.png](../assets/api-testing/image-042.png)
 
@@ -32,8 +32,6 @@ API 테스트만 하고
 
 ![image.png](../assets/api-testing/image-043.png)
 
-![image.png](../assets/api-testing/image-044.png)
-
 ![image.png](../assets/api-testing/image-045.png)
 
 ---
@@ -47,6 +45,7 @@ API 테스트만 하고
 <details>
 <summary><strong>Bruno v3.5.0의 새로운 기능</strong></summary>
 
+![image.png](../assets/api-testing/image-044.png)
 
 - 컬렉션 실행을 위한 공식 GitHub Action
 - CI/CD를 위한 공식 Bruno CLI Docker 이미지

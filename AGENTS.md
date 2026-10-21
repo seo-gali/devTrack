@@ -41,6 +41,7 @@
 | 개발 · 설계 | `networking` | `networking/notes.md` |
 | 개발 · 설계 | `security` | `security/notes.md` |
 | 개발 · 설계 | `system-design` | `system-design/notes.md` |
+| 개발 · 설계 | `software` | `software/notes.md` |
 | 개발 · 설계 | `interview` | `interview/notes.md` |
 | 인프라 · 운영 · 도구 | `infrastructure` | `infrastructure/notes.md` |
 | 인프라 · 운영 · 도구 | `infrastructure/cloud` | `infrastructure/cloud/notes.md` |
@@ -50,7 +51,6 @@
 | 인프라 · 운영 · 도구 | `devops` | `devops/notes.md` |
 | 인프라 · 운영 · 도구 | `devops/ci-cd` | `devops/ci-cd/notes.md` |
 | 인프라 · 운영 · 도구 | `data-engineering` | `data-engineering/notes.md` |
-| 인프라 · 운영 · 도구 | `tools` | `tools/notes.md` |
 | 인프라 · 운영 · 도구 | `open-source` | `open-source/notes.md` |
 | AI | `ai` | `ai/notes.md` |
 | AI | `ai/agents` | `ai/agents/notes.md` |

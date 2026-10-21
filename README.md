@@ -12,6 +12,7 @@
 | 네트워크 | [Networking](networking/README.md) |
 | 보안 | [보안](security/README.md) |
 | 아키텍처 | [시스템 디자인](system-design/README.md) |
+| 아키텍처 | [소프트웨어](software/README.md) |
 | 인터뷰 | [인터뷰 질문](interview/README.md) |
 
 ## 인프라 · 운영 · 도구
@@ -21,7 +22,6 @@
 | 인프라 | [Cloud · Kubernetes · Docker · 리눅스](infrastructure/README.md) |
 | 데브옵스 | [DevOps · CI/CD](devops/README.md) |
 | 데이터 처리 | [데이터 엔지니어링](data-engineering/README.md) |
-| API 테스트 | [API 테스트 도구](tools/README.md) |
 | 오픈소스 | [오픈소스](open-source/README.md) |
 
 ## AI
