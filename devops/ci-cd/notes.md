@@ -945,3 +945,26 @@ CI/CD 파이프라인은 단순한 도구와 구성 파일의 집합이 아닙�
 
 ---
 
+<!-- devtrack-draft-id: 17226e9e-a39f-462f-b7cc-ff9b0919c9d8 -->
+<details>
+<summary><strong>저희 이제 Jenkins와 작별했습니다…</strong></summary>
+
+Jenkins와 10년 이상을 함께 해왔는데요.  
+CI/CD에서 Jenkins는 이제 GitHub Actions + Argo CD와 Argo Workflows + Argo CD에게 자리를 내어주었지만,  
+여전히 배치 Workflow에서는 Jenkins를 가장 애정하고 있었어요.  
+Spring Cloud Data Flow가 나왔을 때도,  
+Argo Workflows가 나왔을 때도 저는 Jenkins를 선택했었어요.
+
+그렇지만,  
+이젠 배치 워크플로우는 Jenkins가 아닌 Temporal로 환승하게 되었습니다.
+
+Spring Batch로 만든 배치를 비롯해 각종 스케줄링과 워크플로우들을 지난 10년간 애정했던 Jenkins에서 Temporal로 환승하게 된 계기,  
+굳이 왜 Temporal인지 등등  
+저희의 Jenkins -> Temporal 이관기를 팀원 분이 정리해주셨습니다.
+
+Jenkins 외 대안을 고민하고 계신 분들이라면 한번 참고해보시면 좋을 것 같습니다 :)
+
+</details>
+
+---
+

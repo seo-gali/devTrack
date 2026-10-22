@@ -99,3 +99,70 @@ https://youtu.be/nepKKz-MzFM
 
 ---
 
+<!-- devtrack-draft-id: b22c7f2b-b7fd-402e-8a89-5548fc2d876c -->
+<details>
+<summary><strong>웹사이트 SEO 하는 분들, Ahrefs나 Semrush부터 사지 마세요!</strong></summary>
+
+1. SEOnaut  
+https://github.com/StJudeWasHere/seonaut  
+오픈소스 웹사이트 SEO 진단 도구, 죽은 링크, 리다이렉트, 중복 Meta 태그 등의 문제를 자동으로 검사해줍니다.
+
+2. SoPilot  
+https://sopilot.net  
+200+ 제품 프로모션 디렉토리를 수집했으며, SEO 외부 링크 제출을 지원하고, AI로 SEO 기사를 생성할 수도 있습니다.
+
+3. SerpBear  
+https://github.com/towfiqi/serpbear  
+자체 배포 키워드 순위 모니터링 시스템으로, Google 순위 변화를 지속적으로 추적합니다.
+
+4. OpenSEO  
+https://github.com/every-app/open-seo  
+오픈소스 SEO 도구 모음으로, 키워드 연구, 순위 추적, 웹사이트 감사 등을 다루며, 데이터 API 설정이 필요합니다.
+
+5. SEOMachine  
+https://github.com/TheCraigHewitt/seomachine  
+SEO 콘텐츠 제작 프로세스를 Claude Code에 넣어, 대량 기획과 기사 최적화에 적합합니다.
+
+6. Awesome Open Source SEO  
+https://github.com/ZensInk/awesome-open-source-seo
+
+오픈소스 SEO 도구를 전문적으로 모은 보물 창고로, 크롤러, 키워드, AI 검색 최적화 등 모두 있습니다.
+
+많은 SEO 도구 자체는 복잡하지 않고, 비싼 건 데이터와 지속 모니터링 서비스예요.  
+직접 손대고 만지작거릴 의향이 있으면, 이 리스트로 돈 꽤 절약할 수 있어요.
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: df7ec142-c34a-4410-b137-4b76851b2eef -->
+<details>
+<summary><strong>원래 제품 데모 영상 만들 때 이렇게 많은 무료 신기한 도구들이 있었어!</strong></summary>
+
+비싼 화면 녹화 소프트웨어 살 필요 없이, 이 6개 도구로 대부분의 요구사항 해결 가능👇
+
+1. OpenScreen  
+https://github.com/getopenscreen/openscreen  
+오픈소스 Screen Studio 대체품, 화면 녹화·편집·내보내기 원스톱, 워터마크 없음, 무료 상업 이용 가능.  
+2. SoPilot  
+https://sopilot.net  
+비디오에서 뭐 말할지 모르겠어? 먼저 X에서 핫한 토픽 찾아보고, AI로 문안과 콘텐츠 아이디어 정리해.  
+3. Flowtake  
+https://github.com/JNX03/Flowtake  
+마우스 자동 추적 확대, 클릭 효과 추가, 특히 SaaS 제품 데모 영상에 딱 맞아.  
+4. Reframe  
+https://github.com/reframe-oss/reframe  
+브라우저에서 바로 비디오 자르기·비율 수정·속도 조정, 서버 업로드 필요 없음.  
+5. Screenity  
+https://github.com/alyssaxuu/screenity  
+무료 브라우저 화면 녹화 확장 프로그램, 화살표 그리기·중요 부분 표시·민감 정보 블러 처리 가능.  
+6. NextGenUp  
+https://github.com/riponcm/nextgenUp  
+로컬 AI 이미지·비디오 향상, 확대·노이즈 제거·배경 제거 등 지원.
+
+화면 녹화·편집·비디오 처리·콘텐츠 제작, 기본적으로 다 돼.
+
+</details>
+
+---
+

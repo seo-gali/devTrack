@@ -488,3 +488,46 @@ Next.js 서버를 직접 운영하고 모니터링하는 프론트엔드 개발�
 
 ---
 
+<!-- devtrack-draft-id: 33ce49b8-df5a-4202-83f4-25c57a874a01 -->
+<details>
+<summary><strong>API 게이트웨이 vs 로드 밸런서 vs 리버스 프록시.</strong></summary>
+
+로드 밸런서는 인스턴스 간에 트래픽을 분산하고,  
+리버스 프록시는 라우팅 및 업스트림 통신을 처리하며,  
+API 게이트웨이는 인증, 속도 제한 및 할당량과 같은 API 관련 문제를 관리합니다. 
+
+![image.png](../assets/drafts/5708047a-400d-43d0-b37f-e9bdd8781372.png)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 9f2a13ce-e217-4e84-8970-47b6505c838e -->
+<details>
+<summary><strong>Node.js 버전 업데이트 후 의존성 동기화 및 배포</strong></summary>
+
+`git diff`로 변경 사항을 확인하고 `npm ci`가 성공한 경우에만 커밋 및 푸시를 진행하세요.
+
+```
+# 1. package-lock.json 의존성 정보 동기화
+npm install --package-lock-only --ignore-scripts
+
+# 2. 잠금 파일 기준 의존성 설치 및 검증
+npm ci --ignore-scripts
+
+# 3. 변경 파일 및 Git 상태 확인
+git diff -- package.json package-lock.json
+git status
+
+# 4. 변경된 잠금 파일 커밋
+git add package-lock.json
+git commit -m "fix: sync npm lockfile for Node.js 24"
+
+# 5. GitHub 원격 저장소에 반영
+git push origin main
+```
+
+</details>
+
+---
+
