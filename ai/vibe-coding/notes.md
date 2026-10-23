@@ -2985,3 +2985,37 @@ cargo-sweep 같은 걸 써볼 수도 있겠네요. 그래도 이건 Rust의 단�
 
 ---
 
+<!-- devtrack-draft-id: e186d5b7-7ede-47ef-9929-6204e87ebda4 -->
+<details>
+<summary><strong>이 6개 파일을 vibe 코딩을 시작하기 전에 생성하세요:</strong></summary>
+
+- PRD.md: 무엇을 만들고 누구를 위한 것인지
+- ARCHITECTURE.md: 스택, 폴더, 데이터 흐름
+- DESIGN.md: 색상, 폰트, 컴포넌트, 분위기
+- RULES.md: 코딩 스타일과 AI가 절대 해서는 안 되는 것들
+- TASKS.md: 작은 단계들, 한 번에 하나씩
+- PROGRESS.md: 완료된 것, 고장 난 것, 다음 단계
+
+파일이 없으면 = AI가 추측합니다.  
+6개 파일 = AI가 당신의 계획을 따릅니다.
+
+10분의 쓰기로 10시간의 수정 시간을 절약하세요.
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 15268465-1e86-498b-b426-9a3fe41cdc6a -->
+<details>
+<summary><strong>행님들, AI로 안드로이드 앱 만드는 사람은 이거 꼭 챙기세요!</strong></summary>
+
+구글 안드로이드 팀이 AI가 유독 헤매는 빌드 업그레이드, 카메라, 성능 분석, 테스트 같은 걸 스킬로 정리해서 공개했어요.
+
+클로드 코드나 Codex에 플러그인으로 붙이고, 자주 막히던 작업 하나로 스킬 없을 때랑 결과를 비교해보면 좋을것 같네요.
+
+https://github.com/android/skills
+
+</details>
+
+---
+

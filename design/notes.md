@@ -814,3 +814,21 @@ AI에 ‘이 모티프로
 
 ---
 
+<!-- devtrack-draft-id: 8b734440-5598-46ea-be2a-d0bf5bd9462e -->
+<details>
+<summary><strong>GPT 특유의 설명이 많은 UI를 깔끔하게 만드는 도구.</strong></summary>
+
+「불필요한 세컨더리 라벨이나 설명을 피한다. 레이아웃으로 설명을 전달한다」
+
+이걸 붙이기만 하면 바로 깔끔해졌어요. 이미 설명이 많은 UI도 「UI 리라이트해」를 추가하면 OK
+
+1.적용 전 2.적용 후
+
+![image.png](../assets/drafts/c1c72cd4-62cf-42e4-a4dc-f59c37f8de7b.png)
+
+![image.png](../assets/drafts/d112e869-46be-4061-ac50-463836e46a6e.png)
+
+</details>
+
+---
+
