@@ -832,3 +832,19 @@ AI에 ‘이 모티프로
 
 ---
 
+<!-- devtrack-draft-id: 03366e88-c107-4818-a338-7d1eac542066 -->
+<details>
+<summary><strong>디자인 시스템 디렉토리</strong></summary>
+
+전 세계의 디자인 시스템, 컴포넌트 라이브러리, UI 툴킷 🌍
+
+→ https://aidesign.guide/design-systems
+
+By Romina Kavcic
+
+![image.png](../assets/drafts/08931159-ef94-4659-9ce8-2d2549e05df7.png)
+
+</details>
+
+---
+
