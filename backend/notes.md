@@ -2298,3 +2298,49 @@ GET 보기, POST 같은 메서드를 식당 주문에 빗댄 설명이 입문자
 
 ---
 
+<!-- devtrack-draft-id: ab8fd71e-3373-462b-a438-8c1d21386205 -->
+<details>
+<summary><strong>Node.js 24 업데이트 후 npm 의존성 동기화 및 GitHub 반영</strong></summary>
+
+```
+# 1. package-lock.json 의존성 정보 동기화
+npm install --package-lock-only --ignore-scripts
+
+# 2. 잠금 파일 기준 의존성 설치 및 검증
+npm ci --ignore-scripts
+
+# 3. 변경 파일 및 Git 상태 확인
+git diff -- package.json package-lock.json
+git status
+
+# 4. 변경된 잠금 파일 커밋
+git add package-lock.json
+git commit -m "fix: sync npm lockfile for Node.js 24"
+
+# 5. GitHub 원격 저장소에 반영
+git push origin main
+```
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: cfa14365-abb2-46d9-b68b-da2ca68240bd -->
+<details>
+<summary><strong>모든 백엔드 개발자가 배워야 할 상위 10가지:</strong></summary>
+
+☐ HTTP & REST API 설계  
+☐ SQL & 데이터베이스 인덱싱  
+☐ 인증 & 권한 부여  
+☐ Redis를 사용한 캐싱  
+☐ 동시성 & 경쟁 상태  
+☐ 메시지 큐 & Kafka  
+☐ 시스템 설계 & 확장성  
+☐ Docker & 배포  
+☐ 테스트 & 디버깅  
+☐ 로깅, 모니터링 & 관찰 가능성
+
+</details>
+
+---
+
