@@ -2469,3 +2469,25 @@ Claude가 셸 명령으로 파일을 바꾸는 경우는 이 matcher에 걸리�
 
 ---
 
+<!-- devtrack-draft-id: ac3827fa-dfcc-48d4-9c18-ab952815aa48 -->
+<details>
+<summary><strong>Claude Code가 CLAUDE.md가 아닌 AGENTS.md도 읽습니다.</strong></summary>
+
+이놈들 다른 LLM 전부 AGENTS.md 쓸 때 혼자 CLAUDE.md라서 귀찮고 괘씸했는데 드디어 바꿨네요. 아 물론 바뀐지는 벌써 한 달이 넘었습니다.
+
+1. v2.1.277 (9/19 출시)부터 AGENTS.md를 직접 읽습니다.
+
+2.  CLAUDE.md도 여전히 읽습니다. 다만 CLAUDE.md가 없으면 AGENTS.md를 읽습니다.  
+- 둘 다 읽게 하려면 /config에서 Project instructions를 claude-md-and-agents-md로 바꾸면 된다고 합니다.
+
+3. CLAUDE.local.md 하나만 있어도 AGENTS.md는 무시됩니다.  
+- 개인 설정 파일 하나 만들었다가 AGENTS.md가 안 먹는 경우가 생길 수 있네요.
+
+4. 예전처럼 CLAUDE.md에  
+@AGENTS  
+.md를 넣어두는 방식도 그대로 써도 됩니다.  
+- 공식 문서상 두 번 읽히지는 않는다고 합니다.
+
+</details>
+
+---

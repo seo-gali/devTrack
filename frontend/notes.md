@@ -208,3 +208,26 @@
 
 ---
 
+<!-- devtrack-draft-id: a2d650be-fe0b-49e6-9f87-c3d61deb1e0b -->
+<details>
+<summary><strong>프론트엔드 작업을 한다면 항상 설치해야 할 유일한 MCP</strong></summary>
+
+chrome-devtools-mcp는 Claude Code가 실제 Chrome 브라우저를 제어할 수 있게 해줍니다
+
+버그 재현, 네트워크 요청 검사, 콘솔 오류 디버깅, 성능 분석, 브라우저 상호작용 자동화
+
+Claude에게 localhost:3000 열기, 버그 재현, 고장 난 부분 찾기를 요청할 수 있습니다
+
+Claude Code에 설치:
+
+/plugin marketplace add ChromeDevTools/chrome-devtools-mcp
+
+/plugin install chrome-devtools-mcp@chrome-devtools-plugins
+
+최신 업데이트로 라이브 Chrome 연결 없이 힙 스냅샷을 분석할 수 있어 오프라인에서 메모리 누수 조사가 더 쉬워졌습니다
+
+https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/README.md
+
+</details>
+
+---

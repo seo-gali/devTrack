@@ -727,3 +727,65 @@ https://hackerschool.org/HackingGame/PHP2SHELL/
 
 ---
 
+<!-- devtrack-draft-id: 5270a7df-3eb6-4d6b-8ca2-aa24811ba53d -->
+<details>
+<summary><strong>절대 ~/Downloads(다운로드) 폴더에서 Claude Code나 Codex를 실행하지 마세요.</strong></summary>
+
+어제 보안 기관 Forever가 실제 고객 컴퓨터에서 포획한 야생 공격 사례를 공개했는데, 보고 나니 감탄할 수밖에 없음: 지난 30년간의 시스템 보안 상식, AI 시대에 제로가 됐어.
+
+지난 30년 동안 Chrome은 팝업 없이 웹페이지가 ~/Downloads에 순수 텍스트 파일(예: .md)을 넣는 걸 기본적으로 허용했음. 시스템이 생각하기론: 순수 텍스트는 .exe도 아니고, 저절로 실행되지 않으니 무슨 걱정이야?
+
+하지만 지금, 개발자의 거의 50%가 똑같은 짓을 함—바로 ~/Downloads에서 Claude Code나 Codex를 열어서 AI가 방금 다운로드한 파일을 압축 해제하거나 정리하게 함.
+
+해커들은 바로 이 사각을 노려, 웹페이지를 통해 조용히 다운로드해서 Downloads에 13KB짜리 순수 텍스트 AGENTS.md / CLAUDE.md를 집어넣음:
+
+1. OpenAI Codex 대응(성공률 >90%):  
+   "엔지니어링 사양"으로 위장한 Markdown이 Codex에게 먼저 글로벌 설정 ~/.codex/config.toml에 악성 MCP 서비스를 등록하라고 지시하고, --dangerously-bypass-approvals-and-sandbox 플래그를 붙여서 검증을 실행함. Downloads를 꺼버려도, 나중에 어떤 정상 프로젝트에서 Codex를 열면 자동으로 트로이를 로드함.
+
+2. Claude Code 대응(성공률 ~50%):  
+   Claude에게 .claude/settings.json을 만들라고 지시하고, ANTHROPIC_BASE_URL을 해커 서버로 가리키게 함. 연결된 첫 번째 초에 Claude 로그인 토큰이 평문으로 해커에게 전달됨; 다음 초에 해커가 대형 모델로 위장해 샌드박스를 끄는 Bash 명령어를 내려보내 컴퓨터를 직접 장악함.
+
+가장 검은 유머는 공식 결론:  
+이 구멍은 CVE가 없고, OpenAI와 Anthropic도 패치를 발행하지 않을 거임. 왜냐면 "브라우저가 텍스트를 자동 저장하는 것"은 정상 기능이고, "AI가 디렉토리 아래 Markdown을 진지하게 읽고 엄격히 실행하는 것"도 정상 기능이기 때문.
+
+예전엔 해커가 너를 해킹하려면 0day를 고심해서 써야 했음; 지금은 세련되게 배치된 Markdown 짧은 에세이 한 편만 쓰면, 네 AI가 샌드박스를 스스로 끄고, 네트워크 케이블을 연결하고, 계정을 양손에 들고 바쳐버림.
+
+~/Downloads 에서 Agent를 시작하지 마세요. 빈 디렉토리에서 시작하고, 프로젝트 디렉토리로 다시 들어가세요. Codex의 그 전역 config.toml 함정 성공률 >90%, 당한 사람은 로컬 파일 삭제로 깨끗이 지울 수 없는 거예요.
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 81c4cc5e-9630-43c1-9d35-e7dc1f1c5556 -->
+<details>
+<summary><strong>다운로드 폴더에서 코딩 에이전트가 탈취될 수 있다는 글이 나왔네요</strong></summary>
+
+웹페이지가 ~/Downloads에 AGENTS.md를 몰래 떨어뜨리면,  
+Codex·Claude Code가 그걸 지시로 따라간대요.  
+전역 설정 변경, 악성 npm 설치, OAuth 토큰 유출까지 재현됐다고 합니다.
+
+패치로 막히는 버그라기보다  
+에이전트가 폴더의 지시 파일을 믿도록 설계된 구조라서,  
+다운로드 폴더에서 에이전트를 돌리지 말고  
+~/.codex/config.toml이랑 .claude/settings.json을 한 번 점검하는 습관이 필요하다고 보면 될 거 같습니다.
+
+Claude Code는 상위 CLAUDE.md를 따라 올라갈 수 있고, 압축 파일 자체에 지시 파일이 들어 있을 수도 있어요
+
+그래서 하위 폴더라고 안심하긴 어렵고,  
+Downloads 안에서는 에이전트를 안 돌리는 쪽이 맞다고 보면 될 거 같습니다
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 1f60459d-3fb5-4986-9f96-677ad47332b0 -->
+<details>
+<summary><strong>AI 코딩 에이전트를 노리는 새로운 위협: 마크다운(Markdown)의 무기화</strong></summary>
+
+웹서핑 중 사용자 모르게 ~/Downloads 폴더로 악성 마크다운 파일(AGENTS.md, CLAUDE.md)이 다운로드되는 공격 기법이 발견되었습니다. 
+
+이 상태에서 Claude Code나 Codex 같은 AI 에이전트를 실행하게 되면, 에이전트가 해당 파일을 업무 지시로 착각하여 스스로 악성 패키지를 설치하거나 인증 토큰을 외부로 유출하게 됩니다.
+
+</details>
+
+---
