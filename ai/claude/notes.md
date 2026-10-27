@@ -2491,3 +2491,40 @@ Claude가 셸 명령으로 파일을 바꾸는 경우는 이 matcher에 걸리�
 </details>
 
 ---
+
+<!-- devtrack-draft-id: f3b7989a-cb60-440b-8622-23e0db652350 -->
+<details>
+<summary><strong>《Clean Code》 저자가 방금 자신의 에이전트들이 코드를 작성할 때 따르는 𝘁𝗵𝗲 𝗿𝘂𝗹𝗲𝘀를 공개했습니다.</strong></summary>
+
+- 충돌을 숨기기만 하는 가드는 수정이 아닙니다.  
+- 모든 함수가 아무것도 반환하지 않아도 테스트가 여전히 통과한다면, 버리세요.  
+- 문제를 해결하는 가장 작은 수정만 배포하세요.  
+- 코드를 변경하기 전에 실패하는 테스트를 작성하세요.
+
+이걸 설치하면 당신의 에이전트 코드가 𝗯𝘂𝗴𝘀를 숨길 수 없고, 그 𝘁𝗲𝘀𝘁𝘀가 당신을 𝗳𝗼𝗼𝗹할 수 없습니다:
+
+```
+"uncle bob/ub-mode의 GitHub에서 ub-mode 스킬을 내 스킬 폴더에 설치하고, 다음 변경을 위해 /ub-mode를 사용하세요. crapper, dryer 또는 mutator가 설치되지 않았다면 해당 단계를 건너뛰세요."
+```
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 79f61ad3-5fe3-4a50-905e-f0c243602140 -->
+<details>
+<summary><strong>클로드에 법령정보센터 API를 붙였더니 답이 달라졌다는 후기.</strong></summary>
+
+1. 국가 법령 데이터를 클로드 커넥터로 직접 연동  
+2. 세금 분야는 조세심판원 결정례 API를 따로 받아 추가  
+3. 연결이 어렵다면 AI에게 법령 연결 도구를 찾아 붙이게 시키기
+
+법 관련 질문은 이 방식이 안전할 것 같음
+
+https://github.com/LimEulYoung/lawful-mcp
+
+![image.png](../../assets/drafts/104998bd-534d-4e7c-88f4-22972ddb8f98.png)
+
+</details>
+
+---

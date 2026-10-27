@@ -2197,3 +2197,39 @@ Codex 쪽은 80회 중 20회에서, 작동 중이던 기존 코드를 오래된 
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 1529cc3a-c824-4180-a295-08a1d6fc239e -->
+<details>
+<summary><strong>에이전트 AI 시스템 설계 개념을 간단한 언어로 이해하기:</strong></summary>
+
+• Agent: 답변만 하는 것이 아니라 행동을 취하는 AI  
+• LLM: 생각하고 결정하는 두뇌  
+• Prompt: 두뇌에게 주는 지시  
+• System prompt: 에이전트의 직무 설명  
+• Tools: 손 (검색, 코드, API, 브라우저)  
+• Function calling: 두뇌가 손을 사용하는 방법  
+• Memory: 단기 메모리는 채팅이고, 장기 메모리는 영원히 기억하는 것  
+• Context window: 한 번에 머릿속에 얼마나 많은 것을 담을 수 있는지  
+• Planning: 큰 목표를 작은 단계로 나누기  
+• Reasoning loop: 생각하고, 행동하고, 확인하고, 반복하기  
+• Reflection: 에이전트가 자신의 작업을 검토하고 수정하기  
+• RAG: 답변하기 전에 자료를 검색하기  
+• Embeddings: 단어를 숫자로 바꿔 AI가 의미를 찾을 수 있게 하기  
+• Vector database: 그 숫자들이 사는 도서관  
+• MCP: AI를 어떤 앱에든 연결하는 만능 플러그  
+• Orchestrator: 다른 에이전트들에게 작업을 배정하는 매니저  
+• Multi-agent: 각자 하나의 직무를 가진 AI 팀  
+• Sub-agents: 주 에이전트가 부수적인 작업을 위해 생성하는 도우미들  
+• Guardrails: 어리석은 행동을 막는 규칙  
+• Human in the loop: 위험한 부분을 당신이 승인하기  
+• Evals: 에이전트가 실제로 작동하는지 확인하는 테스트  
+• Observability: 무엇을 했고 왜 했는지 보여주는 로그  
+• Latency: 응답하는 데 걸리는 시간  
+• Token cost: 모든 생각이 당신에게 드는 비용
+
+챗봇은 말한다.  
+에이전트는 행동한다.
+
+</details>
+
+---

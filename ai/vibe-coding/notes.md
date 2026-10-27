@@ -3171,3 +3171,48 @@ AI가 못 찾은 소식은 브리핑에 아예 안 나오니, 정말 중요한 �
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 3483fbec-23da-4d6f-80fc-6da12ceef37f -->
+<details>
+<summary><strong>저는 3-5일마다 한 번씩 실행하는 prompt입니다:</strong></summary>
+
+ /retro 과거 10에서 20개의 채팅 기록을 살펴보고, AI의 작업을 방해하는 것이 있는지, 즉 AI를 더 잘 작동하게 할 수 있는 최적화 포인트가 있는지 확인하세요. 그런 다음 나에게 보내서 검토한 후 쓰기 여부를 결정하도록 하세요.
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 6a78b3da-7890-4a24-9204-a97585936f2e -->
+<details>
+<summary><strong>제가 잘 작동했던 분위기 코딩 팁 하나:</strong></summary>
+
+어떤 주요 기능을 구현하기 전에, 에이전트에게 개발자들이 일반적으로 이를 구축하는 데 사용하는 다양한 접근 방식과 모범 사례를 조사해 달라고 요청하세요.
+
+대부분의 경우, 더 나은 결과를 얻을 수 있고 구현이 더 확장 가능해지는 경향이 있습니다.
+
+나는 항상 이렇게 해, 잘 작동해
+
+예를 들어, 나는 명상 게임을 만들었고 claude에게 사람들이 차분해지게 만드는 잘 인용된 논문들을 조사해 달라고 요청한 다음, 게임에 구현할 아이디어를 제안해 달라고 했어
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 760d1c9f-0965-4537-ba69-3148fe1a0717 -->
+<details>
+<summary><strong>바이브 코더들이 정말로 이해하는 걸까:</strong></summary>
+
+경쟁 조건(race conditions),  
+데이터베이스 인덱싱,  
+API 속도 제한(rate limits),  
+캐시 무효화(cache invalidation),  
+네트워크 장애,  
+동시성(concurrency),  
+보안 취약점(security vulnerabilities),  
+그리고 데이터베이스 마이그레이션?
+
+아니면 그냥 앱이 마침내 실행될 때까지 AI한테 고쳐달라고 계속 요청하는 걸까?
+
+</details>
+
+---
