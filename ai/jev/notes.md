@@ -1048,3 +1048,19 @@ Jev가 모호한 판단을 내립니다. 코드는 실제 결정에 대한 책�
 
 ---
 
+
+<!-- devtrack-draft-id: 54089f70-dd37-4c86-a210-732b95b8bd36 -->
+<details>
+<summary><strong>RAG 대신에 Jev 등을 사용해 문서 검색을 한다는 논문 “Retriever-Free Retrieval”  </strong></summary>
+
+실제 메커니즘과 결과는 참고할 만하다.  
+① 문서의 관련성을 Yes/No로 판단해 top k건을 선택  
+② 선택한 문서 내의 단락을 평가해 top r건을 추출  
+③ 마지막으로 Multiple Choice로 단락을 재순위화  
+빠르고 비용도 비교적 저렴하다.  
+
+![image.png](../../assets/drafts/15838bba-a9f3-4d45-90b5-6339cf3d62ce.png)
+
+</details>
+
+---
