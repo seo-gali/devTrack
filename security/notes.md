@@ -863,3 +863,29 @@ redis랑 시놀로지 NAS, 10/29 KISA가 둘 다 업데이트하라고 함
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 9aefd89c-bae2-4538-8c64-8311ef38b3b3 -->
+<details>
+<summary><strong>10월을 한마디로 요약하면:</strong></summary>
+
+- PHP 해킹당함  
+- Railway 해킹당함  
+- OpenCode 해킹당함  
+- Binance 해킹당함  
+- Polymarket 해킹당함  
+- GitHub Actions 해킹당함  
+- SoftBank 해킹당함  
+- Cursor 마켓플레이스 해킹당함  
+- Coinbase 벤더 해킹당함  
+- Fireworks AI 해킹당함  
+- LiteLLM 해킹당함  
+- Capcom 해킹당함  
+- npm 패키지 해킹당함  
+- TiDB Cloud 해킹당함  
+- Warp의 벤더 해킹당함
+
+행복한 사이버 보안 인식의 달
+
+</details>
+
+---

@@ -2764,3 +2764,75 @@ AI가 다 됐어요 했는데 실제론 안 돌려본 경우가 제일 많으니
 </details>
 
 ---
+
+<!-- devtrack-draft-id: e9a94518-a021-4a60-85e3-6e377780031e -->
+<details>
+<summary><strong>Anthropic 공식+커뮤니티 도움되는 스킬들.</strong></summary>
+
+앤트로픽 스킬 중에서 고르고 뽑았음. 의외로 지나칠 수 있는 강력한 스킬들.
+
+**frontend-design (skills)**
+
+https://github.com/anthropics/skills/tree/main/skills/frontend-design
+
+웹 프론트엔드 UI를 만들 때 제네릭한 디자인을 피하고 더 나은 시각적 완성도를 추구하도록 안내하는 스킬.
+
+**pdf (skills)**
+
+https://github.com/anthropics/skills/tree/main/skills/pdf
+
+PDF 문서를 읽고, 폼 필드를 추출하거나, 내용을 다루는 스킬. 문서 처리 파이프라인에서 기본으로 쓰이는 기능!
+
+**web-artifacts-builder (skills)**
+
+https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder
+
+React, Tailwind, shadcn/ui 등을 활용해 복잡한 Claude HTML 아티팩트를 만드는 스킬.
+
+**productivity (knowledge-work-plugins)**
+
+https://github.com/anthropics/knowledge-work-plugins/tree/main/productivity
+
+태스크, 캘린더, 일상 워크플로, 개인 컨텍스트 관리를 돕는 생산성 플러그인.
+
+**eli5 (community)**
+
+https://github.com/anthropics/claude-plugins-community/tree/main/eli5
+
+복잡한 주제를 5살에게 설명하듯 쉽게 풀어서 HTML 아티팩트로 만들어주는 플러그인.
+
+**html-plan (community)**
+
+https://github.com/anthropics/claude-plugins-community/tree/main/html-plan
+
+계획을 한 페이지 HTML로 만들어 읽고 바로 응답할 수 있게 하는 스킬.
+
+**next-steps (community)**
+
+https://github.com/anthropics/claude-plugins-community/tree/main/next-steps
+
+각 턴이 끝난 뒤 입력창 위에 최대 3개의 다음 프롬프트 제안을 띄우는 플러그인.
+
+**security-guidance (claude-plugins-official)**
+
+https://github.com/anthropics/claude-plugins-official/tree/main/plugins/security-guidance
+
+Claude가 생성한 코드에 대해 패턴 경고/LLM 디프 리뷰/커밋 시 에이전트 기반 데이터 흐름 추적으로 보안 검토를 수행하는 플러그인.
+
+**code-review (claude-plugins-official)**
+
+https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-review
+
+여러 전문 에이전트가 병렬로 PR을 검토하고 신뢰도 점수로 저품질 피드백을 걸러내는 코드 리뷰 플러그인.
+
+**sales (knowledge-work-plugins)**
+
+https://github.com/anthropics/knowledge-work-plugins/tree/main/sales
+
+세일즈 업무 전반.. 콜 준비, 계정 리서치, 딜 리뷰, 파이프라인/포캐스트, 아웃리치 등 36개 스킬로 지원하는 플러그인.
+
+![image.png](../../assets/drafts/ae1b2ece-9093-4b6f-9ec1-93f0196b7cb5.png)
+
+</details>
+
+---

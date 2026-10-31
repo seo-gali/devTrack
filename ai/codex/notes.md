@@ -2249,3 +2249,15 @@ AI한테도 일 시키듯 구체적으로 말하는 게 제일 빠른 방법 같
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 641eede0-0e93-4e68-aca9-a0c27a5a6276 -->
+<details>
+<summary><strong>OpenAI가 전체 Codex Harness를 오픈소스화했어요!</strong></summary>
+
+CLI 외에도 Skill과 실행 환경이 포함되어 있어서, Agent 구축을 배우고 싶은 친구들 정말 행운이에요!
+
+https://github.com/openai/codex
+
+</details>
+
+---
