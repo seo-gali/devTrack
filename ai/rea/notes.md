@@ -562,3 +562,21 @@ BLA 프로젝트 주소: https://github.com/qybaihe/bla
 </details>
 
 ---
+
+<!-- devtrack-draft-id: a4d86a3c-e1d1-4bdb-9808-441ec7c18b26 -->
+<details>
+<summary><strong>Claude가 REA를 차단하기 시작하자, ArtCraft 팀이 반격으로 차단되지 않는 버전을 오픈소스로 공개했어!</strong></summary>
+
+프로젝트 이름은 Craft Anything.
+
+마음에 드는 웹사이트를 발견하면, URL을 던져주기만 하면 AI가 그걸 본떠서 복제하려고 시도해.
+
+더 대단한 건, 앱, 데스크톱 소프트웨어, 그리고 게임 파일까지 연구할 수 있다는 거야. 원본 소스 코드가 없더라도, 기능이 비슷한 새 버전을 만들어보려고 노력할 수 있어.
+
+이 도구 세트는 원래 그들만의 앱 개발에 쓰던 거였는데, 이제 아예 오픈소스로 공개됐어.
+
+오픈소스 주소: https://github.com/storytold/craft-anything
+
+</details>
+
+---

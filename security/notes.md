@@ -889,3 +889,20 @@ redis랑 시놀로지 NAS, 10/29 KISA가 둘 다 업데이트하라고 함
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 32c9ba98-c619-4e83-a922-82b331ddb79f -->
+<details>
+<summary><strong>해킹당한 후, 서버를 다음과 같이 보안했습니다:</strong></summary>
+
+1. 웹사이트 트래픽은 cloudflare WAF(무료)를 통해서만
+2. 열린 SSH 포트 없음 - tailscale만
+3. 매일 npm 취약점 검사 → 이메일
+4. 매주 Opus 5.5 보안 감사 → 이메일
+
+빠뜨린 거 있나요?
+
+추가로 제안할 두 가지: Tailnet Lock을 활성화하여 유출된 인증 키가 tailnet에 노드를 추가하지 못하게 하고, Tailscale SSH를 꺼 두세요. 일반 OpenSSH를 사용하되, tailnet 내부에서만 접근 가능하도록 하세요. 또한 로그에 나타난 적이 있는 모든 인증 키를 순환(교체)하세요.
+
+</details>
+
+---
