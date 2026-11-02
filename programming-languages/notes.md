@@ -428,3 +428,20 @@ AI: JavaScript(Tensorflow.js,DeepLearn.js)
 
 ---
 
+<!-- devtrack-draft-id: f6d7a34d-2b5a-4773-98df-de1eda1bb7a5 -->
+<details>
+<summary><strong>어떤 Java 컬렉션을 사용해야 할까요?</strong></summary>
+
+• 리스트가 필요하다면? 거의 항상 ArrayList.  
+• 큐나 스택이 필요하다면? ArrayDeque. Stack이나 LinkedList는 사용하지 마세요.  
+• 고유한 항목이 필요하다면? HashSet.  
+• 고유하고 삽입 순서대로 유지해야 한다면? LinkedHashSet.  
+• 고유하고 정렬되어야 한다면? TreeSet.  
+• 항상 가장 작은 또는 가장 큰 항목이 필요하다면? PriorityQueue.  
+• 열거형 키가 필요하다면? EnumMap.  
+• 읽기 작업이 많고 쓰기 작업이 매우 적으며, 여러 스레드가 사용된다면? CopyOnWriteArrayList.  
+• 여러 스레드에서 공유되는 맵이 필요하다면? ConcurrentHashMap.
+
+</details>
+
+---

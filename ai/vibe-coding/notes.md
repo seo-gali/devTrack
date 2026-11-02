@@ -3460,3 +3460,15 @@ Rust는 원래 배우기도 어렵고, 기존 프로젝트를 Rust로 통째로 
 </details>
 
 ---
+
+<!-- devtrack-draft-id: b1db206e-76bf-41a0-b0b7-ea7c154e3098 -->
+<details>
+<summary><strong>좋은 프롬프트를 발견했어: </strong></summary>
+
+이 소프트웨어가 rsync처럼 완벽하길 바래: 목적이 단순하고, 아키텍처가 단순하고, 디자인이 단순하고, 구현이 단순하고, 사용자 입장에서도 단순하게 쓰이게
+
+CLI 앱 디자인에 있어서, 엄청 효과적인 것 같아
+
+</details>
+
+---

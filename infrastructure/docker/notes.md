@@ -489,3 +489,15 @@ https://docs.docker.com/ai/skills
 </details>
 
 ---
+
+<!-- devtrack-draft-id: d8ccbf4b-a896-4645-bb48-c881b7313336 -->
+<details>
+<summary><strong>도커 Run 명령어가 작동하는 방식 </strong></summary>
+
+터미널에서 "docker run nginx"를 실행할 때, 이는 일반적인 전경 프로세스를 시작하는 것처럼 느껴집니다 - stdin, stdout, stderr이 오가며 스트리밍되고, Ctrl+C로 종료할 수 있습니다. 하지만 내부적으로 일어나는 일은 훨씬 더 복잡합니다
+
+![image.png](../../assets/drafts/1db548a5-48e6-4e5f-be3e-e3ce88e83eaa.png)
+
+</details>
+
+---

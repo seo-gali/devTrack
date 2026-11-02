@@ -166,3 +166,33 @@ https://github.com/riponcm/nextgenUp
 
 ---
 
+<!-- devtrack-draft-id: 66662a91-ce92-4670-be1f-759601059a80 -->
+<details>
+<summary><strong>IntelliJ IDEA, 하지만 Rust로 재구축</strong></summary>
+
+프로젝트 열기 0.9초, RAM 169MB. 60개 이상의 언어용 에디터, 디버거, Git, 터미널, 데이터베이스 및 HTTP 클라이언트.
+
+https://www.opensourceprojects.dev/post/openidea
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 314da95c-d80f-4731-a831-25446af81e48 -->
+<details>
+<summary><strong>윈도우 PC, 맥, 그리고 휴대폰 사이를 오가느라 지쳤어요. 그래서...</strong></summary>
+
+Opus 5.5로 TeamViewer를 역설계해서 제 기기들을 하나의 데스크톱으로 바꿨어요.
+
+→ http://getduodesk.vercel.app 
+
+무료 & 오픈소스:  
+→ 윈도우 & 맥 간 공유 마우스와 키보드  → 한쪽에서 복사하면 다른 쪽에서 붙여넣기.   
+→ 화면 간 파일 드래그  
+→ 오래된 노트북이나 태블릿이 두 번째 화면으로 변신  
+→ 계정 없음, 클라우드 없음, 암호화
+
+
+</details>
+
+---

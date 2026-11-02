@@ -1026,3 +1026,28 @@ DB가 켜져 있는 것보다 구버전과 신버전 앱이 함께 정상 동작
 
 ---
 
+<!-- devtrack-draft-id: 2b3e7598-d3a2-4284-90fc-8693972b0771 -->
+<details>
+<summary><strong>데이터베이스 엔지니어링은 기본적으로:</strong></summary>
+
+데이터가 중복되나요? 정규화하세요.  
+쿼리가 너무 느리나요? 인덱스를 추가하세요.  
+읽기 작업이 너무 많나요? 복제본을 추가하세요.  
+쓰기 작업이 너무 많나요? 샤딩을 고려하세요.  
+임시 저장 공간이 필요하나요? 캐싱을 사용하세요.  
+신뢰할 수 있는 트랜잭션이 필요하나요? ACID.  
+유연한 문서 저장이 필요하나요? NoSQL.
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 43d1fe46-6038-478b-a0cb-dccaea598a0f -->
+<details>
+<summary><strong>샤딩 vs 파티셔닝 vs 복제</strong></summary>
+
+![image.png](../assets/drafts/23e1dbed-6a37-4458-acbe-19a45b13fd2a.png)
+
+</details>
+
+---
