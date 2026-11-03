@@ -3472,3 +3472,19 @@ CLI 앱 디자인에 있어서, 엄청 효과적인 것 같아
 </details>
 
 ---
+
+<!-- devtrack-draft-id: c6f753eb-6c58-4364-a216-01fe0000af8c -->
+<details>
+<summary><strong>사용자들을 싫어하지 않는 당신의 가장 좋아하는 코드베이스에 이 프롬프트를 사용하세요:</strong></summary>
+
+```
+모든 핫 패스에 대한 깊은 스캔을 수행하고 불필요한 순차적 비동기 함수 호출을 수정하세요
+```
+
+diff들은 검토하기 매우 쉽고 거의 항상 멋진 발견을 하게 됩니다
+
+![image.png](../../assets/drafts/3eeba25a-8ab3-4770-9085-679e83ff4e60.png)
+
+</details>
+
+---

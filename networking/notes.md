@@ -304,3 +304,17 @@ https://www.tecmint.com/setup-https-local-domain-linux/
 
 ---
 
+<!-- devtrack-draft-id: 919c7856-12fe-4c5a-ac81-e7a7d98734e3 -->
+<details>
+<summary><strong>누군가가 TCP 핸드셰이크나 DNS 조회에 대해 언급했을 때, 그게 어떻게 작동하는지 정말로 모르는데도 고개를 끄덕인 적 있나요?</strong></summary>
+
+그럼 이건 당신을 위한 거예요.
+
+14개의 인터넷 프로토콜에 대한 시각적 빠른 참고 자료로, 내장된 패킷 검사기 포함.  
+https://protocol-explorer-alpha.vercel.app
+
+![image.png](../assets/drafts/261d5825-2a2d-477a-9cd2-b8ac2f2f6c58.png)
+
+</details>
+
+---

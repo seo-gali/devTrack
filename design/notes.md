@@ -986,3 +986,28 @@ https://github.com/anthropics/skills/tree/main/skills/pptx
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 603cbb72-0c9f-479f-aa89-66b9e0e4a858 -->
+<details>
+<summary><strong>AI에게 "배색 좀 더 예쁘게"라고 말했더니 결과적으로 페이지 전체의 모든 색상이 다 바뀌었어?</strong></summary>
+
+네가 어느 부분에 어떤 색을 써야 할지 명확히 말하지 않았기 때문이야.
+
+사실 이 색상들은 각각 역할이 다르고, AI에게 직접 말해주면 돼:
+
+1. Primary Color: 주색, 넓은 면적에 쓰이는 그 색상, 옷의 메인 톤처럼 페이지 전체의 분위기를 먼저 정해.  
+2. Accent Color: 강조색, 버튼이나 포인트에만 쓰이는 색, 빨간 펜으로 동그라미 친 부분처럼 눈에 먼저 띄게.  
+3. Neutral Color: 중성색, 회색·흰색·검정 계열, 밑에 깔려서 다른 색이 돋보이게 하는 조연 역할.  
+4. Background Color: 배경색, 전체 영역을 채우는 바탕색, 종이 색처럼 글씨가 다 그 위에 쓰여.  
+5. Text Color: 텍스트 색, 글씨 전용 색상, 배경과 명암 차이를 두지 않으면 읽기 힘들어.  
+6. Border Color: 테두리 색, 카드나 입력창 테두리에만 쓰이는 선, 그림 테두리처럼 영역을 구분해.
+
+다음번에는 이렇게 말해: "주색은 진한 파랑, 버튼은 Accent Color, 배경은 연한 회색, 텍스트는 진한 회색으로."
+
+한 마디로, AI가 각 부분에 어떤 색을 써야 할지 바로 알게 돼.
+
+![image.png](../assets/drafts/323d4dd8-840b-4d14-a952-0f3d3d8c50c0.png)
+
+</details>
+
+---

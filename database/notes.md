@@ -1051,3 +1051,35 @@ DB가 켜져 있는 것보다 구버전과 신버전 앱이 함께 정상 동작
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 8f3df239-3094-4505-a339-95eb667b343e -->
+<details>
+<summary><strong>컨테이너에서 RDBMS 돌리지 말라는 이유는</strong></summary>
+
+RDBMS는 직결(혹은 이에 준하는) Disk IO 인터페이스 + Persistent Disk를 기반으로 만들어져 있는데, 컨테이너 런타임들은 프로세스에게 제공해줄 수 있는게 (거칠게 말하자면) chroot된 디렉토리 뿐임.
+
+docker는 기껏해야 containerd가 제공하는 overlay2나 erofs 정도고, 플러그인 등으로 어떻게든 차력쇼는 가능하겠지만 여전히 적절한 옵션이 아님.
+
+k8s는 CSI를 제공하는데, 별도 설정이 없으면 기본값으로 network datapath를 공유함 = CNI 장애시 CSI도 같이 영향을 받음. 어느쪽을 선택하든 Disk IO 관점에서 둘 다 비권장. (심지어 docker volume이나 pvc 삭제같은 휴먼에러는 언급도 안함)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: ceb1b904-ac61-4dfd-ae5c-d38074110b8b -->
+<details>
+<summary><strong>건강한 시스템, 빠른 소프트웨어, 그리고 행복한 사용자들을 좋아하는 분들을 위한 더 많은 꿀팁들</strong></summary>
+
+- 데이터베이스에서 전체 행을 로드해서 몇 개 필드만 읽는 모든 곳을 찾아라. 대신 필요한 것만 선택해라  
+- 불필요한 모든 `new URL()` 파싱을 제거해라  
+- 함수와 루프 안에서가 아니라 모듈 레벨에서 모든 정규식을 계산해라  
+- 대형 jsonb 컬럼에서 단일 키를 읽는 핫패스 읽기를 찾아서 그 키를 진짜 컬럼으로 승격시켜라  
+(가능하다면 대형 jsonb는 역병처럼 피해라)
+
+마지막 그걸 하기 전에, 우리는 몇 kb만 필요했는데도 20gb+의 데이터를 detoast해야 하는 쿼리들이 있었어. 강력 추천함.
+
+사람들이 또 뭐가 필요해?
+
+</details>
+
+---
