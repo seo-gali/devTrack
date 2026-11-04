@@ -2952,3 +2952,19 @@ https://github.com/anthropics/claude-code/releases/tag/v2.1.317
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 77639edb-7b5e-4a9f-bd8d-8baf2594c257 -->
+<details>
+<summary><strong>클로드 코드 쓸 때 /model로 모델 바꿀 수 있는 건 다들 알 거임 근데 /model opusplan 이것도 있음</strong></summary>
+
+간단한 거 시켜도 opus로 돌아가서 기다리는 게 싫었다는 사람이 쓴 팁인데  
+이걸 한 번 쳐두면 간단한 작업은 sonnet으로 바꿔서 해준다고 함  
+머리는 opus 손은 sonnet이 된 느낌이라고 함
+
+결과물은 opus급으로 나오면서  
+더 빠르고 토큰도 덜 든다고 함  
+클로드 코드 쓰는 사람은 저장해두고 써볼 만함
+
+</details>
+
+---

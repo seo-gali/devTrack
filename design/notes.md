@@ -1011,3 +1011,88 @@ https://github.com/anthropics/skills/tree/main/skills/pptx
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 8aa26941-3a2b-4a07-9373-fadd7735cde2 -->
+<details>
+<summary><strong>AI에게 "웹페이지 배경을 좀 더 고급스럽게 해줘"라고 말했더니</strong></summary>
+
+결과는 순수한 검은색이거나, 파란색-보라색 그라데이션이야?
+
+그건 AI에게 구체적으로 어떤 배경 효과를 원하는지 말하지 않았기 때문이야.
+
+사실 이런 고급 배경들은 모두 이름이 있어. AI에게 직접 말하면 돼:
+
+1. Mesh Gradient: 메쉬 그라데이션, 여러 색상이 물감처럼 자연스럽게 섞여서 전체 배경이 부드럽고 레이어가 생겨.  
+2. Aurora Background: 오로라 배경, 색색의 빛 띠가 천천히 흐르며 밤하늘의 오로라처럼 느껴져.  
+3. Noise Texture: 노이즈 텍스처, 배경에 미세한 입자 효과를 더해 저렴한 플라스틱 같은 느낌을 없애줘.  
+4. Dot Grid: 도트 그리드, 정갈하게 배열된 작은 원점들로 배경을 구성해 테크감이 넘쳐.  
+5. Spotlight Effect: 스포트라이트 효과, 마우스가 움직이는 곳에 따라 그 부분의 배경이 밝아져.  
+6. Animated Gradient: 애니메이티드 그라데이션, 배경 색상이 천천히 흘러서 화면에 생동감이 더해져.
+
+다음번에는 이렇게 직접 말해:
+
+"홈페이지에 Aurora Background를 사용하고, 배경에 약간의 Noise Texture를 겹쳐, 마우스 인터랙션은 Spotlight Effect로, 전체적으로 간결하고 고급스럽게 유지해."
+
+한 문장으로 AI가 배경 디자인을 어떻게 해야 할지 바로 알게 돼.
+
+![image.png](../assets/drafts/57a624d8-6200-4d49-9c3e-b8068edd73a2.png)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 39794ef7-7de5-458e-92a7-10332b4bd33a -->
+<details>
+<summary><strong>AI에게 애니메이션 추가할 때, 그냥 "동적 효과 좀 추가해"라고만 하면 전체 페이지를 함께 페이드인 처리할 가능성이 커요. </strong></summary>
+
+직접 이름을 지정하세요:
+
+- Stagger：리스트가 하나씩 순차적으로 등장  
+- Spring：튕겼다 멈추는 동작, 버튼과 카드에 자주 사용  
+- Skeleton：로딩 시 회색 블록, 플래시 효과 한 줄 포함  
+- Count Up：숫자가 0에서 목표값까지 롤링  
+- Typewriter：글자가 하나씩 타이핑되는 효과  
+- Marquee：로고 한 줄이 가로로 순환 스크롤
+
+내 결론: 이름을 정확히 말하고, 지속 시간 한 마디만 더 붙이면(예: 0.3초), 보통 한 번에 완성돼요. CSS에 기본 Spring은 없으니 주의하세요. AI는 종종 Framer Motion을 자동으로 추가하는데, 의존성 싫으면 "순수 CSS"라고 명시하세요.
+
+![image.png](../assets/drafts/6b862b34-7881-497f-af92-d03dc125d1a9.png)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 31ab080f-69a6-4d30-8ee3-0f90b011072f -->
+<details>
+<summary><strong>AI에게 페이지 수정 맡길 때, 절대 "레이아웃 좀 더 예쁘게"라고 말하지 마세요.</strong></summary>
+
+그럼 전체 페이지를 싹 뒤엎고 재배치해서, 고친 후에 더 불만족스러워질 거예요.
+
+문제는 당신이 어떤 레이아웃을 원하는지 구체적으로 말하지 않았기 때문이에요. 프론트엔드에서 이런 레이아웃들은 이름이 있어요. 이름을 제대로 말하면 AI가 한 번에 이해하죠:
+
+- Hero Section: 열자마자 큰 이미지와 한 문장  
+- Bento Grid: 크고 작은 격자 블록을 붙여서, 애플 공식 사이트 스타일  
+- Masonry: 폭포수 흐름, 레드노트 스타일  
+- Split Screen: 왼쪽 이미지, 오른쪽 텍스트  
+- Sidebar: 왼쪽 메뉴, 오른쪽 콘텐츠  
+- Full-width: 전체 너비로 가득 채운 통판
+
+이제 저는 이렇게 말해요: "홈페이지는 Hero, 기능 구역은 Bento, 아티클 리스트는 Masonry로."
+
+한 마디로 끝나서, 왔다 갔다 고치는 것보다 훨씬 편해요.
+
+![image.png](../assets/drafts/152b1b52-692c-4dfa-af56-5ae2615cea80.png)
+
+![image.png](../assets/drafts/31af9737-4f5a-435a-8b3c-d91d88b07579.png)
+
+![image.png](../assets/drafts/baf9f61a-9169-4832-8d7c-ddc3fe602950.png)
+
+![image.png](../assets/drafts/1229c7cb-7d3a-4f2a-814b-718653d39f01.png)
+
+![image.png](../assets/drafts/b6ba2304-06f1-44a3-9f00-8d7a7b86f502.png)
+
+![image.png](../assets/drafts/de508014-c842-436f-a34c-cf2b9b9ab05a.png)
+
+</details>
+
+---
