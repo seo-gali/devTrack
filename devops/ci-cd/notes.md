@@ -1030,3 +1030,86 @@ commit의 방법보다,
 </details>
 
 ---
+
+<!-- devtrack-draft-id: f093fc3e-faeb-48f9-88b9-949dceb46450 -->
+<details>
+<summary><strong>위험도에 따른 Git 명령어 순위 ⚠️</strong></summary>
+
+🟢 git status - 안전  
+🟢 git log - 안전  
+🟢 git diff - 안전  
+🟢 git branch - 안전  
+🟢 git stash - 안전
+
+🟡 git merge - 주의 필요  
+🟡 git rebase (로컬 브랜치) - 주의 필요  
+🟡 git cherry-pick - 주의 필요  
+🟡 git checkout . - 주의 필요  
+🟡 git commit --amend - 주의 필요
+
+🔥 git reset --hard - 위험  
+🔥 git clean -fd - 위험  
+🔥 git branch -D - 위험  
+🔥 git rebase -i (공유 브랜치) - 위험  
+🔥 git pull --force - 위험
+
+💀 메인에 git push --force - 프로덕션 킬러  
+💀 git filter-branch - 프로덕션 킬러  
+💀 git reflog expire + gc --prune=now - 프로덕션 킬러  
+💀 잘못된 원격 저장소에 git push --mirror - 프로덕션 킬러  
+💀 공개 릴리스 브랜치에서 git rebase - 프로덕션 킬러
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 3e39d804-bf03-496c-a50c-552613c514c4 -->
+<details>
+<summary><strong>거의 모든 고객 코드베이스에서 보이는 해킹 벡터: 특정 버전에 고정되지 않은 GitHub Actions.</strong></summary>
+
+GitHub Actions는 CI와 배포 워크플로우에서 실행되는 빌드 단계입니다. 변경된 파일 목록, Docker 로그인, GitHub Pages 배포 등 모든 종류의 유틸리티 작업을 수행하는 타사 액션이 있습니다. 등. 모두가 사용합니다.
+
+문제는 그들의 동작이 변경될 수 있다는 점입니다. 이는 언제든지 당신의 CI에서 실행되는 코드로, 당신 아래에서 언제든지 변경될 수 있습니다. 이는 당신 자신의 버전 컨트롤로 버전 관리되지 않습니다. 타사에서 이러한 액션이 하는 일을 언제든지 변경할 수 있습니다.
+
+매우 널리 사용되는 많은 유틸리티가 개인 GitHub 계정의 솔로 개발자들에 의해 관리됩니다: peaceiris/actions-gh-pages, dorny/paths-filter, appleboy/ssh-action.
+
+이러한 GitHub 계정이 장악되면, 공격자는 당신의 GitHub 러너 내에서 임의의 코드를 실행할 수 있습니다: 코드를 유출하거나, CI에 있는 모든 비밀을 훔치거나, 심지어 배포에 코드 변경을 주입할 수 있습니다.
+
+많은 GitHub 워크플로우가 dorny/paths-filter@v3처럼 버전에 고정됩니다. 이는 충분하지 않습니다. 왜냐하면 이러한 버전 태그가 언제든지 새로운 커밋을 가리키도록 변경될 수 있기 때문입니다. 
+
+orny/paths-filter@0e4a8c6effa4802afeda77dc8d303f8176d7dfad처럼 특정 SHA에 고정해야 합니다.
+
+이는 작년에 일어났습니다. 공격자들이 인기 있는 GitHub 액션을 손상시켰습니다. (PR에서 변경된 파일을 나열하는 간단한 유틸리티.) 그들은 GitHub 액션의 악성 버전을 배포한 후, "v1.0.0" 같은 버전 태그를 그 손상된 코드로 소급 변경했습니다. 이를 통해 23,000개의 리포지토리에서 비밀을 훔쳤습니다.
+
+이는 사전에 피하는 데 매우 적은 노력이 들지만 정말 광범위한 증폭 벡터입니다. 이 취약성 카테고리조차 이름이 있는지 모르겠지만, 그것은 시한폭탄입니다.
+
+우리의 코드에 대해 우리가 하는 일:
+
+1. 모든 GitHub Actions를 고정된 SHA로 전환
+2. 모든 GitHub 워크플로우가 고정된 SHA를 사용하도록 보장하는 린트 규칙 추가, 다른 종류의 버전 태그는 사용하지 않음
+
+이 두 가지는 선택한 에이전트에서 원샷으로 할 수 있습니다.
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 895fc534-6e5a-4ad7-b091-c406ebb2de3a -->
+<details>
+<summary><strong>일단 공개적으로 프로그램을 배포를 하려면</strong></summary>
+
+1. Github 등에서 release 로 .exe 등의 형태로 배포해야합니다.
+2. release의 sha256 해시를 떠서 같이 배포해야합니다 (무결성)
+3. 바이러스 토탈 등에 실행 파일을 업로드하여, 안전하다는 정보를 sha256 해시 값으로 검사 결과를 조회할 수 있어야합니다
+4. 사실 제일 좋은 방법은 윈도우 스토어에 배포하는건데, 안될 경우 뭐 인증서 사서 서명하는 방법이 있겠다만 그건 사실 돈만 낭비하는거니 패스하고요. 대부분 배포시 초기에 윈도우즈 경고가 뜨는 건 어쩔 수 없습니다. 많은 사람이 쓰고 안전하다는 보고가 오면 풀리거든요.
+5. 여튼 그런 면에서
+    1. Google Drive로 배포 받은 것을 다운 받으려고 하면 악성 파일 경고를 띄우는 것도
+    2. Virus Total 등에서도 경고를 띄우는 경우가 나오는 것도
+    
+    사실 권한이랑 삭제 방식 등에 문제가 있기 문이에요
+    
+    https://www.virustotal.com/gui/home/upload
+
+</details>
+
+---

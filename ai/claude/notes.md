@@ -2968,3 +2968,35 @@ https://github.com/anthropics/claude-code/releases/tag/v2.1.317
 </details>
 
 ---
+
+<!-- devtrack-draft-id: d51e1973-1a3a-4210-b4d9-a8659683230b -->
+<details>
+<summary><strong>클로드 아티펙트 기능 사용하니까 바이브 영상편집 겁나 편합니다 진짜로클로드 아티펙트 기능 사용하니까 바이브 영상편집 겁나 편합니다 진짜로</strong></summary>
+
+프레임마다 간단한 편집 직접 하거나 댓글 달 수 있게 아티펙트 만들어 달라고 해보세요.
+
+매번 영상 캡처 해서 이 부분 어쩌고 저쩌고 하던 절차 사라지니까 속도 확 붙네요!
+
+아예 영상 편집 툴을 자체적으로 만들어서 쓰시는 분들도 있던데... 저는 어떻게든 말로만 하고 싶어서 미루고 있습니다 ㅋㅋ
+
+![image.png](../../assets/drafts/e9e5aeb4-0025-4ec0-9f97-0dc5360ea5b7.png)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: d1fdbdcc-ab58-4d19-92de-dbd8a14105a3 -->
+<details>
+<summary><strong>클로드 코드 만든 사람 프롬프트 방식, 생각보다 평범함.</strong></summary>
+
+1. 동료한테 말하듯 원하는 걸 말하면 됨
+2. 얼마나 공들일지랑 맞게 했는지 확인 방법까지 알려주기
+3. 틀은 덜 짜고 목표를 분명히 주는 쪽이 낫다는 거
+
+프롬프트 템플릿 모으던 시간이 좀 허무해짐ㅋㅋ
+
+![image.png](../../assets/drafts/b33c49a9-4c11-45e2-ab79-494fb2098832.png)
+
+</details>
+
+---
