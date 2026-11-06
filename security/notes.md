@@ -1236,3 +1236,70 @@ IT 기업에서 엔지니어 채용하고 있는데, 면접에서 개인정보 �
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 687875cd-f6ec-4630-bee9-4da814e5c7f8 -->
+<details>
+<summary><strong>MCP Inspector 보안 권고 2건이 공개됨</strong></summary>
+
+MCP 서버 테스트할 때 Inspector 쓰면 확인할 것 (영향 2.0.0~2.13.0, 수정 2.14.0, 보통)  
+
+1. 웹 화면에서 신뢰 안 되는 MCP 앱을 열면, 그 앱이 자기 프레임을 공격자 쪽으로 옮기면서 샌드박스 보호를 벗어남  
+그 뒤로 전달되는 도구 결과를 밖으로 빼내거나 호스트한테 tools/call까지 던질 수 있음  
+앱별 connectDomains 허용목록은 유출 차단 경계가 아니라고 못 박음  
+CLI나 TUI만 쓰거나 Apps 탭을 안 열면 해당 없음  
+
+2. 출처 모르는 server.json을 가져오면, 거기 든 실행 인자가 Inspector가 띄우는 명령(npx, uvx, docker run 등)에 그대로 들어감  
+화면엔 요약만 보이고 실제 명령은 안 보여줘서, 멀쩡한 패키지 이름 뒤에 docker의 --privileged 같은 위험한 플래그가 숨어 있을 수 있음  
+
+업데이트 전엔 신뢰 안 되는 MCP 앱을 Inspector에서 열거나 서버 설정을 가져오지 말 것  
+2.14.0은 배포 확인됐고 Node 요구 버전이 올라감  
+
+https://github.com/modelcontextprotocol/inspector/security/advisories/GHSA-h9j8-vj8g-v3gg  
+https://github.com/modelcontextprotocol/inspector/security/advisories/GHSA-rwv7-mh2c-ff2p  
+
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 1621c3bf-1c29-4a4d-8bfc-e972c4ad6601 -->
+<details>
+<summary><strong>악성 MCP 패키지 주의</strong></summary>
+
+PyPI의 teamviewer-mcp-server 0.0.1이 악성으로 분류됨  
+
+OpenSSF가 이 패키지를 악성 활동과 연관된 도메인과 통신한다는 이유로 분류함  
+
+어떤 정보를 보내는지, 실제 피해자가 있는지는 공지에 안 나옴  
+이름에 TeamViewer가 들어가지만, 이 공지만으론 TeamViewer 공식 제품이 침해됐다고 볼 근거는 없긴 함  
+
+악성이라 수정 버전도 없음  
+설치하거나 실행하지 말고, MCP 설정이랑 파이썬 의존성 파일에서 이 이름과 버전이 있는지 검색해볼 것  
+https://github.com/advisories/GHSA-v98v-h2h9-7j3h  
+
+파일에 이름만 있는 거랑 실제 실행된 건 구분해야 하고, 실행 이력이 있으면 사용 중지하고 기기랑 로그를 점검(회사 기기면 보안 담당자한테 먼저 연락 ㄱㄱ)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: dc71b424-f432-4615-8cbb-212cdbc931fc -->
+<details>
+<summary><strong>최근 취약점 공개 물결과 함께, 자신의 코드에 더 자세히 들여다볼 좋은 시기입니다.</strong></summary>
+
+
+오픈소스 기술을 통해 코딩 에이전트를 Cloudflare의 취약점 발견 하네스를 시작한 보안 감사자 팀으로 전환하세요.  
+
+6단계 접근법:  
+1. 코드베이스 매핑  
+2. 취약점 탐색  
+3. 각 후보 도전  
+4. 발견 사항 기록  
+5. 발견 사항 검증  
+6. 확인된 사항, 거부된 사항, 또는 여전히 검증이 필요한 사항 보고  
+
+여기서 탐색을 시작하세요: https://github.com/cloudflare/security-audit-skill  
+
+</details>
+
+---

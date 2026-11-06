@@ -3000,3 +3000,143 @@ https://github.com/anthropics/claude-code/releases/tag/v2.1.317
 </details>
 
 ---
+
+<!-- devtrack-draft-id: ad9bffed-fa35-4cb5-be22-ea45b4abcc53 -->
+<details>
+<summary><strong>Claude Code로 자동화한 뒤 버려서 다행이었다는 착각.</strong></summary>
+
+3위: AI를 쓰면 한 번에 완성된다  
+→몇 번이고 다시 하게 시키면 된다.  
+2위: 체크는 전부 내가 한다  
+→체크 담당 AI 직원에게 넘기게 됐다.  
+1위: 프롬프트는 매번 잘 쓰는 거야.  
+
+이게 가장 큰 오해였어.  
+매번 장문으로 지시하고 매번 조금씩 빠지고 매번 영 미묘하게 부족해.  
+그래서 그걸 그만두고 지시를 전부 md 파일에 다 써놨어.  
+덕분에 지금은 "만들어" 한마디로 끝나게 됐어ー.  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 0eea4630-2c3d-4065-8400-96b0aaefdd4d -->
+<details>
+<summary><strong>Claude Code에서 가장 짜증 나는 일: 같은 프로젝트인데, 밟았던 함정 다음번에도 다시 밟아야 함.</strong></summary>
+
+Anthropic에서 공식 플러그인 claude-md-management를 출시했는데, 프로젝트 메모리 CLAUDE.md를 전담 관리하는 거야.  
+
+주로 두 가지 문제를 해결함:  
+CLAUDE.md를 자동으로 검토해서, 오래된 거나 누락된 프로젝트 규칙을 찾아냄  
+현재 세션에서 유효한 경험을 추출함. 디버깅 방법, 자주 쓰는 명령어, 코드 규범 포함  
+수정 제안을 생성해서, 확인 후 파일에 기록함  
+
+설치: /plugin install claude-md-management@claude-plugins-official  
+
+세션 끝난 후 실행: /revise-claude-md  
+
+내 생각엔 이게 맹목적으로 컨텍스트를 늘리는 것보다 더 실용적일 것 같아. 하지만 문제는: 프로젝트 경험이 쌓일수록 CLAUDE.md가 점점 더 비대해져서, 오히려 Agent 효율에 악영향을 미칠까?  
+
+GitHub: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management  
+
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 16fe8316-6740-43f7-98b6-0140d3b4f066 -->
+<details>
+<summary><strong>Claude Code에서 '/insights' 명령어를 사용해보세요.</strong></summary>
+
+모든 세션의 사용 방식을 분석하고, 어떤 점이 훌륭했는지, 어떤 점이 아쉬웠는지를 알려줍니다.  
+
+제 패턴을 파악해서 claude.md에 넣으면 좋을 내용도 알려주고, 저에게 딱 맞는 skill을 만들어주기도 합니다.  
+
+명령어 한 번으로 내 세션 사용 내역 기반 커스텀 스킬(및 claude.md 추가내용)을 클로드가 직접 고안합니다.  
+
+바로 해보세요!  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 9f9477a1-e8d5-45df-ab6e-5594800479d4 -->
+<details>
+<summary><strong>클로드한테 디자인 시킬 땐 조건을 구체적으로 적어야 쓸 만함ㄷㄷ</strong></summary>
+
+1. 대상 고객 적고 스타일은 세 단어로 지정  
+2. 폰트는 최대 2개로 제한  
+3. 부족한 3곳 개선까지 요청  
+
+스타일도 먼저 제안받고 내가 고르는 구조라 따라 하기 편함  
+
+![image.png](../../assets/drafts/a546e8cf-a763-444b-a289-25f082f79b58.png)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 1dc9619d-0613-4c9c-9903-a0842dbf1635 -->
+<details>
+<summary><strong>CLAUDE.md나 AGENTS.md가 낡으면,  코딩 에이전트는 실제 코드보다  그 낡은 문서를 따릅니다.  한 문장이면 고칠 수 있어요.</strong></summary>
+
+설정 문서와 실제 코드가 일부러  
+어긋나게 만든 프로젝트 40개로 실험했어요.  
+아무 조치를 안 하면 에이전트 선택의  
+약 90%가 낡은 문서를 따랐습니다.  
+
+Claude Code는 80번 중 79번이나  
+"코드랑 다르다"고 알아채고도 문서를 따랐고요.  
+
+Codex는 80번 중 20번,  
+멀쩡히 돌아가던 코드를 문서에 맞춰 고쳤고  
+그중 17번은 테스트가 깨졌어요.  
+
+CLAUDE.md는 지시로 들어가고  
+코드는 파일을 읽은 결과로 들어가는데,  
+모델은 지시를 더 무겁게 보도록 학습됩니다.  
+
+문서를 한 번 써두고 방치하면,  
+에이전트는 낡은 지시를 들고 일하는 셈이죠.  
+
+해결책은 CLAUDE.md와 AGENTS.md 맨 위에 이 문장을 넣는 거예요.  
+
+```
+When a repository's documentation and its existing code disagree, follow the conventions used in the existing code, 
+and in your final reply point out each inconsistency you found between the documentation and the code.
+```
+
+문서와 코드가 다르면 코드를 따르고, 찾은 불일치는 마지막에 보고하라는 뜻이에요.  
+
+이 한 줄로 코드를 따르는 비율이 4.2%에서 91.4%로 올랐고, 테스트 통과율은 100%가 됐다고 합니다.  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 31c1648b-8495-4571-8794-0dd1f83ecd2c -->
+<details>
+<summary><strong>클로드 코드 처음 쓰는 사람은 이거 읽어두면 권한 창 7번 안 뜸 — 빈 폴더에서 할 일 앱까지 50분, 막힐 때마다 꺼낸 단축키가 따로 있음</strong></summary>
+
+기능을 미리 외울 게 아니라 막히는 순간마다 하나씩 꺼내 쓰면 50분 안에 클로드코드 한 바퀴가 돈다는 걸 알게 됨  
+
+이분은 빈 폴더에 할 일 앱을 만들면서 묻지도 않고 바꾸기·되돌리기·어제 일 잊기 같은 초보가 실제로 막히는 장면을 일부러 겪고 그때마다 필요한 기능을 보여줌.. 실수한 장면도 그대로 둠  
+
+1. 묻지도 않고 바꾼다면  
+Shift+Tab으로 manual 모드. '예쁘게 해 줘' 한 마디에 권한 창이 일곱 번 떴고 날짜까지 멋대로 넣었다고 함. 그래서 '바꾸기 전에 뭘 바꿀지 먼저 말해 줘'를 붙이는 요령  
+
+2. 생각과 다르게 흘러가면  
+Esc로 일찍 멈추고 바라는 것만 콕 집기. Esc 두 번이면 되감기인데, 기능 여러 개 한꺼번에 넣은 세션은 되감기가 이상했다고 솔직히 말함. 그래서 잘 되면 '커밋해 줘'로 버전 저장  
+
+3. 큰 기능은 plan 모드부터  
+계획서에 '정한 기본 동작'을 읽고 마음에 안 들면 계획에서 바로잡기. 에러는 요약하지 말고 그대로 붙여 넣기(13초 만에 원인 찾음)  
+
+4. 다음 날·긴 대화  
+claude -c로 이어가고, 규칙은 CLAUDE.md(/init이 초안 써 줌). 대화 길어지면 /context로 보고 /clear 또는 /compact. 스킬로 /check 명령 만들고 서브에이전트 2개로 접근성·보안 검사도 시킴  
+
+유료 구독(Pro·Max)이 전제고, 화면은 2026년 10월 v2.1.310 기준이라 버전 따라 문구가 다를 수 있다고 미리 적어 둔 게 좋았음. 과장도 단톡방도 없음  
+
+
+</details>
+
+---

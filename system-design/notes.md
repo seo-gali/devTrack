@@ -1097,3 +1097,18 @@ AI는 체크리스트를 처리할 수 있습니다. 어떤 엣지 케이스가 
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 29658257-dfbc-4ff0-bcee-5d480252e0b6 -->
+<details>
+<summary><strong>브라우저 주소창에 엔터 한 번 치면 화면 뜨기 전까지 브라우저 안에서 8단계가 휙 지나감</strong></summary>
+
+너무 빠르고 눈에는 보이지 않아서 아무도 못 보는 그 단계들을  
+눈으로 볼 수 있도록 만들어봄 👀  
+
+비전공자·기획자·디자이너도 공부 하러 츄라이 해보시죠  
+
+https://browser.dreamshiplab.com  
+
+</details>
+
+---
