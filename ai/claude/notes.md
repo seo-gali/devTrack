@@ -3234,3 +3234,53 @@ claude -c로 이어가고, 규칙은 CLAUDE.md(/init이 초안 써 줌). 대화 
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 73375ba4-990c-4184-88db-19329db991dc -->
+<details>
+<summary><strong>클로드 코드에서 "Yes, and don't ask again"을 선택했을때,</strong></summary>
+
+비밀정보가 포함된 명령어 전체가 프로젝트의 권한 설정 파일에 저장되고, 코드와 함께 커밋될 수 있다고 합니다.  
+
+아침에 이 글 보고 내 저장소에 문제 없는지 따로 확인 중  
+
+**[문제점]**  
+
+- 프로젝트 폴더 .claude/settings.local.json 허용 목록에 명령어가 통째로 들어감  
+- 해당 파일이 레포 .gitignore에 자동으로 추가 안됨  
+
+**[확인방법]**  
+
+1. `git check-ignore -v .claude/settings.local.json`  
+    
+    -> 아래 값이 출력되면 안심
+    
+    **/.claude/settings.local.json    .claude/settings.local.json
+    
+2. `git log --all --oneline -- .claude/settings.local.json`  
+    
+     -> 아무 값도 안나와야 함 값이 나오면 커밋 된적 있는거
+    
+
+**[나왔으면 비번·키 교체부터]**  
+
+- 파일 지워도 예전 커밋, 포크, 남이 받아간 클론엔 그대로 남아 있음  
+- `git rm --cached .claude/settings.local.json` 하고 레포 .gitignore에 .claude/settings.local.json 한 줄 추가  
+
+**[추가로]**  
+
+- 비밀번호나 민감 정보는 .env나 비밀번호 관리 도구에 넣어두고 사용  
+- 비밀번호가 포함된 복문 형태로 승인 제어가 될 수 있다고 함.  
+
+아래 프롬프트로 전체 확인했습니다.  
+주의 : AI가 파일을 그냥 열면 비번이 대화로 넘어가니까 "직접 읽지 말고 스크립트로"는 꼭 넣을 것  
+
+```
+[내 폴더 경로] 안의 .claude/settings.local.json, .claude/settings.json을 점검해줘.
+파일 내용은 직접 열어 읽지 말고 로컬 스크립트로만 검사하고, 비밀값은 앞 4글자+****로 가려서 보여줘. 파일 수정·삭제·커밋·네트워크 전송은 하지 마.
+파일마다 git 추적 여부, 커밋된 적 있는지(git log --all), 무시 출처(git check-ignore -v), 레포 .gitignore에 있는지 확인하고,
+allow 규칙에서 PGPASSWORD=, sshpass -p, mysql -p, Bearer, ://아이디:비번@, sk-, ghp_, AKIA 같은 비밀값 의심 개수를 세서 표로 정리해줘. 해결책은 제안만.
+```
+
+</details>
+
+---
