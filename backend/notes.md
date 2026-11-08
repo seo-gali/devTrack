@@ -2534,3 +2534,30 @@ Node.js 또는 Go, Redis, Lua, Docker, PostgreSQL, Prometheus 및 Grafana.
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 2df7e2a9-2c2b-49c4-ad41-581e1b0f5517 -->
+<details>
+<summary><strong>백엔드 엔지니어</strong></summary>
+
+약한 엔지니어:  
+
+- API 작성 방법을 안다  
+- 데이터베이스 인덱스를 무작위로 추가한다  
+- 속도가 느려지면 Redis를 사용한다  
+- 더 많은 if-else 조건으로 버그를 수정한다  
+- API가 느릴 때 데이터베이스를 탓한다  
+
+강한 엔지니어:  
+
+- 요청의 전체 생명주기를 이해함  
+- 데이터베이스가 실제로 어떻게 작동하는지 앎  
+- 확장성과 안정성을 위해 API를 설계함  
+- 캐싱의 장단점을 이해함  
+- 동시성과 경쟁 상태를 처리함  
+- 실패가 발생하기 전에 미리 생각함  
+
+API 작성 ≠ 백엔드 엔지니어링 이해.  
+
+</details>
+
+---

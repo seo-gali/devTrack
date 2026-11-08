@@ -471,3 +471,32 @@ AI: JavaScript(Tensorflow.js,DeepLearn.js)
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 3226d134-99e3-46eb-b5bc-3cd855c9e773 -->
+<details>
+<summary><strong>2026년 자바의 90%는 이 10가지 개념을 마스터하는 데 달려 있습니다:</strong></summary>
+
+1. 메모리 모델 + happens-before  
+volatile이 실제로 보장하는 것, Double-Checked Locking이 여전히 문제를 일으킬 수 있는 이유, 그리고 안전한 게시(safe publication)가 어떻게 작동하는지 알아야 합니다.  
+2. 동시성 기본 요소  
+올바른 도구 선택: synchronized vs ReentrantLock vs atomics vs 동시성 컬렉션; 스레드 누출과 무제한 실행자(executors)를 피하세요.  
+3. GC와 할당 동작  
+GC 로그를 읽고, 일시 중지(pause)와 처리량(throughput) 간의 트레이드오프를 이해하며, 핫 루프에서 우발적인 할당 폭풍을 멈추세요.  
+4. 프로파일링, 추측이 아닌  
+async-profiler/JFR을 사용해 CPU, 잠금 경합, 할당 핫스팟을 찾으세요; 플레임 그래프는 직관을 항상 이깁니다.  
+5. 현대적 IO와 백프레셔  
+NIO, 요청당 스레드 제한, 그리고 느린 다운스트림이 큐 성장, 타임아웃, 재시도 폭풍을 일으키는 방식을 이해하세요.  
+6. API와 데이터 경계  
+null 가능성, 불변성, 스키마 진화에 엄격하세요; 대부분의 프로덕션 버그는 계약(contract)이 표류(drift)하면서 발생합니다.  
+7. 의존성 관리  
+Maven/Gradle 충돌, shaded jar, CVE, 재현 가능한 빌드; CI와 프로덕션에서 동일한 코드가 다르게 동작하는 이유를 알아야 합니다.  
+8. 확장 가능한 관찰 가능성  
+추적/스팬 ID가 포함된 구조화된 로그, 유용한 메트릭(p95/p99, 포화도), 그리고 하나의 나쁜 고객을 지우지 않는 샘플링.  
+9. 선택적이지 않은 보안 기본  
+역직렬화 가제트, SSRF, 비밀 처리; TLS를 올바르게 사용하고 내부 엔드포인트에서도 입력을 검증하세요.  
+10. 실패 모드와 재시도  
+멱등성 키, 모든 곳의 타임아웃, 지터가 포함된 제한된 재시도; 시스템을 녹이는 가장 빠른 방법은 500 오류에 대한 무한 재시도입니다.  
+
+</details>
+
+---

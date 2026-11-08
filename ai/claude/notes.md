@@ -3140,3 +3140,97 @@ claude -c로 이어가고, 규칙은 CLAUDE.md(/init이 초안 써 줌). 대화 
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 12595a1f-0f2d-4e16-8810-f0f8b9cb3ed5 -->
+<details>
+<summary><strong>클로드에 꼭 설치해야 하는 24가지 도구</strong></summary>
+
+[플러그인 8개]  
+
+1. marketingskills : 마케팅 스킬 44개  
+2. social-media-skills : 포스트·스레드·캡션 자동 작성  
+3. gstack : 전문 도구 20개 이상  
+4. superpowers : 완성형 개발 방법론  
+5. codex-plugin-cc : 클로드 코드에서 OpenAI 코덱스 실행  
+6. financial-services : 투자·리서치·자산관리  
+7. claude-for-legal : 계약서·법률 실무  
+8. claude-skills : 커뮤니티 스킬 모음  
+
+[스킬 8개]  
+
+1. frontend-design : AI 티 나는 디자인 개선  
+2. humanizer : 사람이 쓴 것처럼 자연스럽게 작성  
+3. ai-second-brain : 대화 기록을 개인 위키로 정리  
+4. notebooklm-skill : 자료와 노트 검색  
+5. claude-seo : 구글·AI 검색 최적화  
+6. hyperframes : HTML로 영상 제작  
+7. doc-skills : 워드·PDF·엑셀·PPT 파일 제작  
+8. caveman : 답변 압축으로 토큰 절약  
+
+[MCP 8개]  
+
+1. notion : 노션 문서·DB 읽기 및 쓰기  
+2. slack : 채널 대화 확인 및 공지 작성  
+3. granola : 회의록 자동 정리  
+4. zapier : 수천 개 앱 연결  
+5. perplexity : 실시간 웹 검색  
+6. context7 : 최신 공식 문서 참고  
+7. higgsfield : 영상·이미지 모델 30개 이상  
+8. agent-browser : 웹사이트 자동 클릭 및 조작  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 05d7e6d3-af9d-459f-84c7-11272cb63ce8 -->
+<details>
+<summary><strong>Claude 코드 팁: 쿼터가 리셋될 때 절반이 남아 있다면, 그냥 돈만 날린 거야.</strong></summary>
+
+`/goal`을 실행하고 아무도 절대 하지 않는 청소를 시켜봐: 죽은 코드, 세 군데에 똑같이 작성된 로직, 쓸모없는 의존성, 디스크를 잡아먹는 오래된 worktree들, 아무것도 안 하는 스케줄된 태스크들.  
+
+여기 복사-붙여넣기 할 5개의 목표가 있어. ↓  
+
+1. 죽은 코드  
+    
+    /goal 별도의 브랜치에서, 호출자가 없는 src/의 어떤 함수나 파일도 더 이상 없음. 제거하기 전에 나열하세요. 마지막에 npm test가 0으로 종료되고 어떤 동작도 변경되지 않습니다. 20회 반복 후 중지하세요.
+    
+2. 중복 항목  
+    
+    /goal 브랜치에서 별도의 브랜치로, src/ 내에서 동일한 로직이 두 곳에 더 이상 존재하지 않도록 합니다. 각 중복을 하나의 함수로 통합하세요. 각 통합 후 npm test가 0을 출력합니다. 20회 반복 후 중단하세요.
+    
+3. 의존성  
+    
+    /goal 별도의 브랜치에서, package.json의 각 패키지가 어딘가에서 사용되고 있습니다. 다른 것들을 하나씩 제거하세요. npm test와 빌드가 각 제거 후에 0으로 나옵니다. 최종 목록을 보여주세요.
+    
+4. 디스크  
+    
+    /goal git worktree list는 더 이상 이미 병합된 브랜치의 worktree를 표시하지 않습니다. 오직 그들만 삭제하고, 목록을 MENAGE.md에 작성하며, 어떤 브랜치도 건드리지 말고 어떤 커밋되지 않은 파일도 건드리지 마세요.
+    
+5. 예정된 작업  
+    
+    /goal TACHES.md crontab -l 및 launchctl list의 각 작업을 나열하며, 내가 만든 것들만 포함하고, 실행하는 내용과 마지막 실행 시간을 가능한 한 표시합니다. 아무것도 비활성화하지 마세요. 나중에 내가 결정할게요.
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: cea0d3f3-0cde-4e3d-898b-ba3ed0d4187c -->
+<details>
+<summary><strong>클로드 코드 답이 길어서 스크롤만 하던 사람은 이거 켜두면 편함</strong></summary>
+
+팁: Claude Code의 출력 스타일을 간결하게 전환하면 짧고 직설적인 결과를 얻을 수 있습니다.  
+
+이를 위해 /config → 출력 스타일에서 활성화하거나, settings.json에 "outputStyle": "Concise"를 직접 추가하세요.  
+
+질문할 때 여전히 전체 세부 정보를 얻을 수 있습니다.  
+
+`/output-style concise` 치면 결과부터 말하고 앞뒤 설명은 빼줌  
+
+더 자세히 물으면 길게 답하고 에러나 보안 경고는 그대로 다 나옴  
+최신 버전이어야 메뉴에 보임  
+
+![image.png](../../assets/drafts/fc122bf3-d4a7-46fd-a674-51dd07be583d.png)  
+
+</details>
+
+---

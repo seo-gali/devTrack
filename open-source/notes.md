@@ -218,3 +218,19 @@ engchoon.github.io/ai-office/
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 782ec7cd-6f13-4368-9342-0dc3bceb7a12 -->
+<details>
+<summary><strong>한국에서 쓸 수 있는 공개API 300여 개 정리해둔 깃허브</strong></summary>
+
+자신이 아이디어가 없다면 여길 보시길  
+
+아파트 실거래가, 지하철 실시간 도착, 주유소 가격, 넥슨 게임 데이터, 업비트 시세까지 다 있음  
+
+API 하나 붙이면 서비스 하나 나오는 구조  
+
+https://github.com/yybmion/public-apis-4Kr  
+
+</details>
+
+---

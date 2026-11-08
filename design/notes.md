@@ -1096,3 +1096,28 @@ https://github.com/anthropics/skills/tree/main/skills/pptx
 </details>
 
 ---
+
+<!-- devtrack-draft-id: b0291cd4-1f0b-4500-9ece-d841ffcddd79 -->
+<details>
+<summary><strong>파일 업로드 애니메이션</strong></summary>
+
+![SaveTwitter.Net_1j0RbhKm_9pVmZFM_(600p).gif](../assets/drafts/aeafb29b-4fb5-48d4-b432-153263a0c4c9.gif)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 66499646-08c0-4277-be0e-ca9299f0d8a8 -->
+<details>
+<summary><strong>앱을 더 빠르게 느껴지게 만드는 몇 가지 방법:</strong></summary>
+
+- 즉각적인 피드백을 위해 ease-in 대신 ease-out 사용  
+- 대부분의 UI 애니메이션을 300ms 이내로 유지  
+- 더 빠른 상호작용을 위해 커스텀 이징 커브 사용  
+- 로딩 스피너를 더 빠르게 회전시키기  
+
+![SaveTwitter.Net_bFHrUMS0dzUkXut7_(720p).gif](../assets/drafts/4a6a4aae-1375-43f4-827b-d0c38b029e7d.gif)  
+
+</details>
+
+---
