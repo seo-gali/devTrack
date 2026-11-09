@@ -3284,3 +3284,22 @@ allow 규칙에서 PGPASSWORD=, sshpass -p, mysql -p, Bearer, ://아이디:비�
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 631a7b17-211d-4501-acf9-b1e6dd8e22d5 -->
+<details>
+<summary><strong>팀이 함께 쓰는 CLAUDE.md를 만들고 관리하는 법입니다.</strong></summary>
+
+- 넣을 항목을 고르는 두 가지 질문  
+- 지침 파일이 차지하는 토큰 확인  
+- 빠진 지침을 둘 자리: 경로 규칙·스킬·훅  
+- 저장소와 대조하는 분기 점검  
+
+https://brunch.co.kr/@wikibook/182  
+
+《팀을 위한 클로드 코드 완벽 가이드》  
+
+![image.png](../../assets/drafts/6651713c-6bee-406b-ad96-b8c50e929340.png)  
+
+</details>
+
+---

@@ -1121,3 +1121,76 @@ https://github.com/anthropics/skills/tree/main/skills/pptx
 </details>
 
 ---
+
+<!-- devtrack-draft-id: a8a7278d-9bdb-4dfe-ac69-8dcb11b43a9f -->
+<details>
+<summary><strong>모바일 앱이 어딘가 어색하게 느껴지지만 왜 그런지 모르겠다면, 아마도 간격 때문일 거예요.</strong></summary>
+
+여백을 개별적으로 조정하기 전에 관련 요소끼리의 간격을 맞추면 위화감의 원인을 찾기 쉽네요. 전체 화면보다 먼저 하나의 집합에서 보는 것을 좋아합니다.  
+
+숨 쉴 공간이 핵심입니다. 아무리 강조해도 지나치지 않아요.  
+
+![SaveTwitter.Net_WJm0ba4yWWIyF2XA_(900p).gif](../assets/drafts/df8687b9-7f5b-4187-ad0b-005116f3de04.gif)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 57ba2dcd-4f12-4fba-a4af-dcb5ce364c52 -->
+<details>
+<summary><strong>새로운 스킬: /gestures</strong></summary>
+
+앱을 위한 아름답고 직관적인 제스처를 만들도록 도와줍니다.  
+
+고무 밴드 효과, 드래그를 위한 속도 지원, 모멘텀을 유지하는 드래그 등, Sonner와 Vaul을 만들면서 배운 모든 것과 그 이상을 추가합니다.  
+
+요즘 많이 사용하고 있어요, 당신도 좋아할 거예요.  
+
+https://github.com/emilkowalski/skills  
+
+![SaveTwitter.Net_CIJ-QlhwLejE3IOZ_(720p).gif](../assets/drafts/eec22e05-8092-49e9-b075-e78bc39b2fb8.gif)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 928820ba-c13b-4d29-a9b3-2936e317abf6 -->
+<details>
+<summary><strong>일정이 꽤 많은데 화면이 답답해 보이지 않음</strong></summary>
+
+회의 수랑 집중 시간은 위에 모아두고  
+가운데 주간 달력을 가장 넓게 씀  
+오른쪽에는 빈 시간을 찾고 예약하는 패널을 붙여둠  
+
+일정을 확인하면서  
+바로 옆에서 다음 일정을 잡을 수 있게 배치한 것  
+
+일정 구분에 쓰는 색도 연해서  
+여러 색이 들어가도 서로 튀지 않음  
+진한 버튼은 필요한 곳에만 있어서 바로 눈에 들어오고  
+
+여백을 무작정 넓히지 않아도  
+정보의 비중이랑 색을 조절하면  
+이렇게 정돈된 느낌이 나는구나  
+
+![image.png](../assets/drafts/d90f6408-c1e1-4a12-94a2-875ef67bd072.png)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: a2eab6e2-4f13-4e42-af00-e46b1ebdf1da -->
+<details>
+<summary><strong>이제는 도트 아이템도...AI로.....만든.....다고 ....</strong></summary>
+
+sprite-ai.art  
+
+근데 뭐 ....다른것도 그러고 ..도트도 마찬가지것지...  
+AI생성물 사용표기만 하면 별 생각없긴함.  
+근데 진짜 와...나 예전에 개 노가다로 측면뷰 찍고 손목나간게 슬퍼짐  
+
+![image.png](../assets/drafts/19ae0424-76bc-4130-a053-a9899e839911.png)  
+
+</details>
+
+---

@@ -339,3 +339,23 @@ https://protocol-explorer-alpha.vercel.app
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 1b96da66-e00d-4bce-99de-b75e7dea876d -->
+<details>
+<summary><strong>개발자가 알아야 할 네트워크 포트</strong></summary>
+
+🟢 80 — HTTP  
+🟢 443 — HTTPS  
+🟢 22 — SSH  
+🟢 21 — FTP  
+🟢 25 — SMTP  
+🟡 53 — DNS  
+🟡 3306 — MySQL  
+🟡 5432 — PostgreSQL  
+🟡 6379 — Redis  
+🟡 27017 — MongoDB  
+💀 3000 — 프론트엔드가 이미 실행 중이야  
+
+</details>
+
+---

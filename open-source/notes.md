@@ -234,3 +234,45 @@ https://github.com/yybmion/public-apis-4Kr
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 8b1b0883-bf9b-460f-a834-b2a050d3daba -->
+<details>
+<summary><strong>앱에 사용할 수 있는 전체 다운로드 가능한 포켓몬 스프라이트 컬렉션</strong></summary>
+
+이 저장소는 PokéAPI의 부하를 줄이기 위해 스프라이트 이미지를 별도로 호스팅합니다. 자산이 하위 폴더로 구성된 전체 컬렉션을 다운로드할 수 있습니다.  
+
+기본 포켓몬 스프라이트는 뒤쪽, 여성형 및 반짝이는 변형을 포함한 PNG 파일이며, 이러한 변형의 조합도 포함됩니다.  
+
+드림 월드 자산은 SVG 파일이고, 공식 아트워크는 PNG 파일이며, Showdown 자산은 애니메이션 GIF 파일입니다.  
+
+Showdown 전투 애니메이션은 Smogon 커뮤니티에서 디자인되었습니다.  
+
+https://github.com/PokeAPI/sprites  
+
+![image.png](../assets/drafts/7b3a9b5a-a04f-4bc4-bd8d-b2f749999d23.png)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 97425b8f-6324-4aed-9536-33402429b19d -->
+<details>
+<summary><strong>PKHeX는 포켓몬스터 코어 시리즈의 저장 데이터를 편집하고 세대 간 전송하는 프로그램입니다. </strong></summary>
+
+PKHeX를 사용하면 포켓몬스터 코어 시리즈의 저장 데이터를 보고 편집하고 저장할 수 있습니다.   
+
+또한, 형식을 변환하면서 세대 간 데이터 전송도 가능합니다.   
+
+미스터리 기프트 파일을 포켓몬 엔티티 파일로 변환하거나,   
+
+암호 해독된 3DS 배틀 비디오에서 팀을 가져올 수도 있습니다.  
+
+ 포켓몬 쇼다운 세트와 QR 코드도 가져오기 및 내보내기를 통해 공유할 수 있습니다.   
+
+단, 저장 파일은 특정 콘솔용 암호화 키로 암호화되어 있으면 안 됩니다.  
+
+https://github.com/kwsch/PKHeX  
+
+</details>
+
+---

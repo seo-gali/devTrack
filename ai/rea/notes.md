@@ -597,3 +597,29 @@ BLA 프로젝트 주소: https://github.com/qybaihe/bla
 </details>
 
 ---
+
+<!-- devtrack-draft-id: dfd186fd-e445-480c-936b-125ac25f7793 -->
+<details>
+<summary><strong>AI 역방향 도구 정리</strong></summary>
+
+1. REA: 애플리케이션 동작을 따라가며 JS, Electron, 네이티브 바이너리 등을 분석하는 도구를 Agent에 연결하여 증거와 분석 한계를 제시  
+
+2. reverse-skill: 먼저 대상이 어떤 시나리오에 속하는지 판단한 후, 해당 분석 방법, 도구 체인 및 보고 프로세스를 선택  
+
+3. android-reverse-engineering-skill: 안드로이드 설치 패키지를 역컴파일하여 난독화된 Kotlin 클래스명을 복원하고, 인터페이스, 네트워크 호출 및 코드 구조를 정리  
+
+4. replica-skill: 공개 페이지와 운영 프로세스를 분석한 후, 아키텍처 설계, 독립 개발, 테스트 및 차이 비교를 연결  
+
+5. leanrea: MCP 서비스를 시작하지 않고, 8KB 크기의 경량 Skill 하나만으로 AI가 로컬 역방향 도구를 직접 호출하도록 지휘  
+
+  6. ctf-skills: 역방향, 바이너리, 암호, 포렌식 등 CTF 문제 유형에 따라 해당 문제 해결 아이디어와 도구 의존성을 구성  
+
+7. reverse-skills: 역컴파일 결과를 바탕으로 함수 심볼 분석, 데이터 구조 재구축을 수행하며, 동적 삽입 및 시뮬레이션 디버깅을 연결   
+
+ 8. hello_js_reverse_skill: 프론트엔드 JS 난독화 분석, 서명 추적, 동적 쿠키 귀속, 브라우저 포렌식 및 대조 검증을 연결  
+
+9. Open-ReverseLab: 다중 플랫폼 역방향 지식 베이스, 수백 개의 MCP 도구 호출 및 증거 보고를 하나의 작업 공간에 배치  10. js-reverse-automation--skill: 브라우저 MCP, JSRPC, Flask 및 Burp를 연결하여 프론트엔드 JS 서명 위치 특정 및 자동화 분석 프로세스를 실행  
+
+</details>
+
+---

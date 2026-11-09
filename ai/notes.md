@@ -3824,3 +3824,30 @@ AI를 엄청나게 써보니 깨달은 게 하나 있어요. "인간 쪽의 인�
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 1c5ef01f-f1a4-4db8-af0f-43a9aadde775 -->
+<details>
+<summary><strong>컴퓨터에 AI 코딩 작업을 맡겨두고 폰에서 진행 상황을 보고 싶은 분들</strong></summary>
+
+OpenCode Manager라는 웹앱이 있음  
+
+AI 코딩 도구 OpenCode의 대화와 작업,  
+코드 변경 내역, 터미널, 예약 작업을  
+한 화면에서 관리하는 도구임  
+
+직접 호스팅해서  
+PC와 휴대폰에서 접속하는 형태라  
+작업을 실행하는 컴퓨터는 계속 켜져 있어야 함  
+
+처음 설정할 때 관리자 계정을 만들고  
+설치에는 Docker가 필요함  
+
+이미 OpenCode를 쓰는 분이면  
+새 코딩 도구로 갈아타는 과정 없이  
+접속할 화면을 하나 더 붙이는 용도로 볼 수 있겠음  
+
+https://github.com/chriswritescode-dev/opencode-manager  
+
+</details>
+
+---

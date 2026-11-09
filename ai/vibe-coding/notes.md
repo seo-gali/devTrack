@@ -3742,3 +3742,13 @@ Discord 리라이트 같은 리라이트 작업은 vibe 코딩의 주요 대상�
 </details>
 
 ---
+
+<!-- devtrack-draft-id: d1634eb6-3830-4463-93a9-1f7af7b73796 -->
+<details>
+<summary><strong>Vibecoders, 𝗜'𝗺 𝗯𝗲𝗴𝗴𝗶𝗻𝗴 𝘆𝗼𝘂, 여러분에게 간청하니, 가장 어지러운 프로젝트를 열고 이걸 Claude Code나 Codex에 붙여넣으세요:</strong></summary>
+
+"내 앱에서 모든 암시적 상태 머신을 찾아라. 사용자 경험(UX), 개발자 경험(DX), 에이전트 경험(AX) 세 가지를 모두 향상시킬 수 있는 최선의 결정을 내리되, 절대 아무것도 망가뜨리지 말아라."  
+
+</details>
+
+---
