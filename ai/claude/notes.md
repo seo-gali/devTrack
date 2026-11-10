@@ -3303,3 +3303,23 @@ https://brunch.co.kr/@wikibook/182
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 2e7f06f9-eaa9-4a1d-9ac0-f3851fcc6916 -->
+<details>
+<summary><strong>프로젝트가 엉망이 될 때 Claude Code에 이걸 붙여넣으세요:</strong></summary>
+
+"이 코드베이스를 매핑해 줘.  
+
+폴더 구조를 보여주고,  
+각 주요 파일이 무엇을 하는지,  
+UI에서 데이터베이스까지 데이터가 어떻게 흐르는지,  
+그리고 건드리기 가장 위험한 5개의 파일을 알려줘.  
+
+모든 걸 ARCHITECTURE.md에 작성해."  
+
+당신의 vibe-coded 앱을  
+처음으로 이해하게 될 거야.  
+
+</details>
+
+---

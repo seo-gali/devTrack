@@ -1194,3 +1194,26 @@ AI생성물 사용표기만 하면 별 생각없긴함.
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 46241071-43f2-40bd-9761-7431f2266972 -->
+<details>
+<summary><strong>너의 웹페이지 UI가 엉망인 이유는 네 실력이 부족해서가 아니라, AI에게 네 요구사항을 제대로 설명하지 않았기 때문이야!</strong></summary>
+
+진짜로 너를 제한하는 건, 상상력이 아니라 네가 원하는 효과를 어떻게 설명해야 할지 전혀 모르기 때문이야.  
+
+이 프로젝트는 192개의 전문 이름이 붙은 효과 라이브러리를 수록했으며, 각 이름마다 동적 예시가 포함되어 있어서 클릭 한 번으로 Copy Prompt를 통해 AI가 원하는 효과를 바로 구현해줄 수 있어.  
+
+랜딩 페이지 특수 효과, 모션 효과, 카메라 이동, 사진 스타일 등 다양한 방향으로 따라 할 수 있는 자료가 모두 있어!  
+
+1. 프로젝트 주소:  
+https://github.com/showheyohtaki/motion-prompt  
+
+2. 동적 갤러리, 모든 효과를 실시간 재생 가능:  
+https://showheyohtaki.github.io/motion-prompt/  
+
+3. Skill로 직접 Agent에게 호출하여 바로 수정받을 수도 있어:  
+npx skills add showheyohtaki/motion-prompt  
+
+</details>
+
+---
