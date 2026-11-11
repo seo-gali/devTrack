@@ -2626,3 +2626,22 @@ Java도 SQL도 둘 다 이해하고 있을 때에야 보이는 문제가 있습�
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 18565c64-94d6-4f23-8e25-8546ef632329 -->
+<details>
+<summary><strong>모든 개발자가 알아야 할 HTTP 메서드</strong></summary>
+
+🟢 GET — 데이터 가져오기  
+🟢 POST — 데이터 생성  
+🟢 PUT — 데이터 교체  
+🟢 PATCH — 데이터 업데이트  
+🟢 DELETE — 데이터 제거  
+🟡 HEAD — 헤더만 가져오기  
+🟡 OPTIONS — 지원되는 메서드 확인  
+🟡 TRACE — 진단 요청  
+🟡 CONNECT — 터널 연결 설정  
+
+
+</details>
+
+---
