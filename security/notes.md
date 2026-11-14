@@ -1332,3 +1332,38 @@ https://github.com/advisories/GHSA-v98v-h2h9-7j3h
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 56d01d85-9162-4f23-823f-2f15b7f34587 -->
+<details>
+<summary><strong>비밀번호 유출로 CSV 파일을 망치고 싶다면「,」보다「"」가 더 좋아요.</strong></summary>
+
+12345";\nrm -fr /  
+
+이런 것도 울면서 기뻐할 것 같아요.  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 5c154592-8097-4e26-8caa-bede2771e035 -->
+<details>
+<summary><strong>AI가 “코드 다 짰어요”라고 해도, 실제로 출시하려면 할 일이 한참 남아 있습니다.</strong></summary>
+
+전에 소개했던 PM Skills의 제작자 Paweł Huryn이 이번엔 Product Engineering을 공개했습니다.   
+아이디어부터 정식 출시까지 할 일을 44개의 오픈소스 스킬로 나눠뒀습니다.   
+로그인, 결제, 출시 후 모니터링도 다루고, Claude Code·Codex·Cursor에서 쓸 수 있습니다.  
+
+→ 개발 전 | 아이디어를 주면 에이전트가 사용자 요구와 경쟁 제품을 조사하고, 주요 화면을 시안으로 만들어 보여줍니다.  
+
+→ 개발 중 | 확인한 안에 맞춰 한 에이전트가 코드와 테스트를 작성하고, 별도 세션의 에이전트가 독립적으로 검토합니다.  
+
+→ 출시 전 | 에이전트가 미리보기 링크와 테스트·보안 점검 결과를 건네요.   
+사용자가 거치는 주요 단계를 직접 따라가 본 뒤 출시할지 결정합니다.   
+
+ Github https://github.com/phuryn/product-engineering  
+
+![image.png](../assets/drafts/ca650dac-3fff-42d3-a186-a2e48e441385.png)  
+
+</details>
+
+---

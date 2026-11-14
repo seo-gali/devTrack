@@ -231,3 +231,21 @@ https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/README.md
 </details>
 
 ---
+
+<!-- devtrack-draft-id: f56dca61-2ea0-4763-94c9-f95287bea3ce -->
+<details>
+<summary><strong>대박! 구글 공식: AI가 프론트엔드 코딩할 때, 기본적으로 2019년 수준에서 멈춰버림.</strong></summary>
+
+이유: 대형 모델 훈련 데이터에 레거시 된 오래된 코드가 잔뜩 채워져 있음.  
+
+해결: Chrome 스킬 팩 설치. 성공률 56% → 88%.  
+
+방법: npx modern-web-guidance 한 줄로 설치 끝, 212개 현대 웹 기능 Claude Code, Codex, Copilot, Antigravity에 먹여줌.  
+
+프로젝트 디렉토리에서 npx modern-web-guidance@latest install을 실행하세요. AGENTS.md나 CLAUDE.md에 Baseline 목표를 작성하지 않으면, 기본적으로 Widely available 기준으로 제안을 제공합니다.  
+
+https://github.com/GoogleChrome/modern-web-guidance  
+
+</details>
+
+---

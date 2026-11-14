@@ -6,6 +6,7 @@
 
 | 영역 | 문서 |
 | --- | --- |
+| 인프라 전반 | [Infrastructure](notes.md) |
 | 클라우드 | [Cloud](cloud/notes.md) |
 | 클러스터 · 오케스트레이션 | [Kubernetes](kubernetes/notes.md) |
 | 컨테이너 | [Docker 🐳](docker/notes.md) |
