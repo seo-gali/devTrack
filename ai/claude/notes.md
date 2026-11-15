@@ -3381,3 +3381,57 @@ UI에서 데이터베이스까지 데이터가 어떻게 흐르는지,
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 235b7515-89a3-434f-9f5f-a193f5a41af9 -->
+<details>
+<summary><strong>Claude Code 쓸 때 혼자 다 시키지 말고, '지휘자(Fable 5.2) + 일꾼(Opus 5.5)'으로 역할 나누면 작업 효율이 확 달라집니다.</strong></summary>
+
+설정 딱 3단계면 끝납니다.  
+
+1️⃣ 메인 모델 지정  
+Claude Code에서 `/model fable` 입력 → 지휘자를 Fable 5.2로 설정  
+
+2️⃣ 일꾼 에이전트 분리 (`.claude/agents/worker.md`)  
+파일 상단에 `model: opus` 명시  
+(이걸 안 적으면 일꾼도 메인과 같은 Fable로 돌아갑니다)  
+
+3️⃣ 작업 분배 프롬프트  
+"너는 지휘자야. 계획·설계만 하고 구현은 Opus 일꾼한테 맡겨. 보고 올라오면 확인하고 내 결정 필요할 때만 멈춰."  
+
+작은 수정은 메인 대화에서 바로 치고, 큰 작업만 일꾼에게 쪼개 넘기는 게 속도·한도 면에서 제일 깔끔합니다.  
+
+![image.png](../../assets/drafts/4a5aa562-b584-49f7-8d73-2e528a1aa3cb.png)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 20f9d96d-9e7e-4277-8b5b-5ffd2091460f -->
+<details>
+<summary><strong>Fable 5.2를 지휘자로, Opus 5.5를 일꾼으로 쓰는 설정은 세 단계면 됩니다.</strong></summary>
+
+1. Claude Code에서 /model fable 을 입력해 메인 모델을 Fable 5.2로 바꿉니다.  
+
+2. 프로젝트의 .claude/agents/ 폴더에 일꾼 파일(.md)을 만들고, 맨 위 설정에 name, description, model: opus 를 적습니다. 모델을 안 적으면 일꾼도 메인과 같은 Fable로 돌아갑니다.  
+
+그 안에 worker.md 같은 글 파일을 하나 만들어요.  
+내용은 아래처럼 적어요.  
+```
+name: worker
+description: 지휘자가 나눠 준 구현 작업을 맡는 일꾼
+model: opus
+effort: medium
+```
+너는 일꾼이야. 받은 작업만 끝내고, 바꾼 내용을 짧게 보고해.  
+
+직접 만들기 어려우면 Claude Code에 「.claude/agents/에 Opus로 도는 일꾼 파일 만들어 줘」라고 하면 대신 만들어 줘요. 이 설명은 Claude Code 서브에이전트 문서를 기준으로 작성했습니다.  
+
+3. 큰 작업을 맡기면서 이렇게 덧붙입니다. "너는 지휘자야. 계획과 설계만 하고, 일은 나눠서 Opus 일꾼에게 맡겨. 보고가 오면 확인하고 다음 일을 줘. 내 결정이 필요할 때만 멈춰."  
+
+Claude Code 공식 문서와 맞춰 봤어요. 일꾼도 같은 사용량 한도를 쓰고, 빠른 작은 수정은 메인 대화가 낫다고 문서에 나와 있습니다.  
+
+여러분은 지휘자로 나누시나요, Fable 하나에 통째로 맡기시나요?  
+
+</details>
+
+---
