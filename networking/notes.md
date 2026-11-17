@@ -359,3 +359,53 @@ https://protocol-explorer-alpha.vercel.app
 </details>
 
 ---
+
+<!-- devtrack-draft-id: c7637de6-24d5-4804-82a5-aa52bb4e06cb -->
+<details>
+<summary><strong>네트워크 엔지니어의 웹 관리 화면을 쓰지 않고 명령어만으로 끝내버리는 비정상적인 집념</strong></summary>
+
+서버 쪽도 그렇지만…  
+
+・CLI가 더 명확한 절차로 정리할 수 있음.  
+・터미널을 사용할 수 있다는 전제라면, 복붙으로 실행할 수 있어서 운영 실수의 발생률을 낮출 수 있음  
+・잘되면 자동화(스크립트 등)도 고려할 수 있음  
+ 
+그리고 나서서… 인프라 쪽 입장에서는 CLI의 장점이 꽤 풍부하다고 생각함.  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 21f78d1c-eb4b-4e4b-8d11-16f65117e422 -->
+<details>
+<summary><strong>모든 네트워크 엔지니어는 하드웨어(Hardware) 또는 소프트웨어(Software) 분야에서 다음 기술을 배우고 익혀야 합니다:</strong></summary>
+
+첫째: 하드웨어 기술 (Hardware Skills)  
+
+- 라우터 : 라우터 장치의 설치 및 설정.  
+- 스위치 : 스위치의 설정 및 연결.  
+- 방화벽 : 보호 장치의 다루기.  
+- 액세스 포인트 : 무선 네트워크의 설치 및 설정.  
+- 광섬유 : 광섬유의 배선 및 검사.  
+- 구조화 케이블링 : 네트워크 케이블의 배선 및 정리.  
+- 패치 패널 및 랙 : 네트워크 장비의 정리 및 연결.  
+- 서버 및 UPS : 서버와 예비 전원의 다루기.  
+- 하드웨어 문제 해결 : 물리적 고장의 진단.  
+
+둘째: 소프트웨어 기술 (Software Skills)  
+
+- TCP/IP 및 OSI 모델 : 연결의 기본 이해.  
+- IP 주소 지정 및 서브넷팅 : 네트워크의 주소 지정 및 분할.  
+- 라우팅 및 스위칭 : VLAN, STP, OSPF, BGP.  
+- 네트워크 보안 : 방화벽, VPN, ACL.  
+- Windows 서버 : Active Directory, DNS, DHCP.  
+- 리눅스 관리 : 리눅스 시스템 관리.  
+- 네트워크 모니터링 : Wireshark, PRTG, Zabbix.네트워크 시뮬레이션 : Cisco Packet Tracer, GNS3, EVE-NG.  
+- 가상화 및 클라우드 : VMware, Hyper-V, Azure, AWS.  
+- 네트워크 자동화 : Python, Ansible, PowerShell.  
+
+기억하세요: 전문 네트워크 엔지니어는 장치 지식(Hardware)과 네트워크 및 시스템 관리(Software)를 결합한 사람입니다.  
+
+</details>
+
+---

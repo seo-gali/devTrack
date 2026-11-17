@@ -1338,3 +1338,99 @@ Ubuntu 26.10 “Stonking Stingray”가 출시되었으며, GNU Coreutils의 Rus
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 9abcec07-da65-451a-95ff-c426b40cc4c8 -->
+<details>
+<summary><strong>리눅스에서 서비스가 시작되지 않을 때, 먼저 무엇을 확인할까?  </strong></summary>
+
+```
+systemctl status 서비스명
+```
+이렇게 하면 서비스의 상태나 오류의 개요를 확인할 수 있습니다.  
+더 자세히 알아보고 싶다면,  
+```
+journalctl -u 서비스명  
+```
+으로 관련 로그를 확인하세요.  
+
+중요한 것은, 오류가 발생했다고 해서 바로 설정을 변경하지 않는 것입니다.  
+우선 로그를 읽고 원인을 좁혀보세요.  
+리눅스 공부에서도 의식하고 싶은 포인트입니다.  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 9cc76479-3be2-459e-898b-dc0d2da1a6d4 -->
+<details>
+<summary><strong>Linux 명령어 위험도 순위</strong></summary>
+
+
+🟢 ls -la - 안전함  
+🟢 df -h - 안전함  
+🟢 ps aux - 안전함  
+🟢 tail -f app.log - 안전함  
+🟢 journalctl -u nginx - 안전함  
+
+🟡 chmod -R 755 . - 주의하세요  
+🟡 chown -R www-data . - 주의하세요  
+🟡 mv * ../old - 주의하세요  
+🟡 kill -9 <pid> - 주의하세요  
+🟡 sed -i 's/a/b/g' *.conf - 주의하세요  
+
+🔥 rm -rf * (잘못된 폴더) - 위험함  
+🔥 crontab -r - 위험함  
+🔥 iptables -F over SSH - 위험함  
+🔥 pkill -9 postgres - 위험함  
+🔥 userdel -r - 위험함  
+
+💀 rm -rf / --no-preserve-root - 프로덕션 킬러  
+💀 dd if=/dev/zero of=/dev/sda - 프로덕션 킬러  
+💀 chmod -R 777 / - 프로덕션 킬러  
+💀 mkfs.ext4 /dev/sda1 - 프로덕션 킬러  
+💀 mv /etc /etc.bak - 프로덕션 킬러  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 6f2cba2f-ded0-4323-94e8-fba80f91ea5d -->
+<details>
+<summary><strong>Linux는 할리우드가 가진 모든 것을 가지고 있습니다.</strong></summary>
+
+- 좀비: 부모 프로세스가 종료 상태를 수거하지 않은 완료된 프로세스.  
+    - `ps -eo pid,ppid,stat,cmd | grep ' Z'`  
+- 유령: 프로세스가 열고 있어서 여전히 디스크를 먹어치우는 삭제된 파일.  
+    - `lsof +L1`  
+- 고아: 부모가 죽은 자식 프로세스. PID 1이 그들을 입양합니다.  
+    - `pstree -p`  
+- 데몬: 무언가 잘못될 때까지 조용히 실행되는 백그라운드 서비스.  
+    - `systemctl list-units --type=service`  
+- 킬러: OOM 킬러는 메모리가 부족할 때 프로세스를 골라 종료합니다.  
+    - `journalctl -k | grep -i "killed process"`  
+- 폭탄: 포크 폭탄은 기계가 죽을 때까지 자신을 복사하는 프로세스입니다.  
+    - `ulimit -u`가 당신의 방어 수단입니다  
+- 잠자는 자: `kill -9`로도 깨울 수 없는 D 상태의 프로세스  
+- 클론과 변신자: `fork`는 프로세스를 복사하고, `exec`는 그 복사본을 다른 프로그램으로 바꿉니다. 당신이 입력하는 모든 명령어가 그렇게 태어납니다  
+- 스파이: strace는 프로세스와 커널 간의 모든 대화를 엿듣습니다.  
+    - `strace -p <PID>`  
+- 죄수: cgroups는 프로세스를 고정된 CPU와 메모리 제한 안에 가둡니다.  
+    - `systemd-cgtop`  
+- 평행 우주: 네임스페이스는 각 프로세스에 고유한 PID, 네트워크, 마운트를 부여합니다.  
+    - `lsns`  
+- 경비원: 방화벽은 누가 들어오고 누가 차단되는지 결정합니다.  
+    - `nft list ruleset`  
+- 환상: `/proc`의 파일들은 실제가 아닙니다. 커널이 당신이 읽는 순간 그걸 만들어 냅니다.  
+    - `ls -l /proc/cpuinfo`는 크기 0을 보여주지만, 내용이 있습니다  
+- 블랙홀: `/dev/null`에 쓰여진 것은 절대 돌아오지 않습니다  
+- 시간 여행자: Linux 시간은 1970-01-01부터 시작합니다.  
+    - `date -d@0`  
+- 탐정: 로그는 아무도 기억하지 않을 때도 무슨 일이 일어났는지 기억합니다.  
+    - `journalctl -u <service>`  
+- 부모와 자식: 모든 프로세스는 하나의 부모를 가지고 있으며, 가족 트리는 `PID 1`까지 거슬러 올라갑니다  
+
+할리우드는 단지 영화를 만들었을 뿐입니다. Linux는 거의 모든 디지털 것을 실행해 왔습니다  
+
+</details>
+
+---

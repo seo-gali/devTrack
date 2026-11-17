@@ -249,3 +249,27 @@ https://github.com/GoogleChrome/modern-web-guidance
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 65f3a704-8e64-4953-b664-16a5088972cc -->
+<details>
+<summary><strong>HTML 팁: iframe이 콘텐츠에 맞게 크기를 키우도록 하세요.</strong></summary>
+
+iframe이 있는 페이지에서:  
+
+```
+𝚒𝚏𝚛𝚊𝚖𝚎 {
+𝚏𝚛𝚊𝚖𝚎-𝚜𝚒𝚣𝚒𝚗𝚐: 𝚌𝚘𝚗𝚝𝚎𝚗𝚝-𝚑𝚎𝚒𝚐𝚑𝚝;
+}
+```
+
+임베디드 페이지의 <𝚑𝚎𝚊𝚍>에서:  
+
+```
+<𝚖𝚎𝚝𝚊 𝚗𝚊𝚖𝚎="𝚛𝚎𝚜𝚙𝚘𝚗𝚜𝚒𝚟𝚎-𝚎𝚖𝚋𝚎𝚍𝚍𝚎𝚍-𝚜𝚒𝚣𝚒𝚗𝚐" 𝚌𝚘𝚗𝚝𝚎𝚗𝚝="𝚊𝚕𝚕𝚘𝚠-𝚘𝚛𝚒𝚐𝚒𝚗𝚜=*">
+```
+
+![image.png](../assets/drafts/0c150c67-6bf6-4368-8d81-a4ddcdbcd870.png)  
+
+</details>
+
+---

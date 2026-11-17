@@ -574,3 +574,81 @@ Docker를 안다고 해서 DevOps 엔지니어링을 이해하는 것은 아닙�
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 8357031c-c796-4e3a-8516-9d436fea5c9b -->
+<details>
+<summary><strong>모든 DevOps 엔지니어는 클라우드 네트워킹을 이해해야 합니다.</strong></summary>
+
+대부분의 조직에서 네트워크 팀은 VPC 네트워크를 관리하며, VPC에 사용되지 않는 범위만 할당되도록 보장합니다.  
+
+그들은 이를 어떻게 관리하나요?  
+
+일반적으로 IP 주소 할당을 추적하기 위해 IP 주소 관리(IPAM) 도구를 사용합니다.  
+
+예를 들어, AWS는 VPC IPAM이라는 기본 솔루션을 제공합니다. 이는 미리 정의된 규칙에 따라 VPC에 CIDR 범위를 할당할 수 있습니다.  
+
+이러한 도구들은 조직 내에서 사용되는 IP 주소 공간의 중앙 집중식 뷰를 제공합니다.  
+
+네트워크 팀이 네트워크를 관리하더라도, DevOps 엔지니어로서 IP 주소 지정과 기본 네트워킹에 대한 지식을 가져야 합니다.  
+
+아는 것이 많을수록 좋습니다.  
+
+이렇게 하면 문제를 해결하고 네트워크 팀과 더 잘 협업할 수 있습니다.  
+
+예를 들어, 다음 문제를 해결해야 할 수 있습니다:  
+
+ - 네트워크 연결성 및 지연 문제  
+ - 라우팅 문제  
+ - DNS 해석 문제  
+ - IP 주소 충돌 및 서브넷 고갈  
+ - 방화벽 및 프록시 관련 문제  
+
+추가된 이미지는 오픈 소스 IPAM 도구인 Netbox의 예시 대시보드를 보여줍니다.  
+
+![image.png](../assets/drafts/0a9b036a-4e35-4d4e-903a-6755243bb6ee.png)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 4e4907e7-f670-4bcd-863a-71686250418f -->
+<details>
+<summary><strong>DevOps 엔지니어들은 Kubernetes가 너무 복잡해지는 것에 대해 걱정해야 할까요?</strong></summary>
+
+우리는 배포를 단순화하기 위해 Docker로 시작했습니다.  
+
+그 다음 Kubernetes.  
+그 다음 Helm.  
+그 다음 ArgoCD.  
+그 다음 서비스 메시.  
+그 다음 오퍼레이터.  
+그 다음 플랫폼 엔지니어링.  
+
+이제 엔지니어들은 애플리케이션을 관리하는 인프라를 관리하는 데 더 많은 시간을 보냅니다.  
+
+우리는 복잡성을 해결하고 있는 걸까요, 아니면 새로운 복잡성의 층을 만들고 있는 걸까요?  
+
+Kubernetes는 여전히 프로덕션을 단순화하고 있는 걸까요, 아니면 너무 멀리 가버린 걸까요?  
+
+네. 추가된 각 레이어는 Docker가 열어둔 실제 격차를 메웠지만, 누적된 부하는 이제 많은 팀에게 더 큰 비용이 되고 있습니다.  
+
+플랫폼 엔지니어링은 그 스택을 골든 패스 뒤에 숨겨 앱 팀이 매니저들을 돌보는 일을 멈추도록 하는 데 존재합니다.  
+
+Kubernetes는 여전히 올바른 추상화를 투자할 때 대규모 프로덕션을 단순화합니다. 그보다 작은 모든 것에는 관리형 런타임이 종종 승리합니다. 그 걱정은 당신의 조직이 전체 표면을 필수로 취급할 때만 정당화됩니다  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: cfef8c3a-e1bb-4d56-b127-4fe4172a7f16 -->
+<details>
+<summary><strong>DevOps Engineer Roadmap (2026)</strong></summary>
+
+Linux → 네트워킹 → Bash 스크립팅 → Python → Git & GitHub → Git 워크플로우 →  
+CI/CD → Jenkins → GitHub Actions → Docker → Kubernetes → Helm → Terraform →  
+Ansible → AWS/Azure/GCP → 코드형 인프라(IAC) → 모니터링 → Prometheus → Grafana →  
+로깅 → 보안 → DevSecOps → GitOps → ArgoCD → 서비스 메시 → 사이트 신뢰성 엔지니어링(SRE) → 클라우드 자동화 → AI 기반 DevOps → 실제 프로젝트 구축  
+
+</details>
+
+---

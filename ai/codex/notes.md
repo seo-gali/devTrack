@@ -2592,3 +2592,49 @@ Codex에게 "잘 작동하는지 확인해."라고 말하는 걸 그만둬.
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 4510bcd1-ef71-41dc-811e-d5b01773b10a -->
+<details>
+<summary><strong>업무보고에서 두괄식으로 조리있게 말하기 연습하려고 지피티 플젝 세팅 완</strong></summary>
+
+음성채팅모드로도 잘 연습해봐야지  
+
+![image.png](../../assets/drafts/102002cd-5959-4f3d-b43a-1538743a0c07.png)  
+
+![image.png](../../assets/drafts/7e265d7a-8ed8-441e-9451-e82e483f1ef0.png)  
+
+![image.png](../../assets/drafts/3977a54c-195a-414a-bf03-1d54b9eebe26.png)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: f513668e-23bf-42cb-82ab-2dcf9b403908 -->
+<details>
+<summary><strong>확장 가능한 RAG 아키텍처는 다음과 같습니다:</strong></summary>
+
+데이터 수집  
+↓  
+텍스트 청킹  
+↓  
+임베딩  
+↓  
+벡터 데이터베이스  
+↓  
+의미 검색  
+↓  
+프롬프트 엔지니어링  
+↓  
+LLM 생성  
+↓  
+API 통합  
+↓  
+테스트 및 모니터링  
+
+깔끔한 아키텍처는 효율적인 검색과 확장성을 촉진합니다.  
+
+![image.png](../../assets/drafts/36f54d64-f25e-45a8-9532-b48a7d5b8a3a.png)  
+
+</details>
+
+---

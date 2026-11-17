@@ -1207,3 +1207,96 @@ GraphQL은 엄청난 잠재력을 가지고 있어요. 클라이언트가 각자
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 9d5618cb-cb02-4bf5-afeb-305af2efa6b2 -->
+<details>
+<summary><strong>「로직은 앱 쪽에서 작성하라」「DB에 처리를 맡기지 마라」며 안티패턴 취급받는 저장 프로시저.</strong></summary>
+
+아름다운 아키텍처 논의 뒤에서, 수천 줄의 SQL이 DB 안에서 직접 꿈틀대며, 앱 계층을 거치지 않는 압도적인 힘의 기술(성능)로 무거운 야간 배치를 새벽까지 폭속으로 끝내는 현실.  
+
+설계의 아름다움보다, 「어쨌든 새벽까지 무조건 처리를 끝낸다」는 힘의 기술이야말로 비즈니스를 구하고 있는 사실, 진흙탕 같은 리얼이 가득해서 좋다.  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 3ec562e1-b1a4-4fa1-ac19-ac24b652854a -->
+<details>
+<summary><strong>DB의 컬럼은 users 테이블의 user_id 같은 쪽이 주류인 것 같아</strong></summary>
+
+나 자신은 테이블명을 넣지 않는 편이었는데, 지금은 AI가 하니까 상관없어졌어. 역시 명명은 통일되어 있는 게 중요해.  
+
+테이블명을 각각 네임스페이스처럼 보고 있는 사람은 id 같은 단독으로는 알기 어려운 컬럼명을 붙이는 경향이 있는 인상. 게다가, Rails적인 관습에 물들어 있는 사람.  
+
+더 고전적인, 컬럼명이 스키마에 대해 글로벌한 개념으로 보는 방식이라면 user_id 같은 식이 된다  
+
+고전적인 명명법이라면 join 시 using이 제대로 작동해서 편리하다고 할 수 있지, 아니면 using은 그런 명명법을 전제로 만들어진 구문이라고 해야 할까.  
+
+Rails 방식이라면 매번 on user.id = foo.user_id 같은 걸 써야 하니까.  
+
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 3fd6760c-87a2-43e8-89fc-8b8c62da030d -->
+<details>
+<summary><strong>요즘 Claude Code로 DB까지 설계하시는 분들 많으시죠?</strong></summary>
+
+저도 여러 앱을 만들다 보니 DB 설계가 은근히 신경 쓰입니다. 코드는 다시 짜면 되는데 DB는 운영하다 구조를 바꾸려면 일이 꽤 커지거든요.  
+
+Claude Code용 Database Architect 에이전트가 공개됐네요.  
+
+단순히 SQL만 짜주는 게 아니라  
+
+1. 테이블 구조, PK/FK, 인덱스 설계  
+2. PostgreSQL, MySQL, MongoDB 등 DB 선택  
+3. 멀티테넌시, RLS 등 데이터 격리 설계  
+4. 쿼리 성능과 확장성 검토  
+5. 마이그레이션과 롤백 계획  
+
+설치는 쉬워요 터미널에서 한 줄이면 됩니다. (요즘 대부분이 이렇긴 하지만 ㅎ)  
+
+npx claude-code-templates@latest --agent database/database-architect  
+
+설치 후 Claude Code에서 이렇게 요청하면 됩니다.  
+
+"database-architect 에이전트로 현재 DB 구조를 분석하고, 테이블 관계와 인덱스, 성능 개선안을 검토해 줘. 변경은 하지 말고 설계안부터 보여줘."  
+
+운영 중인 DB라면 바로 수정하지 말고 검토부터 시키는 게 좋겠죠.  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: d9a36a7e-bdf8-40d5-84b1-002f06b42af9 -->
+<details>
+<summary><strong>SQL 인터뷰 주제: 인터뷰 난이도별 순위</strong></summary>
+
+🙂 SELECT with WHERE & ORDER BY - Junior  
+🙂 INNER JOIN Basics - Junior  
+🙂 GROUP BY & COUNT - Junior  
+🙂 Primary vs Foreign Keys - Junior  
+🙂 Handling NULL Values - Junior  
+
+⚙️ Subqueries vs CTEs - Mid-Level  
+⚙️ Window Functions (ROW_NUMBER) - Mid-Level  
+⚙️ Indexing Basics - Mid-Level  
+⚙️ Normalization (1NF-3NF) - Mid-Level  
+⚙️ Transactions & ACID - Mid-Level  
+
+🔥 Reading EXPLAIN Plans - Senior  
+🔥 Composite Index Ordering - Senior  
+🔥 Isolation Levels & Anomalies - Senior  
+🔥 Deadlock Debugging - Senior  
+🔥 Optimizing Slow Queries at Scale - Senior  
+
+💀 Sharding Strategy Design - Staff Engineer  
+💀 Zero-Downtime Schema Migrations - Staff Engineer  
+💀 Replication Lag & Consistency - Staff Engineer  
+💀 MVCC Internals - Staff Engineer  
+💀 Multi-Region Database Design - Staff Engineer  
+
+</details>
+
+---

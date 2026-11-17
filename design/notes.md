@@ -1217,3 +1217,15 @@ npx skills add showheyohtaki/motion-prompt
 </details>
 
 ---
+
+<!-- devtrack-draft-id: fab298de-afee-4b6d-ae86-08314e4ddd5f -->
+<details>
+<summary><strong>디자인 엔지니어링 팁: 내부 모서리가 카드 밖으로 불거집니다.</strong></summary>
+
+내부 반경은 외부에서 패딩을 뺀 border-radius: calc(28px - 10px)  
+
+![image.png](../assets/drafts/504b9fa4-fbc6-4a54-8b9e-05070c1bd936.png)  
+
+</details>
+
+---
