@@ -1229,3 +1229,17 @@ npx skills add showheyohtaki/motion-prompt
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 19de36bf-797b-457c-a627-9f2cf70d88ff -->
+<details>
+<summary><strong>디자인 팁: 버튼 안의 아이콘은 텍스트보다 주변 공간이 덜 필요합니다.</strong></summary>
+
+디자인의 헛소리처럼 보이지만, 시각적으로 균형 잡힌 UI를 볼 때 그만큼 좋은 안도감을 주는 건 없죠. 그리고 이건 제가 평소에 따르는 팁 중 하나예요.  
+
+![image.png](../assets/drafts/f0e5bf55-a6a3-4495-928e-7a8893ed146b.png)  
+
+![image.png](../assets/drafts/3b848618-b48f-42d7-83f9-af3434f2c1f1.png)  
+
+</details>
+
+---

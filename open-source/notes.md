@@ -276,3 +276,18 @@ https://github.com/kwsch/PKHeX
 </details>
 
 ---
+
+<!-- devtrack-draft-id: e9baebce-3cb6-4950-945f-af71c56ac25d -->
+<details>
+<summary><strong>오픈소스 기여를 위해 AI를 사용하는 더 나은 방법:</strong></summary>
+
+1. 저장소를 복제하세요  
+2. AI에게 아키텍처를 매핑해 달라고 요청하세요  
+3. 하나의 기능을 처음부터 끝까지 추적하세요  
+4. 초보자 친화적인 이슈를 찾으세요  
+5. AI에게 관련 파일이 무엇인지 물어보세요  
+6. 수정 사항을 직접 구현하고 테스트하세요  
+
+</details>
+
+---

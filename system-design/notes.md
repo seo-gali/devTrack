@@ -1246,3 +1246,19 @@ API 플랫폼을 구축한다고 상상해보세요. 이 플랫폼은 여러 지
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 1321ac45-951c-4a31-8612-06f20fb2dc14 -->
+<details>
+<summary><strong>시스템 디자인을 이해하면 바이브 코딩할 때도 더 나은 앱을 만들 수 있습니다.</strong></summary>
+
+더 나은 아키텍처 결정. 더 나은 AI 프롬프트. 앱이 성장할 때 적은 놀라움.  
+
+그래서 시스템 디자인을 시각적으로 배우기 위한 인터랙티브 앱을 만들었습니다.  
+
+https://designed-to-scale.vercel.app  
+
+![image.png](../assets/drafts/fd4ae222-85a2-4c6d-b0fb-a1dc2d8d4214.png)  
+
+</details>
+
+---

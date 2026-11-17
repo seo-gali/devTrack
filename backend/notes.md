@@ -2710,3 +2710,38 @@ Claude Code로 만들어 회사 내에 배포하기 좋은 HTML 앱, 대표적�
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 8a3dceeb-79ab-490f-b27d-f9f70611b513 -->
+<details>
+<summary><strong>모든 개발자가 알아야 할 중요한 백엔드 엔지니어링 주제:</strong></summary>
+
+- HTTP & HTTPS  
+- DNS, TCP & TLS  
+- REST API 설계  
+- 인증 & 권한 부여  
+- JWT, OAuth & 세션  
+- SQL & NoSQL 데이터베이스  
+- 인덱싱 & 쿼리 최적화  
+- 트랜잭션 & ACID  
+- Redis & 캐싱  
+- 로드 밸런싱  
+- 리버스 프록시 & API 게이트웨이  
+- 속도 제한  
+- 메시지 큐 (Kafka & RabbitMQ)  
+- 마이크로서비스 아키텍처  
+- 이벤트 기반 아키텍처  
+- 분산 시스템  
+- CAP 정리  
+- 데이터베이스 복제 & 샤딩  
+- Docker & Kubernetes  
+- CI/CD 파이프라인  
+- 로깅 & 모니터링  
+- 분산 추적  
+- 장애 내성 & 높은 가용성  
+- 시스템 설계 & 확장성  
+
+API를 만드는 법만 배우지 마세요. 실제 프로덕션 트래픽에서 시스템이 어떻게 작동하는지 배우세요.  
+
+</details>
+
+---

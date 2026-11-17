@@ -2638,3 +2638,24 @@ API 통합
 </details>
 
 ---
+
+<!-- devtrack-draft-id: a13f7d9d-72e7-497d-b34b-a2333a255438 -->
+<details>
+<summary><strong>아무것도 안 했는데 C드라이브가 매일 25GB씩 사라져가고 있어. 조사해보니, </strong></summary>
+
+숨겨진 폴더 깊숙이에서 원격 데스크톱 클라이언트가 화면도 띄우지 않고 작동 중이었고, 23초마다 어딘가에 계속 연결하고 있었어. 로그는 118GB야. 내가 없는 사이에 누가 들어와 있는 건가……?  
+
+계속. 로그 내용을 확인했다. 연결 대상은 PC 내부의 Ubuntu(WSL)로, 외부로의 통신은 제로였다. 작동하던 것은 WSL의 화면 표시 부품(msrdc.exe)으로, Microsoft 서명의 정품이었다. PC 내부 연결에 23초마다 실패해서, 그때마다 12MB의 로그를 남겨놓고 있었을 뿐이었다. 해킹이 아니었다.  
+
+그래서, Ubuntu를 멋대로 깨운 범인은 ChatGPT의 데스크톱 앱이었어. Codex가 들어있는지 확인하려고 wsl.exe를 두드리고 있었어. Codex를 안 쓰고 있는데. 대책은 %USERPROFILE%\.wslconfig 에  
+
+```
+[wsl2]
+guiApplications=false
+```
+
+를 넣어. WSL 넣은 사람들은 AppData\Local\Temp\DiagOutputDir 를 봐봐.  
+
+</details>
+
+---
