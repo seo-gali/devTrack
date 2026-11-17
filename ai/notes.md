@@ -4503,3 +4503,34 @@ AX를 제대로 한다는 것은 사실 AI 기술이나 솔루션의 문제가 �
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 576d5a23-0703-4ed4-95f5-86ef35ddbf86 -->
+<details>
+<summary><strong>AI 시대에 시험은 쓸모없다는 식의 일침 날리는 사람들 특</strong></summary>
+
+바이브 코딩으로 꺼드럭대는 사람 나타나면 주기적으로 하는 소린데 ai에서 오는 위기는 딸깍하는 님한테서 오는게 아니라 내옆에서 ai들고 생산성 10배 내고 있는 동료다. 결국엔 단기적인 인력 과잉 공급인거지 시간이 지나서 진입 자체를 안하면 결국 전문가의 가치는 유지됨  
+
+AI가 발달할수록 오히려 그 분야에 대한  
+지식이 검증된 전문가의 가치 상승할 것 임 ㅇㅈ?  
+
+![image.png](../assets/drafts/efed0a03-ff06-4319-9073-66bf13100ffa.png)  
+
+![image.png](../assets/drafts/d6a0cd89-97dd-4321-b2f4-eb415ff57939.png)  
+
+![image.png](../assets/drafts/236b3a11-18c0-4987-a1a8-491263b75838.png)  
+
+![image.png](../assets/drafts/04abcf4c-8720-49c3-a273-3ba06fa2f223.png)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 9a056822-c375-464a-b8dd-4283df30d78a -->
+<details>
+<summary><strong>사람들이 api가격을 안보니까 전혀 다르게 보는구나 ai가격은 우려와 달리 계속 싸지는 중임..</strong></summary>
+
+놀랍게도 아키텍처가 발전할수록, 환각이 줄어들고 캐시 압축, 양자화 성능이 올라갈 수록, 토큰 읽기와 생성에 드는 단위비용(전력을 포함)이 내려감... 오픈웨이트 모델들이 아래에서 무섭게 치고 올라오는 구조라 가격 올리기도 쉽지 않음. 당장 지금도 그돈이면 딥시크/Qwen 쓴다 하는 사람 많고.  
+
+</details>
+
+---
