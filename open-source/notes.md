@@ -291,3 +291,16 @@ https://github.com/kwsch/PKHeX
 </details>
 
 ---
+
+<!-- devtrack-draft-id: c6194010-73e8-47e3-b9be-4583b45786e5 -->
+<details>
+<summary><strong>누군가 브라우저에서 픽셀 아트 이모지를 그려주는 4700만 개 파라미터짜리 초소형 디퓨전 모델을 학습시켰어요</strong></summary>
+
+저는 그 위에 간단한 슬랙 이모지 메이커를 만들었어요. 아무거나 입력하면 고를 수 있는 이모지 4개가 나와요.  
+
+https://huggingface.co/spaces/cfahlgren1/slack-moji  
+
+
+</details>
+
+---
