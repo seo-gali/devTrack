@@ -1351,3 +1351,31 @@ npx claude-code-templates@latest --agent database/database-architect
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 2472e0e6-cab2-46f0-bd3a-61237b9e5ac2 -->
+<details>
+<summary><strong>SQL의 구조적인 문제(이제 벌레라고 불러도 좋을 정도)는, 정렬 조건을 매개변수로 전달할 수 없는 겁니다.</strong></summary>
+
+SQL의 언어 사양을 정하는 녀석들은, 집합론 덕후라고 해도 될 정도로 완강했지만, LIMIT… OFFSET…도 넣어놓고도, 언제까지나 ORDER BY를 매개변수화하지 못하는 겁니다.  
+정말 머리가 뻣뻣한 녀석들이에요.  
+
+저로서는, ORDER BY 외에, DYNAMIC ORDER BY  
+같은 구를 새로 만들어야 한다고 생각합니다.  
+
+ORDER BY의 조건을 매개변수화할 수 없는 이유는, 옵티마이저가 ORDER BY에 인덱스를 사용할지 여부를 고려해야 하기 때문입니다.  
+
+그래서, 인덱스를 고려하는 ORDER BY와 별개의 구를 만들면 됩니다.  
+
+DYNAMIC ORDER BY  
+
+는, 인덱스를 고려하지 않고, SELECT 결과만을 정렬합니다.  
+(그래서, SELECT절에 없는 컬럼으로는 정렬할 수 없습니다)  
+
+라고 정의하면 됩니다.  
+옵티마이저 수정도 아주 조금만 하면 됩니다.  
+
+왜 실제 피해가 발생하고 있는데, 이런 정도의 일도 못 하는지 이해하기 어렵습니다.  
+
+</details>
+
+---

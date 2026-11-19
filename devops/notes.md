@@ -652,3 +652,30 @@ Ansible → AWS/Azure/GCP → 코드형 인프라(IAC) → 모니터링 → Prom
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 4a2c87e3-8169-4053-b67f-a6af99ff8b82 -->
+<details>
+<summary><strong>난이도별 DevOps 도구 순위:</strong></summary>
+
+🔥 Kubernetes - 매우 어려움  
+🔥 Terraform - 매우 어려움  
+🔥 AWS - 매우 어려움  
+🔴 Istio - 어려움  
+🔴 Jenkins - 어려움  
+🔴 Argo CD - 어려움  
+🟠 Ansible - 중간-어려움  
+🟠 Helm - 중간-어려움  
+🟠 ELK Stack - 중간-어려움  
+🟠 Prometheus - 중간-어려움  
+🟡 Docker - 중간  
+🟡 Grafana - 중간  
+🟡 GitLab CI/CD - 중간  
+🟡 Nginx - 중간  
+🟢 Git - 쉬움  
+🟢 GitHub Actions - 쉬움  
+🟢 Docker Compose - 쉬움  
+🟢 Bash - 쉬움  
+
+</details>
+
+---

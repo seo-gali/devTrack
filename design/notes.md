@@ -1243,3 +1243,60 @@ npx skills add showheyohtaki/motion-prompt
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 1fe83559-7da5-4ff2-9326-4b29a1a003cf -->
+<details>
+<summary><strong>활성 네비게이션 항목 UI 디자인 상세.</strong></summary>
+
+🌓 단순히 저대비 배경만 주면, 어떤 항목이 활성 상태인지 구분하기 어려워집니다.  
+
+🔤 더 굵은 폰트 웨이트를 사용하면 도움이 되지만, 비디오에서 폰트 웨이트 변화조차 눈치채지 못한 분들이 많을 거라 확신합니다.  
+
+🌗 배경에 약간 더 많은 대비를 주면 더 나아지지만, 특히 저시력자들에게는 여전히 부족합니다.  
+
+🍫 추가적인 표시자가 필요합니다. 일반적인 해결책은 한쪽에 고대비 바를 두는 것입니다.  
+
+→ 하지만 오른쪽에 배치하면 스크롤바와 공간을 놓고 경쟁하게 됩니다.  
+
+← 왼쪽에 배치하면 화면 베젤과 섞여 버립니다.  
+
+🚀 해결책은 양쪽에 약간의 여백을 주는 것입니다.  
+
+![image.png](../assets/drafts/5bd60f8a-26ac-4bde-86a9-43cfd9894604.png)  
+
+![image.png](../assets/drafts/60cc3b64-2016-40ac-9586-c13c275ae15f.png)  
+
+![image.png](../assets/drafts/f523a27f-da95-4104-8097-7bd0d4a66c91.png)  
+
+![image.png](../assets/drafts/c1a6a77a-0ac1-4163-93a8-db58e31e84fd.png)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 7473c6c2-1664-4097-af3a-b30baff65dc8 -->
+<details>
+<summary><strong>내가 가장 싫어하는 UI 단점:  </strong></summary>
+
+트리거 위치를 인지하지 않는 애니메이션들.  
+
+드롭다운, 팝오버, 메뉴 등은 트리거에서 확장되어야 하며, 중앙에서가 아니야.  
+
+이걸 네 에이전트한테 그냥 보내:  
+이 앱의 모든 트리거 기반 UI 요소는 중앙이 아니라 트리거에서 애니메이션되도록 해.  
+
+![SaveTwitter.Net_jDbL3LTuiPiKFPUl_(720p).gif](../assets/drafts/5df6c8e1-3fd2-4b81-9053-843f268dd683.gif)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: a4e18e14-c63a-4711-aedf-3d7fdf1acecf -->
+<details>
+<summary><strong>디자인 팁: 카드의 제목은 이미지 위쪽과 함께가 아니라 설명과 함께 배치해야 합니다.</strong></summary>
+
+![SaveTwitter.Net_eVB87YeN7TxdjaCN_(720p).gif](../assets/drafts/f6459b19-924a-4156-aa8c-1f263c653760.gif)  
+
+</details>
+
+---
