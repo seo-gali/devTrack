@@ -1379,3 +1379,69 @@ DYNAMIC ORDER BY
 </details>
 
 ---
+
+<!-- devtrack-draft-id: d7464f38-c43d-45c6-8573-fa0035844128 -->
+<details>
+<summary><strong>데이터베이스 모델과 20년 전에 작성된 고대의 SQL을 가리키며 전체를 올바르게 리팩토링하라고 지시할 수 있을 때 AI 코딩 열풍을 믿게 될 거예요.</strong></summary>
+
+AI는 복잡한 SQL에서 놀라울 정도로 형편없어요.  
+
+UI, API, 그리고 전에 수십억 번 코딩된 다른 것들에 대한 보일러플레이트 코드를 생성할 수는 있죠.  
+
+하지만 SQL은 달라요. 데이터 모델과 비즈니스 로직에 매우 특화되어 있어서, AI가 종종 이해하지 못하죠. 솔직히 말해서, 대부분의 인간들도 거의 이해하지 못해요.  
+
+SQL은 체스와 조금 비슷해요. 적은 수의 피스, 간단한 규칙, 하지만 그걸로 만들 수 있는 복잡성은 엄청나죠.  
+
+그리고 누군가 수십 년 된 레거시 SQL을 신뢰성 있게 풀어내고 리팩토링할 수 있는 AI를 만든다면, 포춘 500 기업들이 그 사람을 현금 산더미로 묻어버릴 거예요.  
+
+참고로, 이게 제 일상 업무예요. 그 고통을 속속들이 알아요.  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: dbb52135-04e7-4026-ad5d-dc7cef0c99dc -->
+<details>
+<summary><strong>최근 점점 더 많은 프로젝트가 PostgreSQL 대신 SQLite를 쓰기 시작하는 걸 보고 있다.</strong></summary>
+
+예전에는 SQLite가 작은 도구나 단일 기기용 앱에만 적합하다고 생각했다.  
+
+하지만 개인 프로젝트나 소규모 SaaS라면 그렇게 복잡한 데이터베이스 아키텍처가 아예 필요 없을 수도 있다.  
+
+데이터베이스 파일 하나만 있으면 되고, 데이터베이스 서비스를 따로 관리할 필요도 없으며, 백업과 마이그레이션도 편하다.  
+
+파일 하나만으로 완전히 백업할 수 있고, 배포에 문제가 생기면 파일을 복사하는 것만으로 롤백할 수 있다는 이런 내결함성은 개인 프로젝트에서는 추가로 얻는 데이터베이스 성능보다 훨씬 더 실질적이다.  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 42ae8d98-35b9-4c6c-8ad0-636b539d1782 -->
+<details>
+<summary><strong>PostgreSQL 19 나왔는데 btree_gist 인덱스 있으면 pg_upgrade가 안 됨 (실서버 올리기 전에 참고)</strong></summary>
+
+11/19에 정식 버전이 나왔고 릴리스 노트에 호환성 바뀐 항목만 20개 넘음  
+그중 운영 서버 올릴 때 걸리는 것만 골라봄  
+
+1) btree_gist로 만든 inet, cidr 인덱스가 있으면 업그레이드 자체가 안 됨  
+이 인덱스가 조회 결과에서 있어야 할 행을 빼먹는 버그가 있었다고..  
+2) 18 이하 pg_dump로 뜬 덤프는 standard_conforming_strings = off였으면 19에서 복원이 제대로 안 됨  
+19 버전 pg_dump로 다시 뜨면 됨  
+3) max_locks_per_transaction 기본값이 64에서 128로 바뀜  
+직접 설정한 값이 있으면 2배로 올려야 예전이랑 같은 양임  
+4) JIT 기본값이 off로 바뀜  
+무거운 분석 쿼리 많은 곳은 직접 켜야 함  
+5) pg_hba.conf에 radius 줄 있으면 다른 인증으로 먼저 바꿔야 함  
+RADIUS가 UDP만 지원해서 보안 문제를 못 고친다고 아예 지원을 끊었음  
+6) md5 비밀번호로 로그인하면 이제 경고가 뜸  
+SELECT rolname FROM pg_authid WHERE rolpassword LIKE 'md5%';  
+이 쿼리로 md5 쓰는 계정 바로 찾을 수 있음  
+
+REPACK (CONCURRENTLY)가 새로 생겼음  
+VACUUM FULL과 달리 테이블 락 안 걸고 정리됨  
+
+![image.png](../assets/drafts/44a525b1-eb17-4e67-80e9-06a32d6f700c.png)  
+
+</details>
+
+---

@@ -1642,3 +1642,19 @@ AI가 붙여준 이름으로 잘 돌아가면 그냥 넘어가기 쉬우니까 �
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 23f34f5d-cb0a-44d5-af63-806adc99b7fc -->
+<details>
+<summary><strong>안전한 API 키 관리를 위해 WelsonJS에서 Microsoft의 Azure Key Vault 연동을 지원하기로 했습니다.</strong></summary>
+
+OpenAI API Key, Claude API Key, 그리고 각종 Proxy 제공자의 API Key 등 내부적으로도 여러 테스트를 하다보니 파일만으로는 관리가 힘든 지점이 생기더군요.  
+
+특히, 코드 서명이나 빌드 자동화(CI) 등에 관여하는 API Key는 악의적 사용자에게 노출되지 않으면서도 필요할 때 바로 꺼내기도 수월한 위치에 있어야 할 필요성이 있었습니다.  
+
+그래서, 기존처럼 파일을 이용한 키 관리도 지원하면서 Azure Key Vault도 추가로 지원하기로 했습니다. :)  
+
+이미 Azure AI Foundry 연동 기능이 들어가있었는데 매번 API 키를 입력해야되는 불편 접수가 되어있었던 것도 이번 작업으로 해결될 것 같습니다.  
+
+</details>
+
+---

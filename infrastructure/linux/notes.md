@@ -1434,3 +1434,31 @@ journalctl -u 서비스명
 </details>
 
 ---
+
+<!-- devtrack-draft-id: d094cc55-0b21-4ee2-98e4-f5fc5dd1884c -->
+<details>
+<summary><strong>리눅스 사용자: 주니어 대 시니어</strong></summary>
+
+👶 주니어:  
+
+- 우분투를 안다.  
+- sudo를 안다.  
+- apt install을 안다.  
+- cd와 ls를 안다.  
+- chmod를 안다.  
+
+🧠 시니어:  
+
+- 토큰화를 이해한다.  
+- 임베딩을 이해한다.  
+- 벡터 데이터베이스를 이해한다.  
+- 모델 평가를 이해한다.  
+- 환각 현상을 이해한다.  
+- 파인튜닝을 이해한다.  
+- 추론 비용을 이해한다.  
+
+💀 단순한 SQL 쿼리가 AI 에이전트보다 나은 때를 안다  
+
+</details>
+
+---

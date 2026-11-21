@@ -1300,3 +1300,15 @@ npx skills add showheyohtaki/motion-prompt
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 74ef3c50-2342-4611-be9a-06a1dc7c7ac6 -->
+<details>
+<summary><strong>파일 다운로드 후에 사람들이 파일을 찾느라 애쓰지 않게 하세요. </strong></summary>
+
+버튼은 그냥 열기(Open)가 됩니다.  
+
+![SaveTwitter.Net_jfTeHFqaZfTB-hMn_(720p).gif](../assets/drafts/24b3e312-a2b4-4905-8198-7a760d8a7f64.gif)  
+
+</details>
+
+---
