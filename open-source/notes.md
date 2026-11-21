@@ -304,3 +304,54 @@ https://huggingface.co/spaces/cfahlgren1/slack-moji
 </details>
 
 ---
+
+<!-- devtrack-draft-id: fea29d43-0b39-4047-8e86-8a718968ea2d -->
+<details>
+<summary><strong>AI 워크플로우, 자동화 시스템, 노코드 AI 애플리케이션을 구축하기 위한 10개의 오픈소스 GitHub 저장소.</strong></summary>
+
+이들은 도구를 연결하고, 작업을 자동화하며, AI 기반 워크플로우를 실행합니다.  
+
+1. Dify  
+시각적 개발 플랫폼으로 AI 애플리케이션과 에이전트 워크플로우를 구축하세요.  
+https://github.com/langgenius/dify  
+
+2. Flowise  
+시각적 드래그 앤 드롭 인터페이스를 사용하여 LLM 애플리케이션과 AI 에이전트를 구축하세요.  
+https://github.com/FlowiseAI/Flowise  
+
+3. Oxylabs Web API MCP  
+MCP 서버를 통해 AI 에이전트를 웹 데이터에 연결하여 연구 및 데이터 추출 워크플로우를 수행하세요.  
+https://github.com/oxylabs/web-api-mcp  
+
+4. Langflow  
+AI 에이전트와 LLM 기반 워크플로우를 시각적으로 구축하고 실험하세요.  
+https://github.com/langflow-ai/langflow  
+
+5. n8n  
+애플리케이션, API, AI 서비스를 연결하여 워크플로우를 자동화하세요.  
+https://github.com/n8n-io/n8n  
+
+6. Activepieces  
+통합 플랫폼으로 AI 기반 자동화를 구축하세요.  
+https://github.com/activepieces/activepieces  
+
+7. Kestra  
+선언적 자동화를 통해 워크플로우와 데이터 파이프라인을 오케스트레이션하세요.  
+https://github.com/kestra-io/kestra  
+
+8. Prefect  
+데이터 및 자동화 워크플로우를 생성, 예약 및 모니터링하세요.  
+https://github.com/PrefectHQ/prefect  
+
+9. Dagster  
+관찰 가능성과 자산 관리를 통해 데이터 파이프라인을 개발하고 오케스트레이션하세요.  
+https://github.com/dagster-io/dagster  
+
+10. Windmill  
+스크립트와 워크플로우를 내부 도구, 자동화 및 애플리케이션으로 전환하세요.  
+https://github.com/windmill-labs/windmill  
+
+
+</details>
+
+---
