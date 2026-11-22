@@ -3740,3 +3740,19 @@ Claude Code의 버릇은(다른 AI도),
 </details>
 
 ---
+
+<!-- devtrack-draft-id: c7705c25-4186-4186-a492-e696a7a5ff01 -->
+<details>
+<summary><strong>CLAUDE에게 앱의 전체 아키텍처를 하나의 HTML 페이지와 JSON 파일로 매핑해 달라고 하세요.</strong></summary>
+
+HTML은 당신을 위한 겁니다.  
+
+JSON은 새로운 기능을 작업할 다음 에이전트를 위한 겁니다.  
+
+이제 당신의 코드베이스는 스스로 설명합니다  
+
+![image.png](../../assets/drafts/c6696042-0a45-49e4-96e5-d531e4fd69c6.png)  
+
+</details>
+
+---
