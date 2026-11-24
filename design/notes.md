@@ -1342,3 +1342,94 @@ AI는 검증 가능한 모든 것을 장악할 것이다. 디자인은 검증될
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 80c98af9-9532-49b6-9ce6-3d6b54e15b95 -->
+<details>
+<summary><strong>편의 기능으로 모니터에 표출할 간단한 시계를 만들어야되는데, 화면에 절대 숫자가 나오면 안된다는 조건이 있음.</strong></summary>
+
+처음에는 2진 시계를 고려했었는데 미적으로 괜찮은 디자인을 뽑기 어려워서 고민하던 중, 4진, 6진 시계를 고민해 봤음.  
+
+더 고민해보니 6진 시계가 가장 괜찮을 것 같음.  
+
+![image.png](../assets/drafts/02e5c57e-8b3f-4628-96cf-e8544354d370.png)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 056cac57-f4c9-4772-bfaf-44ec2b386c95 -->
+<details>
+<summary><strong>CSS 팁: 목록의 가장자리를 스크롤할 수 있는 부분에서만 페이드 처리하세요.</strong></summary>
+
+```
+@𝚙𝚛𝚘𝚙𝚎𝚛𝚝𝚢 --𝚝 { 𝚜𝚢𝚗𝚝𝚊𝚡: "<𝚕𝚎𝚗𝚐𝚝𝚑>"; 𝚒𝚗𝚑𝚎𝚛𝚒𝚝𝚜: 𝚏𝚊𝚕𝚜𝚎; 𝚒𝚗𝚒𝚝𝚒𝚊𝚕-𝚟𝚊𝚕𝚞𝚎: 𝟶𝚙𝚡; }
+@𝚙𝚛𝚘𝚙𝚎𝚛𝚝𝚢 --𝚋 { 𝚜𝚢𝚗𝚝𝚊𝚡: "<𝚕𝚎𝚗𝚐𝚝𝚑>"; 𝚒𝚗𝚑𝚎𝚛𝚒𝚝𝚜: 𝚏𝚊𝚕𝚜𝚎; 𝚒𝚗𝚒𝚝𝚒𝚊𝚕-𝚟𝚊𝚕𝚞𝚎: 𝟶𝚙𝚡; }
+
+@𝚔𝚎𝚢𝚏𝚛𝚊𝚖𝚎𝚜 𝚎𝚍𝚐𝚎𝚜 {
+  𝟶% { --𝚝: 𝟶𝚙𝚡; --𝚋: 𝟺𝟶𝚙𝚡; }
+  𝟷𝟶%, 𝟿𝟶% { --𝚝: 𝟺𝟶𝚙𝚡; --𝚋: 𝟺𝟶𝚙𝚡; }
+  𝟷𝟶𝟶% { --𝚝: 𝟺𝟶𝚙𝚡; --𝚋: 𝟶𝚙𝚡; }
+}
+
+@𝚜𝚞𝚙𝚙𝚘𝚛𝚝𝚜 (𝚊𝚗𝚒𝚖𝚊𝚝𝚒𝚘𝚗-𝚝𝚒𝚖𝚎𝚕𝚒𝚗𝚎: 𝚜𝚌𝚛𝚘𝚕𝚕()) {
+  .𝚕𝚒𝚜𝚝 {
+    𝚖𝚊𝚜𝚔: 𝚕𝚒𝚗𝚎𝚊𝚛-𝚐𝚛𝚊𝚍𝚒𝚎𝚗𝚝(#𝟶𝟶𝟶𝟶, #𝟶𝟶𝟶 𝚟𝚊𝚛(--𝚝) 𝚌𝚊𝚕𝚌(𝟷𝟶𝟶% - 𝚟𝚊𝚛(--𝚋)), #𝟶𝟶𝟶𝟶);
+    𝚊𝚗𝚒𝚖𝚊𝚝𝚒𝚘𝚗: 𝚎𝚍𝚐𝚎𝚜 𝚕𝚒𝚗𝚎𝚊𝚛 𝚋𝚘𝚝𝚑;
+    𝚊𝚗𝚒𝚖𝚊𝚝𝚒𝚘𝚗-𝚝𝚒𝚖𝚎𝚕𝚒𝚗𝚎: 𝚜𝚌𝚛𝚘𝚕𝚕(𝚜𝚎𝚕𝚏);
+  }
+```
+
+하드 클리핑은 행을 반으로 자르고 목록이 계속되는지 여부를 알려주지 않습니다.   
+
+여기서는 목록 자체의 스크롤 위치가 두 페이드 길이를 설정합니다.   
+
+맨 위에서는 상단 페이드가 없고, 끝에서는 하단 페이드가 없으며, 오버플로우가 없으면 페이드가 전혀 없습니다.  
+
+![SaveTwitter.Net_nRQ1T6SdRqZslS8h_(720p).gif](../assets/drafts/3c40d76a-ef3a-4a62-ad8e-f4ce8d6839ec.gif)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 0fbc0669-ec9d-4606-bc16-5fa6b83ab0aa -->
+<details>
+<summary><strong>디자인 팁: 툴바는 탭이 아니라 리스트에 속합니다.</strong></summary>
+
+![SaveTwitter.Net_2YXjxbBgvIvjm3UD_(720p).gif](../assets/drafts/51a0d6db-647c-4af4-9614-67aa3807686f.gif)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: a65d8a79-843a-48ad-a3cf-9d9e9991ce7f -->
+<details>
+<summary><strong>님들 디자인 취향 몇 년도 사람임? 👀</strong></summary>
+
+1965~2035년 사이 내 디자인 감각 시대를 판별해 주는 테스트 만들어옴!  
+
+🔗 https://design-time-machine.ai.studio  
+
+포스터·로고·타이포 고르다 보면   
+내 취향 소름 돋게 나옴  
+
+https://design-time-machine.ai.studio/?r=adbbdaddaacd  
+
+![image.png](../assets/drafts/260bc40a-57ad-4262-bece-273c8950f4ba.png)  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 9a8312a8-6bb1-4f51-95dd-8eaaa0ad53e6 -->
+<details>
+<summary><strong>AI로 구축할 수 있게 되면서, 좀 눈에 띄는 애니메이션이 없나~ 싶을 때가 있을 거라고 생각해요.</strong></summary>
+
+그럴 때 유용한 게 바로 「animorio」예요  
+
+다양한 카테고리에서 많은 애니메이션을 소개하는 사이트. 코드를 복사해서 붙여넣기만 하면 되고, ClaudeCode에 「이 페이지의 애니메이션을 채택해!」 같은 지시를 하면 꽤 괜찮게 구현해 주는 경우도 있어요👌  
+
+AI 시대에 아주 편리한 사이트예요🙌  
+
+</details>
+
+---

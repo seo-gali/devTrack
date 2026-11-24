@@ -1510,3 +1510,48 @@ LLM도 stateless입니다. 모든 호출은 새로 시작되며, 모델은 프�
 </details>
 
 ---
+
+<!-- devtrack-draft-id: e2bf9a75-03af-4574-ae62-f8757d3f7b38 -->
+<details>
+<summary><strong>시스템 설계: 주니어 vs 시니어</strong></summary>
+
+👶 주니어:  
+
+- REST API를 안다.  
+- Redis를 안다.  
+- Kafka를 안다.  
+- 로드 밸런서를 안다.  
+- 마이크로서비스를 안다.  
+
+🧠 시니어:  
+
+- 일관성 트레이드오프를 이해함.  
+- 장애 허용성을 설계함.  
+- 역압력을 처리함.  
+- 용량을 계획함.  
+- 멱등성을 이해함.  
+- 우아한 저하를 설계함.  
+
+마이크로서비스가 단순한 시스템을 불필요하게 복잡하게 만들 수 있다는 것을 안다.  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: efd345bf-0da4-4012-a378-ca8a0904355d -->
+<details>
+<summary><strong>모니터링이 없을 때, 시스템 내장 명령이 마지막 모니터링이다.</strong></summary>
+
+① CPU 급등: top으로 프로세스 PID 찾기 → top -Hp PID로 가장 바쁜 스레드 찾기 → printf '%x' 스레드ID로 16진수 변환 → jstack PID에서 이 nid 검색해 코드 확인. Arthas 있으면 직접 thread -n 3.  
+
+② 메모리: jstat -gcutil PID 1000으로 GC 빈도와 오래된 세대 점유율 확인, Full GC 후에도 안 떨어지면 대개 누수; jmap으로 힙 스냅샷 내보내 MAT 분석, dump 시 애플리케이션 일시 중지 주의.  
+
+③ 디스크: df -h로 어느 파티션 꽉 찼는지 확인, du -sh *로 계층별로 큰 파일 찾기; 파일 삭제 후 공간 안 풀리면 lsof | grep deleted로 핸들 아직 잡고 있는 프로세스 찾기. IO 높으면 top의 wa, iostat -x와 iotop 확인.  
+
+④ 네트워크: ping으로 연결 확인, nc로 포트 테스트, ss -s로 연결 상태 확인(대량 TIME_WAIT, CLOSE_WAIT), tcpdump로 패킷 캡처.  
+
+인터뷰 때 이렇게 답할 수 있음: 먼저 현상별로 분류, CPU는 top -Hp와 jstack으로 스레드 위치 파악, 메모리는 jstat과 힙 스냅샷, 디스크는 df, du, lsof, 네트워크는 ss와 tcpdump; Arthas와 모니터링 있을 때 우선 그쪽 사용.  
+
+</details>
+
+---
