@@ -3785,3 +3785,15 @@ Claude가 PR을 열고, 변경 사항을 검토하며, 피드백과 실패한 �
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 9f4b1aa1-d795-4995-983b-62e79dd890a1 -->
+<details>
+<summary><strong>Claude Code v2.1.330에서 「/ship」과 「/steward」가 추가됨. 내 스킬이 점점 줄어들어가는 중</strong></summary>
+
+/ship - PR 생성부터 Claude의 리뷰, CI 실패·충돌·리뷰 대응까지 실행  
+
+/steward - 열린 자신의 PR을 감시하며, CI 실패·충돌·리뷰 대응까지 실행  
+
+</details>
+
+---
