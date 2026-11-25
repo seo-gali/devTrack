@@ -1714,3 +1714,37 @@ OpenAI API Key, Claude API Key, 그리고 각종 Proxy 제공자의 API Key 등 
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 4f881a8b-5be5-4004-be85-efaf4dfe0c3a -->
+<details>
+<summary><strong>API를 사용한다면, 공격자가 하기 전에 보안을 점검하세요.</strong></summary>
+
+많은 프레임워크가 기본적으로 API 문서를 외부에 노출합니다.  
+
+그대로 노출해 두면 누구나 접근해서 API에 관한 모든 정보를 얻을 수 있습니다. 경로, 매개변수, 메서드, 심지어 노출되거나 접근 가능해서는 안 되는 엔드포인트까지 말이죠.  
+
+이를 점검하려면 도메인에 다음 경로들을 추가해 정보가 노출되는지 확인하세요:  
+
+• /api/  
+• /api/v1/  
+• /api/v2/  
+• /v1/  
+• /v2/  
+• /graphql  
+• /graphiql  
+• /swagger/  
+• /swagger-ui/  
+• /swagger.json  
+• /swagger.yaml  
+• /openapi.json  
+• /api-docs/  
+• /docs/  
+• /redoc/  
+
+어떤 경로가 페이지를 불러오고 정보를 반환한다면, 즉시 운영 환경에서 비활성화하거나 로그인 뒤에 배치하세요.  
+
+![image.png](../assets/drafts/c4369da7-d847-4214-a902-21e8abd283f3.png)  
+
+</details>
+
+---
