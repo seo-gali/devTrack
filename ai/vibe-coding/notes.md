@@ -4553,3 +4553,19 @@ Fable 5.2, Opus 5.5, GPT-6.2 Astra 중 어떤 걸 쓰든 Claude Code나 Codex에
 </details>
 
 ---
+
+<!-- devtrack-draft-id: c198ae28-87ce-4f02-97f9-09d41f4601b0 -->
+<details>
+<summary><strong>바이브 코딩 딜레마</strong></summary>
+
+오픈 소스를 사용했다면 소스를 오픈해야한다.  
+
+하지만 AI가 저작권 있는 소스를 사용했을 수 있다. 그 경우 고소당할 수 있다.  
+
+그렇다면 개발자가 검수해서 오픈 소스만 사용되었는지 판별해야한다.  
+
+그렇지만 바이브 코더가 그걸 판단 할 수 있을까  
+
+</details>
+
+---

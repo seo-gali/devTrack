@@ -5217,3 +5217,85 @@ AI도 딱 그 수준으로 뻔한 답만 뱉음
 </details>
 
 ---
+
+<!-- devtrack-draft-id: 1b2fe4df-2e3a-46fb-a2c4-abeb37afe377 -->
+<details>
+<summary><strong>우리가 AI를 쓸 때 md는 전략적으로 써야함 장문의 md일수록 AI가 더 안 읽고 대충 넘김</strong></summary>
+
+클로드 공식문서도 200줄 넘기지 말라고 함  
+
+md파일은 그저 가이드라인일 뿐임  
+AI가 감으로 생략하고 건너뛸 수도 있음  
+
+그래서 md엔 진짜 필요한 것만 남김  
+레포가 뭔지, 자주 쓰는 명령, AI가 모를 주의점  
+
+꼭 지켜야 하는 건 md에 부탁하지 말고  
+자동 실행 설정으로 강제로 돌리는 게 맞음  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 53834c61-e516-493b-8641-fcfb652ab14d -->
+<details>
+<summary><strong>글·문서 쓸 때 AI한테 시키는 사람들 이거 보셈</strong></summary>
+
+README 쓰고 RFC 다듬고 기술 문서를 외국인이 읽히게 고치느라 시간 다 쓰는 사람들, 그거 손으로 다 할 필요 없음  
+
+AI한테 SKILL.md만 붙여넣으면 문서 구조 잡는 법부터  
+문장 다듬는 법까지 통째로 알려주는 거임  
+
+기술 문서 작성·검토·간결한 영어 교정까지  
+글 쓸 때마다 반복하는 작업을 AI가 대신 해줌  
+
+어떤 AI든 붙여넣기만 하면 되니까  
+문서 바뀔 때마다 처음부터 설명할 필요도 없음  
+
+이 4개만 붙여두면 문서 작업은 바로 시킬 수 있음  
+
+1. Technical Writing (dafaalz)  
+개발자 문서·RFC·README·기술 가이드를 한 번에 이해되는 글로 써주고 검토까지 해줌 새 문서 처음부터 쓰거나 기존 문서 다시 정리해야 할 때 씀 구조 잡고 문장 고치고 빠진 설명 찾던 작업을 대신 해주니까 문서 완성 속도가 붙음  
+🔗 https://agentlefs.com/context/dafaalz/agent-skills/skills/technical-writing/SKILL.md  
+
+2. Simple English  
+기술 문장을 항공 매뉴얼식 간결한 영어로 다듬어서 외국인이 한 번에 읽히게 해줌 영어 문서가 길고 꼬여서 전달이 안 될 때 씀 문장 쪼개고 어려운 표현 쉬운 말로 바꾸던 작업을 대신 해주니까 문서가 바로 읽힘  
+🔗 https://github.com/aiqinghaiwork163/haishui-agent/blob/HEAD/optional-skills/creative/simple-english/SKILL.md  
+
+3. STE100 Writing  
+ASD-STE100 규칙으로 기술 문서를 명확하게 쓰고 AI 티 나는 문장까지 잡아줌 매뉴얼·기술 문서를 규칙대로 정확하게 써야 할 때 씀 규칙 대조하고 어색한 문장 골라내던 작업을 대신 해주니까 문서 품질이 일정하게 유지됨  
+🔗 https://github.com/faizshaikh22/faizshaikh22.github.io/blob/HEAD/.agents/skills/ste100-writing/SKILL.md  
+
+4. Technical Writing (christofferbergj)  
+문서·RFC·README·PR 설명을 독자랑 목적에 맞게 쓰고 다듬어줌 읽는 사람에 따라 문서 톤이랑 깊이를 바꿔야 할 때 씀  
+독자 수준 맞추고 목적에 맞게 문장 손보던 작업을 대신 해주니까 문서 전달력이 올라감  
+🔗 https://agentlefs.com/context/christofferbergj/agent-skills/skills/communication/technical-writing/SKILL.md  
+
+문서 작성부터 영어 교정까지 글쓰기 한 번에 챙기셈  
+링크 다 남겨뒀으니 저장해두고 써먹으셈  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: f545afd6-6416-459a-9900-d456f2d4abbb -->
+<details>
+<summary><strong>아직도 AI에게 '요약해 줘'만 하세요? 결과물이 달라지는 프롬프트 9가지</strong></summary>
+
+AI가 매번 뻔한 답만 내놓는다면 질문법부터 바꿔야 함.  
+
+1. 사고 파트너 : 의도를 파악하고 필요한 역질문 던지기  
+2. 냉혹한 비평가 : 약점과 실패 원인 분석하기  
+3. 역설계 전략가 : 목표에서 출발해 거꾸로 실행 로드맵 설계하기  
+4. 상위 1% 전문가 : 전문가 관점에서 진단하고 해결책 제시하기  
+5. 의사결정 설계자 : 기준별 비교 후 최적의 선택 찾기  
+6. 숨은 기회 사냥꾼 : 틈새시장과 새로운 기회 분석하기  
+7. 10배 학습 가속기 : 실전 중심의 학습 과정 설계하기  
+8. 자동 실행 시스템 : 매일 반복할 수 있는 업무 루틴 구축하기  
+9. 핵심 지식 추출기 : 핵심 인사이트와 실행 방안 뽑아내기  
+
+AI는 어떻게 질문하느냐에 따라 결과물의 수준이 달라짐.  
+
+</details>
+
+---
