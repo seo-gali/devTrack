@@ -1,50 +1,1257 @@
+# CI/CD
+
+속성: DevOps
+
+
 <details>
-<summary>백엔드, 프론트엔드도 CI 환경을 구축하고 컨테이너 환경을 이해해야하는 시대에 뭘 배워야할까?</summary>
-CI라 하면 보통은 빌드 시스템 구축에 집중하는데, 요즘같이 사건사고가 많은 때에 최소한의 CI, 컨테이너에 대한 이해도가 필요하다.
+<summary><strong>CI/CD Concepts</strong></summary>
 
-특히 보안...!
 
-예를 들면 다음과 같다.
+- Build pipelines - 🟢 Easy
+- Unit testing - 🟢 Easy
+- Artifact storage - 🟢 Easy
+- Deployment pipelines - 🟡 Medium
+- Environment management - 🟡 Medium
+- CI/CD tools - 🟡 Medium
+- Rollbacks & strategies - 🟠 Medium
+- Secrets management - 🟠 Medium
+- Pipeline debugging - 🔴 Hard
+- Release at scale - 🔴 Hard
 
-Jenkins 같은 CI 서버를 컨테이너로 띄우면 빌드 중에 이미지를 만들어야 해서 호스트의 docker.sock을 컨테이너에 마운트하는 경우가 많다.
-예제대로 설정 한 줄만 넣으면 빌드가 잘 돌아간다.
+---
 
-그 CI 컨테이너의 빌드 도구 하나에 취약점이 있어서 누군가 컨테이너 셸을 얻었다고 해보자.
-컨테이너 안이니까 피해도 그 안에서 끝날 것 같다.
-그런데 마운트된 소켓으로는 호스트의 Docker에 무슨 명령이든 보낼 수 있다.
 
-쿠버네티스에서도 비슷한 일이 생긴다.
-배치 작업을 띄우려고 서비스 어카운트에 Pod 생성 권한을 줬다면, 그 토큰을 가진 사람은 배치 작업과 상관없는 Pod도 마음대로 만들 수 있다.
-배포 YAML의 환경 변수에 DB 비밀번호를 적어둔 Pod가 있다면, 목록만 보는 권한이라고 생각했던 Pod list 권한으로도 그 비밀번호가 그대로 보인다.
-
-docker.sock은 마운트하지 말고 권한은 최소로 주라는 말은 한 번쯤 들어봤을 거다.
-하지만 그런 설정으로 실제로 어디까지 갈 수 있는지 직접 해본 적이 없으면, 일정이 급할 때는 일단 돌아가는 설정을 고르기 쉽다.
-그렇다고 회사 서버에서 공격을 해볼 수도 없고, 취약한 Docker와 쿠버네티스 환경을 혼자 만들어 연습하기도 번거롭다.
-
-이런 공격을 직접 해보는 강의가 있다.
-대기업에서 레드팀으로 일하는 mick3y 지식공유자님의 '레드팀을 위한 컨테이너 보안과 침투 테스트'다.
-
-제목은 레드팀을 위한 강의지만, 공격에 쓰이는 설정은 개발자가 매일 만지는 docker run 옵션과 YAML이다.
-
-Docker 쪽은 Docker in Docker에서 스토리지 드라이버가 겹치는 문제 때문에 소켓을 마운트하는 방식이 생긴 배경부터 설명하고, 소켓이 마운트된 컨테이너의 셸을 얻은 상태에서 탈출 실습을 한다.
-
-소켓 파일을 찾고 docker ps로 호스트의 컨테이너 목록이 보이는 걸 확인한 다음, 호스트의 루트를 마운트한 컨테이너를 새로 띄워서 호스트 셸까지 얻는다.
-
-쿠버네티스에서는 Pod 안에서 얻은 서비스 어카운트 토큰 하나로 어디까지 갈 수 있는지 실습한다.
-먼저 이 토큰으로 무엇을 할 수 있는 권한 목록을 확인하고, 가진 권한에 따라 다음 공격을 고른다.
-Pod 생성 권한이 있으면 노드의 /etc를 마운트한 Pod를 띄워 파일을 외부 서버로 보낸다.
-더 높은 권한의 서비스 어카운트를 지정해 Pod를 만들고, 그 Pod에 들어간 토큰까지 가져온다.
-Secret을 만들고 읽는 권한만 있어도 다른 서비스 어카운트의 토큰을 손에 넣고, 그 토큰으로 DB 계정 정보까지 가져온다.
-
-보통 이런 강의들은 결국 그래서 실습을 어떻게 하느냐가 문제인데, 이 강의는 실습 환경 역시 제공한다.
-
-강의에서 전달해주는 실습 환경을 접속해서 실습을 해보면 된다.
-브라우저로 접속해서 이메일 인증만 하면 바로 셸이 열려서, 가상화 설정이나 WSL, Docker Desktop, 클러스터 구성으로 시간을 쓰지 않아도 된다.
-회사 서버를 건드릴 걱정 없이 수업을 따라 공격해보고, 몇 번이고 다시 해볼 수 있다.
-
-실습을 마치고 나면 우리 팀 CI에 마운트한 docker.sock이나 서비스 어카운트에 준 권한을, 누군가 컨테이너 셸을 얻었다는 가정으로 다시 따져볼 수 있다.
-
-Docker와 쿠버네티스로 서비스를 배포하면서 CI 설정이나 권한 YAML을 만지거나 리뷰하지만, 그 설정이 공격에 어떻게 쓰이는지 직접 해본 적은 없는 백엔드 개발자와 데브옵스 엔지니어분들께 추천드린다.
-
-https://www.inflearn.com/course/container-security-a?partners=bec7867c35894d3f891e74a187583b2f&utm_campaign=94661&utm_medium=referral&utm_source=partners&utm_user=94661&cid=345513
 </details>
+
+---
+
+
+<details>
+<summary><strong>훌륭한 데브옵스/SRE 엔지니어가 되고 싶으신가요?</strong></summary>
+
+
+1. 리눅스 및 시스템 기초  
+프로세스, 메모리, 파일 시스템, 네트워킹, CLI를 이용한 디버깅 등 실제 시스템 작동 방식
+2. 네트워킹  
+DNS, HTTP/HTTPS, TCP/IP, 포트, 로드 밸런싱, 실제 트래픽 흐름 방식
+3. 클라우드 (하나를 골라서 깊이 파고들어 보세요)  
+AWS/GCP/Azure, IAM, VPC, 스케일링, 스토리지 - 서비스가 아니라 기본 원리를 이해해야 합니다.
+4. 컨테이너  
+Docker, 이미지, 네트워킹, 볼륨, 컨테이너를 실행할 때 실제로 일어나는 일들
+5. 쿠버네티스  
+Pod, 스케줄링, 서비스, 배포, 디버깅 등 단순히 kubectl 명령어만 사용하는 것이 아닙니다.
+6. 코드형 인프라(Infrastructure as Code)  
+Terraform이나 유사 도구를 사용하여 상태, 모듈 등을 관리하고, 인프라를 제대로 관리하세요. 수동 클릭은 필요 없습니다.
+7. CI/CD  
+파이프라인, 빌드, 배포, 롤백, 코드가 프로덕션 환경에 도달하는 과정
+8. 관찰 가능성  
+로그, 메트릭, 추적, 알림, 문제 발생 시 디버깅 방법
+9. 신뢰성  
+타임아웃, 재시도, 속도 제한, 오류 처리, 시스템 안정화
+10. 비용 및 효율성  
+기본 재무 운영, 청구서 이해, 낭비 제거, 인프라 사용 최적화
+11. 공학적 사고  
+도구만 쫓지 말고 시스템을 이해하고, 고장 원인과 해결 방법을 알아라.
+
+---
+
+
+</details>
+
+---
+
+
+<details>
+<summary><strong>Git Flow</strong></summary>
+
+
+main → 프로덕션  
+develop → 작업 브랜치
+
+feature → 빌드  
+release → 안정화  
+hotfix → 프로덕션 빠르게 수정
+
+![image.png](../../assets/ci-cd/image-020.png)
+
+---
+
+
+</details>
+
+---
+
+
+<details>
+<summary><strong>GitHub -&gt; Jenkins -&gt; Docker -&gt; Kubernetes -&gt; 완전한 DevOps 워크플로우</strong></summary>
+
+
+이어그램에 표시된 𝐞𝐧𝐝-𝐭𝐨-𝐞𝐧𝐝 𝐂𝐈/𝐂𝐃 𝐟𝐥𝐨𝐰의 간단한 분해입니다
+
+𝐂𝐈 𝐏𝐢𝐩𝐞𝐥𝐢𝐧𝐞 (𝐁𝐮𝐢𝐥𝐝 & 𝐒𝐜𝐚𝐧)  
+‣ 개발자가 GitHub에 코드를 푸시합니다  
+‣ Jenkins CI가 코드를 가져와 파이프라인을 트리거합니다  
+‣ OWASP Dependency Check가 취약한 라이브러리를 스캔합니다  
+‣ SonarQube가 코드 품질 및 보안 분석을 수행합니다  
+‣ Docker가 이미지를 빌드합니다  
+‣ Trivy가 이미지의 취약점을 스캔합니다  
+‣ 이미지가 레지스트리에 푸시됩니다
+
+𝐂𝐃 𝐏𝐢𝐩𝐞𝐥𝐢𝐧𝐞 (𝐃𝐞𝐩𝐥𝐨𝐲)  
+‣ Jenkins CD가 이미지 버전을 업데이트합니다  
+‣ 변경 사항이 GitHub로 다시 푸시됩니다  
+‣ ArgoCD가 최신 변경 사항을 가져옵니다  
+‣ 애플리케이션을 Kubernetes에 배포합니다
+
+𝐌𝐨𝐧𝐢𝐭𝐨𝐫𝐢𝐧𝐠 & 𝐀𝐥𝐞𝐫𝐭𝐬  
+‣ Prometheus가 메트릭을 수집합니다  
+‣ Grafana가 대시보드를 시각화합니다  
+‣ 파이프라인 상태에 대한 이메일 알림
+
+𝐓𝐡𝐢𝐬 𝐢𝐬 𝐰𝐡𝐚𝐭 𝐜𝐨𝐦𝐩𝐚𝐧𝐢𝐞𝐬 𝐞𝐱𝐩𝐞𝐜𝐭 𝐲𝐨𝐮 𝐭𝐨 𝐮𝐧𝐝𝐞𝐫𝐬𝐭𝐚𝐧𝐝:  
+‣ CI (build + scan)  
+‣ CD (deploy + automate)  
+‣ Security (shift-left approach)  
+‣ Monitoring (production visibility)
+
+![image.png](../../assets/ci-cd/image-021.png)
+
+---
+
+
+</details>
+
+---
+
+
+<details>
+<summary><strong>🧠 Git 기술 - 난이도 분해 🔥</strong></summary>
+
+
+➕ git add -> 🟢 쉬움
+
+💾 git commit -> 🟢 쉬움
+
+📥 git pull -> 🟢 쉬움 (⚠️ 숨겨진 복잡성)
+
+📤 git push -> 🟢 쉬움
+
+📦 git clone -> 🟢 쉬움
+
+🌿 브랜칭 -> 🟡 쉬움–중간
+
+🔀 병합 -> 🟡 쉬움–중간
+
+🧾 git log -> 🟢–🟡 쉬움–중간
+
+🔄 git stash -> 🟡 쉬움–중간
+
+🔗 리모트 (origin/upstream) -> 🟡 쉬움–중간
+
+⚔️ 병합 충돌 -> 🟠 중간
+
+🧠 리베이스 -> 🟠 중간
+
+🔍 bisect -> 🟠 중간
+
+🧹 cherry-pick -> 🟠 중간
+
+🧱 reset -> 🟠 중간
+
+🪄 revert -> 🟠 중간
+
+🔍 reflog -> 🟠 중간
+
+🔒 훅 -> 🔴 어려움
+
+🧬 서브모듈 -> 🔴 어려움
+
+🧬 인터랙티브 리베이스 -> 🔴 어려움
+
+🧠 히스토리 디버깅 -> 🟣 매우 어려움
+
+⚙️ 리포지토리 전략 (모노 vs 멀티) -> ☠️ 극한
+
+---
+
+
+</details>
+
+---
+
+
+<details>
+<summary><strong>Github 다이어그램 변환</strong></summary>
+
+
+Github의 URL을 단 1글자만 수정하면, 복잡한 리포지토리 구조가 순식간에 트리 다이어그램으로 바뀌는 「**gitdiagram**」이 너무 대단해
+
+・로그인 불필요, URL만 수정하면 끝  
+・파일의 의존 관계가 깔끔한 트리 다이어그램으로 표시  
+・순식간에 코드의 전체 구조가 시각화됨  
+・공부하고 싶은 저기 저 리포지토리 내용도 한눈에 파악
+
+「타인의 코드, 어디부터 읽기 시작해야 할지 모르겠어」라는 고민이 해결됨
+
+기존 프로젝트를 파악하고 싶을 때도, 학습을 위해 오픈소스 코드를 읽고 싶을 때도, 어쨌든 코드 리딩할 때는 항상 쓰고 싶은 도구
+
+이걸 아는 것만으로도 타인의 코드를 읽는 진입 장벽이 1/10 정도가 돼
+
+https://x.com/shiba_program/status/2047606145909760385
+
+---
+
+
+</details>
+
+---
+
+
+<details>
+<summary><strong>푸시 전에 GitHub Actions 워크플로우를 로컬에서 테스트합니다</strong></summary>
+
+
+https://github.com/bahdotsh/wrkflw
+
+## 실행 방안 (바로 사용)
+
+### 1. 설치
+
+```
+# Rust 기반
+cargo install wrkflw
+
+# mac
+brew install wrkflw
+```
+
+---
+
+### 2. 워크플로우 문법 검증 (푸시 전 필수)
+
+```
+wrkflw validate
+```
+
+- 결과
+    - `0` → 정상
+    - `1` → 오류 있음
+
+👉 PR 올리기 전에 이거 한 번 돌리면 CI 실패 거의 방지됨
+
+### 3. 로컬 실행 (CI 시뮬레이션)
+
+```
+wrkflw run .github/workflows/ci.yml
+```
+
+### 옵션
+
+```
+# 특정 job만 실행
+wrkflw run --job build .github/workflows/ci.yml
+
+# 컨테이너 없이 빠르게 테스트
+wrkflw run --runtime emulation .github/workflows/ci.yml
+
+# 실패한 컨테이너 유지 (디버깅용)
+wrkflw run --preserve-containers-on-failure .github/workflows/ci.yml
+```
+
+### 4. 이벤트 기반 실행 (실제 CI처럼)
+
+```
+# push 이벤트 시뮬레이션
+wrkflw run --event push --diff .github/workflows/ci.yml
+
+# PR 이벤트
+wrkflw run --event pull_request --base-branch main --diff .github/workflows/ci.yml
+```
+
+👉 `on:` 조건까지 그대로 검증됨
+
+### 5. 자동 감시 (개발 중)
+
+```
+wrkflw watch
+```
+
+- workflow 수정 시 자동 재실행
+
+### 6. TUI (옵션)
+
+```
+wrkflw
+```
+
+- 워크플로우 목록 / 실행 / 로그 확인 가능
+
+---
+
+## 실전 적용 패턴 (추천)
+
+### Git push 전 루틴
+
+```
+wrkflw validate && wrkflw run .github/workflows/ci.yml
+```
+
+→ 실패 시 push 금지
+
+### Git hook으로 강제 (선택)
+
+`.git/hooks/pre-push`
+
+```
+#!/bin/sh
+wrkflw validate || exit 1
+wrkflw run .github/workflows/ci.yml || exit 1
+```
+
+## 제한 사항 (중요)
+
+- service container (`services:`) 실제 실행 안됨
+- macOS / Windows runner 완전 지원 아님
+- GitHub secrets 완전 동일하게 재현 불가
+
+## 핵심 요약
+
+- `validate` → 문법 체크
+- `run` → CI 실행 재현
+- `-event` → 트리거 조건 검증
+- `-runtime emulation` → 빠른 테스트
+
+---
+
+
+</details>
+
+---
+
+
+<details>
+<summary><strong>터미널 하나로 단일 머신 진단 완료, 더 이상 htop, iostat, nettop 같은 걸 잔뜩 열 필요 없음.</strong></summary>
+
+
+Rust로 작성된 시스템 진단 TUI, CPU, 메모리, 디스크, GPU, 전원, 서비스, 네트워크 등을 커버하는 12개 탭 페이지, macOS와 Linux 모두 실행 가능. Insights 페이지는 스왑 떨림, 좀비 프로세스, 디스크 꽉 찬 거 같은 이상을 자동으로 감지해서, 아주 쉬운 말로 무슨 문제가 생겼는지 알려줌. Timeline 페이지는 타임라인을 드래그해서 전체 세션의 임의 시점 상태를 되돌아볼 수 있음. 읽기 전용, 프로세스 안 죽이고 설정도 안 바꿈, 새로고침할 때 CPU 점유율 0.5% 이하로 억제.
+
+[https://github.com/matthart1983/syswatch](https://github.com/matthart1983/syswatch)
+
+### 1. 기능 구조 (12개 탭)
+
+| 탭 | 기능 | 대체 도구 |
+| --- | --- | --- |
+| Overview | 전체 시스템 요약 | 없음 (통합 대시보드) |
+| CPU | CPU 사용량 상세 | htop, mpstat |
+| Memory | 메모리 상태 | free, vm_stat |
+| Disks | 디스크 IO | iostat |
+| Filesystems | 파일시스템 상태 | df |
+| Procs | 프로세스 | htop, ps |
+| GPU | GPU 상태 | ioreg / sysfs |
+| Power | 전력/배터리 | pmset |
+| Services | 서비스 상태 | systemctl |
+| Net | 네트워크 | nettop |
+| Timeline | 시간 기반 상태 조회 | 없음 |
+| Insights | 이상 감지 | 없음 |
+
+---
+
+### 2. 핵심 차별점
+
+### (1) Insights (이상 탐지)
+
+- 스왑 쓰래싱
+- 좀비 프로세스
+- 디스크 용량 부족
+- 메모리 압박
+- 과도한 load
+
+→ 단순 수치가 아니라 **문제 원인을 자연어로 설명**
+
+---
+
+### (2) Timeline (세션 리플레이)
+
+- ← / → 키로 과거 상태 조회
+- 모든 패널이 동일 시점으로 동기화
+
+→ `htop` 계열에는 없는 기능
+
+---
+
+### (3) 통합 UI
+
+- CPU / 메모리 / IO / 네트워크 / 서비스 한 화면
+- 다중 터미널 필요 없음
+
+---
+
+### (4) 낮은 오버헤드
+
+- 새로고침 시 CPU 사용량 < 0.5%
+
+---
+
+### (5) 안전성
+
+- read-only
+- 프로세스 kill / 설정 변경 없음
+
+---
+
+### 3. 지원 환경
+
+- OS: macOS / Linux
+- 언어: Rust
+- 의존성:
+    - Rust 1.75+
+    - Linux: 추가 의존성 없음
+    - macOS: 시스템 프레임워크 링크
+
+---
+
+### 4. 설치 및 실행
+
+```
+git clone https://github.com/matthart1983/syswatch.git
+cd syswatch
+cargo build--release
+./target/release/syswatch
+```
+
+옵션:
+
+```
+syswatch--tick500# 2Hz
+syswatch--tab procs# 특정 탭으로 시작
+```
+
+---
+
+### 5. 주요 키 바인딩
+
+| 키 | 기능 |
+| --- | --- |
+| 1~9 | 각 탭 이동 |
+| 0 / - / + | Net / Timeline / Insights |
+| Tab | 탭 순환 |
+| ↑ ↓ | 항목 선택 |
+| s | 정렬 변경 |
+| ← → | 타임라인 이동 |
+| p | 일시정지 |
+| q | 종료 |
+
+---
+
+### 6. 설계 철학 (명확한 제한)
+
+- 멀티 호스트 ❌ → 단일 머신 전용
+- 데몬 ❌ → 실행 중 세션만 존재
+- 자동 조치 ❌ → 관측만 수행
+- 로그 분석 ❌ → 상태 기반 진단
+- UI 꾸미기 ❌ → 수치 중심
+
+---
+
+### 7. v0.1 범위 vs 향후 계획
+
+### v0.1
+
+- 12개 탭 완성
+- macOS / Linux 지원
+- 실시간 데이터 수집
+
+### v0.2 예정
+
+- Snapshot / Diff
+- Recording / Replay
+- 필터 / 설정
+
+---
+
+### 8. 제한 사항 (권한/플랫폼)
+
+- 일부 기능은 sudo 필요:
+    - 팬 속도
+    - GPU 상세 전력
+    - 온도 (macOS 일부)
+- Apple Silicon GPU:
+    - 일부 지표만 제공
+
+---
+
+## 실행 방안
+
+### 1. 실제 사용 시 포지션
+
+- 장애 징후 감지 초기 단계
+- "느리다", "이상하다" 같은 상황에서 1차 진단
+
+---
+
+### 2. 기존 도구 대비 적용 전략
+
+| 상황 | 권장 |
+| --- | --- |
+| 전체 상태 확인 | SysWatch |
+| 특정 프로세스 디버깅 | htop |
+| 로그 분석 | journalctl |
+| 네트워크 심층 분석 | iftop |
+
+---
+
+### 3. 당신 환경 기준 (백엔드/인프라)
+
+- Kafka / Influx / Collector 병목 확인
+- CPU vs IO vs 네트워크 병목 구분
+- OOM / swap thrash 감지
+- 서비스 상태(systemd) 즉시 확인
+
+---
+
+
+</details>
+
+---
+
+
+<details>
+<summary><strong>Git 팁: 아무도 말해주지 않지만 모두가 필요한 팁</strong></summary>
+
+
+- git bisect를 사용해 문제 발생 커밋 찾기
+- git reflog를 사용해 잃어버린 커밋 복구
+- 명확성을 위해 이름과 함께 git stash 사용
+- 병렬 브랜치 작업을 위해 git worktree 사용
+- git blame를 사용해 누가 무엇을 작성했는지 확인
+- 기여 요약을 위해 git shortlog 사용
+- git 기록 없이 내보내기를 위해 git archive 사용
+- 특정 커밋을 위해 git cherry-pick 사용
+- 커밋 기록 정리 위해 git rebase -i 사용
+- 사전 커밋 검사 위해 git hooks 사용
+
+---
+
+
+</details>
+
+---
+
+
+<details>
+<summary><strong>시스템 디자인 시리즈 - CI/CD &amp; 배포</strong></summary>
+
+
+**CI/CD가 실제로 의미하는 것:**
+
+수동 배포는 예측 불가능하게 실패합니다.  
+자동화된 파이프라인은 매번 같은 방식으로 실패합니다. 예측 가능한 실패는 고칠 수 있는 실패입니다.
+
+CI는 프로덕션 전에 깨진 코드를 잡아냅니다.  
+CD는 테스트가 통과하면 자동으로 배포합니다.
+
+시작하기: GitHub Actions + Docker.
+
+**GitHub Actions:**
+
+리포지토리의 YAML 파일이 GitHub에 푸시할 때마다 자동으로 무엇을 할지 알려줍니다.
+
+테스트 실행 → Docker 이미지 빌드 → 스테이징에 배포.
+
+GitHub Secrets가 자격 증명을 안전하게 유지합니다.  
+코드에 절대 포함시키지 마세요.
+
+**Docker:** 
+
+어디서나 동일한 환경.
+
+Dockerfile → 이미지 → 컨테이너.
+
+하나의 명령어(`docker compose up`)로 새로운 엔지니어가 로컬에서 전체 스택을 실행할 수 있습니다.
+
+"스테이징에서 작동함"이 마침내 "프로덕션에서 작동함"을 의미합니다.
+
+**배포 전략:**
+
+다섯 가지 전략, 각각 다른 위험 수준을 가집니다:
+
+• 롤링 배포 (기본 안전 선택)
+
+• 블루-그린 (즉시 롤백, 제로 위험)
+
+• 카나리 (먼저 5% 트래픽)
+
+• 기능 플래그 (코드 배포, 기능 릴리스 별도)
+
+• 데이터베이스 마이그레이션 안전 (항상 하위 호환)
+
+---
+
+
+</details>
+
+---
+
+
+<details>
+<summary><strong>Git 기술 - 난이도 분류</strong></summary>
+
+
+- ➕ git add → 🟢 쉬움
+- 💾 git commit → 🟢 쉬움’
+- 📥 git pull → 🟢 쉬움 (숨겨진 복잡성 있음)
+- 📤 git push → 🟢 쉬움
+- 📦 git clone → 🟢 쉬움
+- 📋 git status → 🟢 쉬움
+
+- 🌿 브랜치 생성 → 🟡 쉬움–중간
+- 🔀 병합 → 🟡 쉬움–중간
+- 🧾 git log → 🟡 쉬움–중간
+- 🔄 git stash → 🟡 쉬움–중간
+- 🔗 원격 저장소 (origin, upstream) → 🟡 쉬움–중간
+- 🏷️ 태그 → 🟡 쉬움–중간
+
+- ⚔️ 병합 충돌 → 🟠 중간
+- 🧠 git rebase → 🟠 중간
+- 🔍 git bisect → 🟠 중간
+- 🧹 git cherry-pick → 🟠 중간
+- 🧱 git reset → 🟠 중간
+- 🪄 git revert → 🟠 중간
+- 🔍 git reflog → 🟠 중간
+
+- 🔒 Git 훅 → 🔴 어려움
+- 🧬 서브모듈 → 🔴 어려움
+- ✂️ 대화형 리베이스 → 🔴 어려움
+- 🏗️ Git 내부 구조 → 🔴 어려움
+
+- 🧠 히스토리 디버깅 → 🟣 매우 어려움
+- ♻️ 손실된 커밋 복구 → 🟣 매우 어려움
+- 🕰️ 히스토리 안전하게 재작성 → 🟣 매우 어려움
+
+- ⚙️ 모노레포 vs 폴리레포 전략 → ☠️ 극한
+- 🏢 엔터프라이즈 Git 워크플로우 설계 → ☠️ 극한
+- 🚚 대형 저장소 마이그레이션 → ☠️ 극한
+
+---
+
+
+</details>
+
+---
+
+
+<details>
+<summary><strong>당신의 GitHub 프로필은 두 번째 이력서입니다. 가치를 더하세요.</strong></summary>
+
+
+- README 만들기
+    
+    [https://profile-readme-generator.com](https://t.co/z0VMAh66qW)
+    
+- GitHub Stats
+    
+    [https://github.com/anuraghazra/github-readme-stats](https://t.co/Mkt8xA36n3)
+    
+- GitHub Streak
+    
+    [https://github.com/DenverCoder1/github-readme-streak-stats](https://t.co/GhQgTi0zvf)
+    
+- Shields.io
+    
+    [https://shields.io](https://t.co/wz3bwEt916)
+    
+- Capsule Render
+    
+    [https://github.com/kyechan99/capsule-render](https://t.co/Xw4Q2d7NDM)
+    
+- GitHub Trophies
+    
+    [https://github.com/ryo-ma/github-profile-trophy](https://t.co/Pa3FllQN80)
+    
+- Profile Summary
+    
+    [https://github.com/vn7n24fzkq/github-profile-summary-cards](https://t.co/yCmL8vHUZB)
+    
+- Visitor Badge
+    
+    [https://visitorbadge.io](https://t.co/bybfWkbREJ)
+    
+
+당신의 GitHub 프로필을 돋보이게 하세요.
+
+
+</details>
+
+---
+
+
+<details>
+<summary><strong>깃허브냐, 깃랩이냐.</strong></summary>
+
+
+바이브코더라면 은근히 오래 고민하게 되는 문제입니다.
+
+혼자 빠르게 만들고 Vercel·Cloudflare·각종 SaaS와 바로 연결하려면 GitHub가 편합니다. 예제와 자료가 많아서 AI에게 에러를 물어볼 때도 답을 찾기 쉽습니다.
+
+반대로 내 서버에 직접 배포하고, 저장소·러너·배포 흐름까지 한곳에서 통제하려면 GitLab이 더 잘 맞습니다. 사내망이나 셀프호스팅 환경이라면 특히 강점이 큽니다.
+
+그리고 많이 놓치는 부분:
+
+GitHub과 GitLab 모두 셀프호스티드 러너를 붙일 수 있습니다.
+
+남는 서버나 NAS가 있다면,
+
+코드 푸시 → 자동 테스트 → 자동 빌드 → 자동 배포
+
+를 내 장비에서 돌릴 수 있습니다.
+
+다만 현실적인 고민도 있습니다.
+
+설정이 더 쉬운 쪽은 어디인가?
+
+AI가 참고할 자료가 많은가?
+
+배포 서버까지 직접 관리할 것인가?
+
+러너 서버의 보안과 업데이트를 감당할 수 있는가?
+
+앱 하나 때문에 GitLab 전체를 운영할 필요가 있는가?
+
+정리하면,
+
+빠르게 만들고 외부 서비스와 붙이기: GitHub  
+자체 서버와 통제 중심 운영: GitLab
+
+바이브코더에게 진짜 중요한 건 저장소 이름보다  
+AI가 만든 코드를 자동으로 검사하고, 통과한 코드만 배포하게 만드는 구조입니다.
+
+![image.png](../../assets/ci-cd/image-022.png)
+
+[VibeCrew - GitHub vs GitLab, 바이브코더는 무엇을 골라야 할까](https://vibecrew.kr/free/593)
+
+---
+
+
+</details>
+
+---
+
+
+<details>
+<summary><strong>Git 로드맵</strong></summary>
+
+
+```markdown
+커밋 → 브랜치 → 병합 → 리베이싱
+ → 원격 → 태그 → 체리피킹 → 바이섹트
+  → 훅 → Git 워크플로 → CI/CD.
+```
+
+---
+
+
+</details>
+
+---
+
+
+<details>
+<summary><strong>오늘 @github 비동기 병합 API를 출시하게 되어 기쁩니다!</strong></summary>
+
+
+PR을 프로그래밍 방식으로 병합하는 당신(또는 당신의 에이전트)에게 이건 딱 맞아요 🧵
+
+[https://github.blog/changelog/2026-10-01-github-async-merge-api-generally-available/](https://github.blog/changelog/2026-10-01-github-async-merge-api-generally-available/)
+</details>
+
+---
+
+
+<!-- devtrack-draft-id: bf7f6005-8e17-4a98-b636-3852381afe80 -->
+<details>
+<summary><strong>pulls.review소개</strong></summary>
+
+풀 리퀘스트의 변경 사항을 논리적인 그룹으로 분류하고 요약합니다. 중요한 부분에 집중하여 리뷰를 더 효율적으로 할 수 있도록 도와줍니다.
+
+옵트인 GitHub 사용자 스크립트, GitHub Actions 또는 로컬 git 변경을 위한 CLI로 사용 가능!
+
+https://pulls.review/
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: c64fbb83-9e97-4b48-89ef-daf84f4b2cce -->
+<details>
+<summary><strong>GitHub에서 코드 읽기가 막막하면, 주소의 ‘hub’부분을 바꿔보면 됨.</strong></summary>
+
+1. GitDiagram — 전체 구조부터 보기
+    
+    주요 구성 요소와 연결 관계를 AI가 다이어그램으로 정리해줌.
+    그림에서 관심 있는 부분을 누르면 해당 파일이나 폴더로 이동할 수 있음.
+    
+    http://github.com소유자/저장소
+    → http://gitdiagram.com소유자/저장소https://gitdiagram.com/visualize-codebase
+    
+2. Gitingest — 코드를 AI에 전달하기
+    
+    폴더 구조와 코드 내용을 복사·다운로드 가능한 텍스트로 묶어줌.
+    필요한 파일만 골라 AI에 넣고 “이 기능은 어느 파일부터 읽으면 돼?”라고 물어볼 때 쓰면 됨.
+    
+    http://github.com소유자/저장소
+    → http://gitingest.com 소유자/저장소https://gitingest.com
+    
+
+구조도로 큰 그림을 보고, 궁금한 부분은 AI와 코드로 확인하기.
+
+파일을 하나씩 열기 전에, 어디부터 읽을지 잡는 용도임.
+
+![HUQB2SCakAAX6QN.jpg](../../assets/drafts/ec55736c-19f6-498b-9586-ef011a66c40f.jpg)
+
+![HUQBpvpbsAE5hDU.jpg](../../assets/drafts/ac208a0c-55b3-49ba-8587-064ee92a7dfb.jpg)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: bd609850-40e8-489a-9843-0ddfc53cd7d4 -->
+<details>
+<summary><strong>CI/CD 파이프라인: 궁극의 로드맵</strong></summary>
+
+```json
+├── 01 버전 관리
+│   ├── Git 기초
+│   ├── GitHub, GitLab & Bitbucket
+│   ├── 브랜칭 & 병합 전략
+│   └── 풀 리퀘스트 & 코드 리뷰
+│
+├── 02 CI/CD 기초
+│   ├── 지속적 통합이란 무엇인가?
+│   ├── 지속적 전달이란 무엇인가?
+│   ├── 지속적 배포란 무엇인가?
+│   └── CI/CD 워크플로 이해
+│
+├── 03 자동화 테스트
+│   ├── 단위 테스트
+│   ├── 통합 테스트
+│   ├── 엔드투엔드 테스트
+│   ├── 코드 커버리지
+│   └── 테스트 자동화
+│
+├── 04 CI 파이프라인 개발
+│   ├── 빌드 자동화
+│   ├── 종속성 설치
+│   ├── 린팅 & 코드 품질 검사
+│   ├── 자동화 테스트 실행
+│   └── 빌드 아티팩트
+│
+├── 05 CI/CD 도구
+│   ├── GitHub Actions
+│   ├── GitLab CI/CD
+│   ├── Jenkins
+│   ├── CircleCI
+│   └── Azure DevOps Pipelines
+│
+├── 06 파이프라인 구성
+│   ├── YAML 기초
+│   ├── 워크플로 트리거
+│   ├── 작업, 단계 & 러너
+│   ├── 환경 변수
+│   └── 시크릿 관리
+│
+├── 07 Docker & 컨테이너화
+│   ├── Dockerfile & 이미지
+│   ├── 컨테이너 이미지 빌드
+│   ├── 컨테이너 레지스트리
+│   ├── 이미지 태깅 & 버전 관리
+│   └── 컨테이너 보안 스캔
+│
+├── 08 지속적 배포
+│   ├── 개발 환경 배포
+│   ├── 스테이징 환경 배포
+│   ├── 프로덕션 배포
+│   ├── 승인 게이트
+│   └── 자동 롤백
+│
+├── 09 클라우드 & 인프라
+│   ├── AWS, Azure 또는 GCP
+│   ├── 코드로서의 인프라
+│   ├── Terraform 기초
+│   ├── Kubernetes 배포
+│   └── 환경 구성
+│
+├── 10 보안 & 안정성
+│   ├── 최소 권한 접근
+│   ├── 종속성 취약점 스캔
+│   ├── 정적 애플리케이션 보안 테스트
+│   ├── 소프트웨어 공급망 보안
+│   └── 파이프라인 실패 복구
+│
+├── 11 모니터링 & 최적화
+│   ├── 파이프라인 로그 & 디버깅
+│   ├── 빌드 시간 최적화
+│   ├── 종속성 캐싱
+│   ├── 알림 & 경고
+│   └── 배포 메트릭 & 모니터링
+│
+└── 12 실전 프로젝트
+    ├── 웹 애플리케이션 테스트 자동화
+    ├── GitHub Actions로 CI 파이프라인 빌드
+    ├── Docker 이미지 자동 빌드 & 푸시
+    ├── 풀스택 앱을 클라우드에 배포
+    └── 롤백 포함 완전한 CI/CD 파이프라인 빌드
+```
+
+CI/CD 파이프라인은 단순한 도구와 구성 파일의 집합이 아닙니다.
+
+코드로 신뢰할 수 있는 소프트웨어를 만드는 방법이며, 모든 릴리스를 스트레스 가득하고 수동적인 과정으로 만들지 않습니다.
+
+코드를 푸시할 때마다 파이프라인은 이를 테스트하고, 문제를 조기에 포착하며, 애플리케이션을 빌드하고 배포 준비를 합니다.
+
+목표는 단순히 더 빠르게 배포하는 것이 아닙니다. 자신 있게 배포하고, 인간 오류를 줄이며, 릴리스를 반복 가능하게 만드는 것입니다.
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 8dfaee75-f456-4110-9988-d9988a92e7cb -->
+<details>
+<summary><strong>Git을 배우기 전까지는 정말 고생했는데, 이 19가지 명령어를 알게 된 후로 훨씬 수월해졌습니다:</strong></summary>
+
+1. git add: 작업 디렉토리의 변경 사항을 스테이징 영역으로 추가할 수 있게 해줍니다
+2. git commit: 현재 스테이징된 변경 사항의 스냅샷을 메시지와 함께 로컬 저장소에 저장할 수 있게 해줍니다
+3. git push: 로컬 저장소의 커밋된 변경 사항을 원격 저장소로 업로드할 수 있게 해줍니다
+4. git fetch: 원격 저장소의 변경 사항을 다운로드하지만 로컬에 적용하지는 않습니다
+5. git pull: 원격 저장소의 변경 사항을 가져와서 로컬 브랜치에 병합할 수 있게 해줍니다
+6. git merge: 한 브랜치의 변경 사항을 다른 브랜치에 결합할 수 있게 해줍니다
+7. git diff: 아직 스테이징되거나 커밋되지 않은 변경 사항을 볼 수 있게 해줍니다
+8. git diff HEAD: 현재 작업 디렉토리와 최신 커밋 간의 변경 사항을 볼 수 있게 해줍니다
+9. git status: 작업 디렉토리와 스테이징 영역의 현재 상태를 보여줍니다
+10. git branch: 모든 로컬 브랜치를 볼 수 있게 해줍니다
+11. git checkout: 브랜치를 생성하거나 브랜치 간에 전환할 수 있게 해줍니다
+12. git log: 현재 브랜치의 커밋을 추가 세부 정보와 함께 보여줍니다
+13. git stash: 커밋되지 않은 변경 사항을 일시적으로 저장하고 나중에 적용할 수 있게 해줍니다
+14. git rebase: 한 브랜치의 커밋을 다른 브랜치에 적용할 수 있게 해줍니다
+15. git reset: 작업 디렉토리의 변경 사항을 취소하고 특정 커밋으로 되돌아갈 수 있게 해줍니다
+16. git revert: 새 커밋을 생성하여 변경 사항을 취소할 수 있게 해줍니다
+17. git cherry pick: 한 브랜치의 커밋을 다른 브랜치에 적용할 수 있게 해줍니다
+18. git bisect: 버그를 빠르게 좁혀줄 수 있게 해줍니다
+19. git init: 빈 저장소를 생성할 수 있게 해줍니다
+
+
+![image.png](../../assets/drafts/bbebfa01-4aa6-4625-878b-d53a7ab68d92.png)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 17226e9e-a39f-462f-b7cc-ff9b0919c9d8 -->
+<details>
+<summary><strong>저희 이제 Jenkins와 작별했습니다…</strong></summary>
+
+Jenkins와 10년 이상을 함께 해왔는데요.  
+CI/CD에서 Jenkins는 이제 GitHub Actions + Argo CD와 Argo Workflows + Argo CD에게 자리를 내어주었지만,  
+여전히 배치 Workflow에서는 Jenkins를 가장 애정하고 있었어요.  
+Spring Cloud Data Flow가 나왔을 때도,  
+Argo Workflows가 나왔을 때도 저는 Jenkins를 선택했었어요.
+
+그렇지만,  
+이젠 배치 워크플로우는 Jenkins가 아닌 Temporal로 환승하게 되었습니다.
+
+Spring Batch로 만든 배치를 비롯해 각종 스케줄링과 워크플로우들을 지난 10년간 애정했던 Jenkins에서 Temporal로 환승하게 된 계기,  
+굳이 왜 Temporal인지 등등  
+저희의 Jenkins -> Temporal 이관기를 팀원 분이 정리해주셨습니다.
+
+Jenkins 외 대안을 고민하고 계신 분들이라면 한번 참고해보시면 좋을 것 같습니다 :)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 8a7dbaa8-6ff1-40b6-8192-1fe3854eb0e7 -->
+<details>
+<summary><strong>AI가 코드를 이제까지보다 훨씬 빠르게 작성함에 따라, CICD의 최종 상태는 다음과 같이 보아야 한다고 생각합니다:</strong></summary>
+
+1. 모든 커밋에 대한 빠른 PR 검사
+- 모든 것이 5분 이내에 실행됩니다
+- 리뷰 봇이 여기에 포함됩니다
+- 린팅, 타입 체크, 유닛 테스트 (😱)
+
+2. 병합 큐
+- 모든 비용이 많이 드는 검사는 여기에 포함됩니다
+- 통합/E2E 테스트는 이제 그 어느 때보다 중요합니다: 우리는 더 많은 테스트를 실행해야 하며, 적게 하지 말아야 합니다!
+- 배치가 실패하면, 에이전트가 이를 수정하기 위해 PR을 열어둡니다
+- 스테이징(그 다음 프로덕션)으로 지속적으로 병합합니다
+
+3. 지속적인 스테이징 검증
+- 에이전트 스웜이 스테이징 환경에서 사용자 행동을 시뮬레이션합니다
+- 여기가 비결정적 검사를 실행하여 결정적 E2E 테스트로 포착할 수 없는 이상 징후를 플래그할 수 있는 곳입니다
+- 구성/상태 관련 회귀 문제를 포착합니다 (마이그레이션이 DB를 잠가버리는 경우)
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 9789b939-8f5b-4426-b77a-abe4c351082b -->
+<details>
+<summary><strong>Git는 쓸 줄 압니다. commit과 push라면 문제없습니다</strong></summary>
+
+신입 엔지니어에게서,  
+자주 듣는 말입니다.
+
+확실히,  
+매일의 업무는 그것으로 돌아갑니다.
+
+하지만, 자꾸 이렇게 묻고 싶어집니다.
+
+「그럼, 다른 사람과  
+같은 곳을 수정하고 있었으면,  
+어떻게 되나요?」
+
+여기서 멈춰버리는 사람이, 꽤 많습니다.
+
+Git는,  
+자신의 작업을 저장하는 도구가 아닙니다.  
+팀으로 개발하기 위한 도구입니다.  
+・누가, 언제, 무엇을 바꿨는지 기록을 남김  
+・같은 곳을 건드리면, 충돌이 났다고 알려줌  
+・무슨 일이 있어도, 이전 상태로 되돌릴 수 있음
+
+그러니, 정말 중요한 것은  
+commit의 방법보다,  
+「충돌이 났을 때, 침착하게 고칠 수 있는가」입니다.
+
+쓸 줄 아는 것과,  
+팀에서 능숙하게 다룰 수 있는 것은, 별개의 것입니다.
+
+한 번, 일부러 충돌을 만들어  
+고치는 연습을 해보세요.
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: f093fc3e-faeb-48f9-88b9-949dceb46450 -->
+<details>
+<summary><strong>위험도에 따른 Git 명령어 순위 ⚠️</strong></summary>
+
+🟢 git status - 안전  
+🟢 git log - 안전  
+🟢 git diff - 안전  
+🟢 git branch - 안전  
+🟢 git stash - 안전
+
+🟡 git merge - 주의 필요  
+🟡 git rebase (로컬 브랜치) - 주의 필요  
+🟡 git cherry-pick - 주의 필요  
+🟡 git checkout . - 주의 필요  
+🟡 git commit --amend - 주의 필요
+
+🔥 git reset --hard - 위험  
+🔥 git clean -fd - 위험  
+🔥 git branch -D - 위험  
+🔥 git rebase -i (공유 브랜치) - 위험  
+🔥 git pull --force - 위험
+
+💀 메인에 git push --force - 프로덕션 킬러  
+💀 git filter-branch - 프로덕션 킬러  
+💀 git reflog expire + gc --prune=now - 프로덕션 킬러  
+💀 잘못된 원격 저장소에 git push --mirror - 프로덕션 킬러  
+💀 공개 릴리스 브랜치에서 git rebase - 프로덕션 킬러
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 3e39d804-bf03-496c-a50c-552613c514c4 -->
+<details>
+<summary><strong>거의 모든 고객 코드베이스에서 보이는 해킹 벡터: 특정 버전에 고정되지 않은 GitHub Actions.</strong></summary>
+
+GitHub Actions는 CI와 배포 워크플로우에서 실행되는 빌드 단계입니다. 변경된 파일 목록, Docker 로그인, GitHub Pages 배포 등 모든 종류의 유틸리티 작업을 수행하는 타사 액션이 있습니다. 등. 모두가 사용합니다.
+
+문제는 그들의 동작이 변경될 수 있다는 점입니다. 이는 언제든지 당신의 CI에서 실행되는 코드로, 당신 아래에서 언제든지 변경될 수 있습니다. 이는 당신 자신의 버전 컨트롤로 버전 관리되지 않습니다. 타사에서 이러한 액션이 하는 일을 언제든지 변경할 수 있습니다.
+
+매우 널리 사용되는 많은 유틸리티가 개인 GitHub 계정의 솔로 개발자들에 의해 관리됩니다: peaceiris/actions-gh-pages, dorny/paths-filter, appleboy/ssh-action.
+
+이러한 GitHub 계정이 장악되면, 공격자는 당신의 GitHub 러너 내에서 임의의 코드를 실행할 수 있습니다: 코드를 유출하거나, CI에 있는 모든 비밀을 훔치거나, 심지어 배포에 코드 변경을 주입할 수 있습니다.
+
+많은 GitHub 워크플로우가 dorny/paths-filter@v3처럼 버전에 고정됩니다. 이는 충분하지 않습니다. 왜냐하면 이러한 버전 태그가 언제든지 새로운 커밋을 가리키도록 변경될 수 있기 때문입니다. 
+
+orny/paths-filter@0e4a8c6effa4802afeda77dc8d303f8176d7dfad처럼 특정 SHA에 고정해야 합니다.
+
+이는 작년에 일어났습니다. 공격자들이 인기 있는 GitHub 액션을 손상시켰습니다. (PR에서 변경된 파일을 나열하는 간단한 유틸리티.) 그들은 GitHub 액션의 악성 버전을 배포한 후, "v1.0.0" 같은 버전 태그를 그 손상된 코드로 소급 변경했습니다. 이를 통해 23,000개의 리포지토리에서 비밀을 훔쳤습니다.
+
+이는 사전에 피하는 데 매우 적은 노력이 들지만 정말 광범위한 증폭 벡터입니다. 이 취약성 카테고리조차 이름이 있는지 모르겠지만, 그것은 시한폭탄입니다.
+
+우리의 코드에 대해 우리가 하는 일:
+
+1. 모든 GitHub Actions를 고정된 SHA로 전환
+2. 모든 GitHub 워크플로우가 고정된 SHA를 사용하도록 보장하는 린트 규칙 추가, 다른 종류의 버전 태그는 사용하지 않음
+
+이 두 가지는 선택한 에이전트에서 원샷으로 할 수 있습니다.
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 895fc534-6e5a-4ad7-b091-c406ebb2de3a -->
+<details>
+<summary><strong>일단 공개적으로 프로그램을 배포를 하려면</strong></summary>
+
+1. Github 등에서 release 로 .exe 등의 형태로 배포해야합니다.
+2. release의 sha256 해시를 떠서 같이 배포해야합니다 (무결성)
+3. 바이러스 토탈 등에 실행 파일을 업로드하여, 안전하다는 정보를 sha256 해시 값으로 검사 결과를 조회할 수 있어야합니다
+4. 사실 제일 좋은 방법은 윈도우 스토어에 배포하는건데, 안될 경우 뭐 인증서 사서 서명하는 방법이 있겠다만 그건 사실 돈만 낭비하는거니 패스하고요. 대부분 배포시 초기에 윈도우즈 경고가 뜨는 건 어쩔 수 없습니다. 많은 사람이 쓰고 안전하다는 보고가 오면 풀리거든요.
+5. 여튼 그런 면에서
+    1. Google Drive로 배포 받은 것을 다운 받으려고 하면 악성 파일 경고를 띄우는 것도
+    2. Virus Total 등에서도 경고를 띄우는 경우가 나오는 것도
+    
+    사실 권한이랑 삭제 방식 등에 문제가 있기 문이에요
+    
+    https://www.virustotal.com/gui/home/upload
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: 6fa860b1-cf4e-4caf-ac80-1bf879f78958 -->
+<details>
+<summary><strong>IT 기업에서 엔지니어를 채용하고 있는데, CI/CD에 대해 물어보면 “파이프라인은 돌아가고 있었습니다”에서 멈추는 분들이 실무 경력 1~3년차에서는 정말 많아요</strong></summary>
+
+그래서 경험이 거의 없는 엔지니어를 위해 【CI/CD 7일 로드맵】을 만들었습니다.  
+개념을 이해하는 것부터 직접 실습하는 것까지 순서대로 정리했습니다.  
+
+1. 1일차 CI와 CD의 차이  
+    
+    여기 용어 정리가 의외로 애매한 편이에요.
+    
+    - CI는 변경을 자주 통합하고, 자동으로 빌드와 테스트를 한다
+    - CD는 통합한 것을 릴리스 가능한 상태로 유지하거나, 자동으로 배포한다
+    - 무엇을 자동화하고, 무엇을 사람이 판단하는가
+    
+    자신의 현장에서는 어디까지가 자동인지, 적어 보세요.
+    
+2. 2일차 파이프라인의 흐름  
+    
+    흐름을 한 번쯤 말할 수 있을 뿐만으로, 대화가 쉬워집니다.
+    
+    - 빌드
+    - 테스트
+    - 배포
+    
+    어디서 실패하면 멈추는지, 그것을 의식하는 것이 오늘의 범위입니다.
+    
+3. 3일째 GitHub Actions 작성하기  
+    
+    직접 작성해본 경험이 있으면 바로 이해할 수 있는 분야입니다.
+    
+    - .github/workflows/ci.yml 에 작성
+    - on 으로 트리거, jobs 와 steps 로 처리 작성
+    - push 와 pull_request 로 실행
+    
+    테스트를 실행하는 것만 담은 작은 워크플로우를 직접 하나 만들어 보세요.
+    
+4. 4일째 실패 로그 읽기  
+    
+    빨간색이 떴을 때 당황하지 않는 분은 강하시다.
+    
+    - 실패한 단계를 특정한다
+    - 에러 메시지를 위에서부터 확인한다
+    - 로컬에서 동일한 명령어를 재현한다
+    
+    "CI에서는 실패했지만, 로컬에서는 통과된다"의 원인을 생각하는 습관이 중요하다고 생각합니다.
+    
+5. 5일차 비밀 관리  
+    
+    여기는 보안 관점에서 자주 보이는 부분입니다.
+    
+    - 비밀번호나 키를 코드에 직접 입력하지 마세요
+    - GitHub Actions에서는 secrets를 사용하세요
+    - 로그에 값이 출력되지 않도록 주의하세요
+    
+    과거에 커밋해버린 경우의 대응도 미리 생각해두세요.
+    
+6. 6일째 배포 방식과 롤백  
+    
+    「릴리스에서 사고가 나면 어떻게 해?」는 정석이에요.
+    
+    - 롤링 업데이트는 조금씩 교체하는 거예요
+    - 블루그린은 신구 환경을 전환하는 거예요
+    - 되돌리는 절차를 미리 정해두기
+    
+    방식의 이름보다, 되돌릴 수 있는 설계인지가 중요한 거죠.
+    
+7. 7일차 총복습  
+    
+    오늘 확인할 것.
+    
+    - CI와 CD의 차이를 설명할 수 있다
+    - 빌드, 테스트, 배포의 흐름을 설명할 수 있다
+    - 워크플로의 기본 구성을 설명할 수 있다
+    - 실패했을 때의 조사 방법을 설명할 수 있다
+    - 시크릿의 취급을 설명할 수 있다
+    - 롤백의 개념을 설명할 수 있다
+
+여기까지 설명할 수 있으면, CI/CD 질문에도 침착하게 답할 수 있을 것 같습니다.  
+
+</details>
+
+---
+
+<!-- devtrack-draft-id: fe804e4e-1a97-4a4a-9040-c05ebf97b11d -->
+<details>
+<summary><strong>백엔드, 프론트엔드도 CI 환경을 구축하고 컨테이너 환경을 이해해야하는 시대에 뭘 배워야할까? </strong></summary>
+
+CI라 하면 보통은 빌드 시스템 구축에 집중하는데,  
+요즘같이 사건사고가 많은 때에 최소한의 CI, 컨테이너에 대한 이해도가 필요하다.  
+특히 보안...!  
+
+예를 들면 다음과 같다.  
+
+Jenkins 같은 CI 서버를 컨테이너로 띄우면 빌드 중에 이미지를 만들어야 해서 호스트의 docker.sock을 컨테이너에 마운트하는 경우가 많다.  
+예제대로 설정 한 줄만 넣으면 빌드가 잘 돌아간다.  
+
+그 CI 컨테이너의 빌드 도구 하나에 취약점이 있어서 누군가 컨테이너 셸을 얻었다고 해보자.  
+컨테이너 안이니까 피해도 그 안에서 끝날 것 같다.  
+그런데 마운트된 소켓으로는 호스트의 Docker에 무슨 명령이든 보낼 수 있다.  
+
+쿠버네티스에서도 비슷한 일이 생긴다.  
+배치 작업을 띄우려고 서비스 어카운트에 Pod 생성 권한을 줬다면, 그 토큰을 가진 사람은 배치 작업과 상관없는 Pod도 마음대로 만들 수 있다.  
+배포 YAML의 환경 변수에 DB 비밀번호를 적어둔 Pod가 있다면, 목록만 보는 권한이라고 생각했던 Pod list 권한으로도 그 비밀번호가 그대로 보인다.  
+
+docker.sock은 마운트하지 말고 권한은 최소로 주라는 말은 한 번쯤 들어봤을 거다.  
+하지만 그런 설정으로 실제로 어디까지 갈 수 있는지 직접 해본 적이 없으면, 일정이 급할 때는 일단 돌아가는 설정을 고르기 쉽다.  
+그렇다고 회사 서버에서 공격을 해볼 수도 없고, 취약한 Docker와 쿠버네티스 환경을 혼자 만들어 연습하기도 번거롭다.  
+
+이런 공격을 직접 해보는 강의가 있다.  
+대기업에서 레드팀으로 일하는 mick3y 지식공유자님의 '레드팀을 위한 컨테이너 보안과 침투 테스트'다.  
+
+제목은 레드팀을 위한 강의지만, 공격에 쓰이는 설정은 개발자가 매일 만지는 docker run 옵션과 YAML이다.  
+
+Docker 쪽은 Docker in Docker에서 스토리지 드라이버가 겹치는 문제 때문에 소켓을 마운트하는 방식이 생긴 배경부터 설명하고, 소켓이 마운트된 컨테이너의 셸을 얻은 상태에서 탈출 실습을 한다.  
+
+소켓 파일을 찾고 docker ps로 호스트의 컨테이너 목록이 보이는 걸 확인한 다음, 호스트의 루트를 마운트한 컨테이너를 새로 띄워서 호스트 셸까지 얻는다.  
+
+쿠버네티스에서는 Pod 안에서 얻은 서비스 어카운트 토큰 하나로 어디까지 갈 수 있는지 실습한다.  
+먼저 이 토큰으로 무엇을 할 수 있는지 권한 목록을 확인하고, 가진 권한에 따라 다음 공격을 고른다.  
+Pod 생성 권한이 있으면 노드의 /etc를 마운트한 Pod를 띄워 파일을 외부 서버로 보낸다.  
+더 높은 권한의 서비스 어카운트를 지정해 Pod를 만들고, 그 Pod에 들어간 토큰까지 가져온다.  
+Secret을 만들고 읽는 권한만 있어도 다른 서비스 어카운트의 토큰을 손에 넣고, 그 토큰으로 DB 계정 정보까지 가져온다.  
+
+보통 이런 강의들은 결국 그래서 실습을 어떻게 하느냐가 문제인데,  
+이 강의는 실습 환경 역시 제공한다.  
+
+강의에서 전달해주는 실습 환경을 접속해서 실습을 해보면 된다.  
+브라우저로 접속해서 이메일 인증만 하면 바로 셸이 열려서, 가상화 설정이나 WSL, Docker Desktop, 클러스터 구성으로 시간을 쓰지 않아도 된다.  
+회사 서버를 건드릴 걱정 없이 수업을 따라 공격해보고, 몇 번이고 다시 해볼 수 있다.  
+
+실습을 마치고 나면 우리 팀 CI에 마운트한 docker.sock이나 서비스 어카운트에 준 권한을, 누군가 컨테이너 셸을 얻었다는 가정으로 다시 따져볼 수 있다.  
+
+Docker와 쿠버네티스로 서비스를 배포하면서 CI 설정이나 권한 YAML을 만지거나 리뷰하지만,  
+그 설정이 공격에 어떻게 쓰이는지 직접 해본 적은 없는 백엔드 개발자와 데브옵스 엔지니어분들께 추천드린다.  
+
+https://www.inflearn.com/course/container-security-a?partners=bec7867c35894d3f891e74a187583b2f&utm_campaign=94661&utm_medium=referral&utm_source=partners&utm_user=94661&cid=345513  
+
+</details>
+
+---
